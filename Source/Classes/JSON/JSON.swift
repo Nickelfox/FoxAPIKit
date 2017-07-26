@@ -8,6 +8,8 @@
 
 import SwiftyJSON
 
+public typealias JSON = SwiftyJSON.JSON
+
 public extension JSON {
 	
 	public var optional: JSON? {
