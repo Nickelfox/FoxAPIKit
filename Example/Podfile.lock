@@ -1,0 +1,22 @@
+PODS:
+  - Alamofire (4.5.0)
+  - APIClient (0.1.0):
+    - Alamofire (~> 4.4)
+    - SwiftyJSON (~> 3.1)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - APIClient (from `../`)
+
+EXTERNAL SOURCES:
+  APIClient:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  APIClient: 149613fde4a9ce9a906b08cf56ba9166342130f6
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 00b9e48b4e68b265ec95a0ee76602f4880cf8f51
+
+COCOAPODS: 1.1.1
