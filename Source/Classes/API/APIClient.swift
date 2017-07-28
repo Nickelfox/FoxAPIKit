@@ -23,8 +23,17 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 	public init() {
 		self.networkManager = NetworkReachabilityManager()
 		self.sessionManager = SessionManager(configuration: URLSessionConfiguration.default)
-		let profileJSON = self.currentProfile
-		self.authHeaders = try? SwiftyJSON.JSON(profileJSON as Any)^
+		if let profileJSON = self.currentProfile {
+			do {
+				self.setAuthHeaders(try JSON(profileJSON)^)
+			} catch {
+				print("No saved auth headers found.")
+			}
+		}
+	}
+	
+	private func setAuthHeaders(_ authHeaders: U?) {
+		self.authHeaders = authHeaders
 	}
 	
 	private var currentProfile: Any? {
