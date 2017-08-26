@@ -1,5 +1,5 @@
 //
-//  APIErrorType.swift
+//  APIClientError.swift
 //  APIClient
 //
 //  Created by Ravindra Soni on 16/12/16.
@@ -24,7 +24,7 @@ fileprivate enum ErrorCode: Int {
 	}
 }
 
-enum ApiClientError: AnyError {
+enum APIClientError: AnyError {
 	
 	case unknown
 	case noInternet
