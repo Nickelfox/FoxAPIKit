@@ -1,6 +1,6 @@
 {
   "name": "APIClient",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "A wrapper over Alamofire for handling APIs for iOS by Fox Labs.",
   "description": "A wrapper over Alamofire for handling APIs for iOS by Fox Labs. It contains utility methods for various classes in iOS.",
   "homepage": "https://github.com/Nickelfox/APIClient",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/Nickelfox/APIClient.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "9.0"
@@ -27,6 +27,9 @@
       "~> 3.1"
     ],
     "JSONParsing": [
+      "~> 0.1.2"
+    ],
+    "AnyErrorKit": [
       "~> 0.1"
     ]
   }

@@ -1,10 +1,13 @@
 PODS:
   - Alamofire (4.5.0)
-  - APIClient (0.1.0):
+  - AnyErrorKit (0.1.0)
+  - APIClient (0.1.1):
     - Alamofire (~> 4.4)
-    - JSONParsing (~> 0.1)
+    - AnyErrorKit (~> 0.1)
+    - JSONParsing (~> 0.1.2)
     - SwiftyJSON (~> 3.1)
-  - JSONParsing (0.1.0):
+  - JSONParsing (0.1.2):
+    - AnyErrorKit (~> 0.1.0)
     - SwiftyJSON (~> 3.1)
   - SwiftyJSON (3.1.4)
 
@@ -17,8 +20,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  APIClient: 1a114dc452aaa5609b9619900e8d8176ab4290ed
-  JSONParsing: 6fc4eb2b606a2133241b953f9de3a153ef6e41fa
+  AnyErrorKit: 7ae07b01bbad1333910a2c1dccda8afc8cea6b65
+  APIClient: d27868096e3ca5c56fe8f07558a39bf6f2d7d68c
+  JSONParsing: 19fa4e886a2b8bddeb47169bfa92ecb55862b054
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
 PODFILE CHECKSUM: 00b9e48b4e68b265ec95a0ee76602f4880cf8f51

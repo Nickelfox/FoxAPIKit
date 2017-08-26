@@ -9,12 +9,14 @@
 import Foundation
 import Alamofire
 import JSONParsing
+import AnyErrorKit
 
 private let AuthHeadersKey = "AuthHeadersKey"
 
 public let DefaultStatusCode = 0
 
 public typealias JSON = JSONParsing.JSON
+public typealias AnyError = AnyErrorKit.AnyError
 
 open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 
@@ -135,7 +137,7 @@ extension APIClient {
 		
 		//Reachability Check
 		if !self.isNetworkReachable {
-			completionHandler(.failure(APIErrorType.noInternet))
+			completionHandler(.failure(ACError.noInternet))
 		}
 
 		if self.enableLogs {
@@ -143,7 +145,7 @@ extension APIClient {
 		}
 		request.response { [weak self] response in
 			guard let this = self else {
-				completionHandler(.failure(APIErrorType.unknown))
+				completionHandler(.failure(ACError.unknown))
 				return
 			}
 			if this.enableLogs {
@@ -158,7 +160,7 @@ extension APIClient {
 				do {
 					let result: T = try this.parse(json, router: router, code)
 					completionHandler(.success(result))
-				} catch let apiError as APIError {
+				} catch let apiError as AnyError {
 					completionHandler(.failure(apiError))
 				} catch {
 					completionHandler(.failure(error as NSError))
@@ -207,7 +209,7 @@ extension APIClient {
 		self.sessionManager.upload(
 		multipartFormData: multipartFormData, with: router) { [weak self] encodingResult in
 			guard let this = self else {
-				completionHandler(.failure(APIErrorType.unknown))
+				completionHandler(.failure(ACError.unknown))
 				return
 			}
 			switch encodingResult {
@@ -235,29 +237,29 @@ extension APIClient {
 				jsonToParse = json.jsonAtKeyPath(keypath: keypathToMap)
 			}
 			return try T.parse(jsonToParse)
-		} catch let apiError as APIError {
+		} catch let apiError as AnyError {
 			throw apiError
 		} catch let error as NSError {
 			throw error
 		} catch {
-			throw APIErrorType.unknown
+			throw ACError.unknown
 		}
 	}
 	
 	//Override this function to provide custom implementation of error parsing.
-	open func parseError(_ json: JSON, _ statusCode: Int) -> APIError {
+	open func parseError(_ json: JSON, _ statusCode: Int) -> AnyError {
 		if let errorResponse = try? V.parse(json, code: statusCode) {
 			return errorResponse
 		} else {
-			return APIErrorType.unknown
+			return ACError.unknown
 		}
 	}
 	
-	fileprivate func parseError(_ error: NSError?) -> APIError {
+	fileprivate func parseError(_ error: NSError?) -> AnyError {
 		if let error = error {
 			return error
 		} else {
-			return APIErrorType.unknown
+			return ACError.unknown
 		}
 	}
 

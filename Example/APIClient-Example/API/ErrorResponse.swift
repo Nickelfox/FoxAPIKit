@@ -12,10 +12,10 @@ import JSONParsing
 
 private let errorKey = "error"
 
-public struct ExampleError: APIError {
+public struct ExampleError: AnyError {
 	
 	public var code: Int
-	public var title: String
+	public var domain: String
 	public var message: String
 
 	
@@ -23,7 +23,7 @@ public struct ExampleError: APIError {
 
 public struct ErrorResponse: ErrorResponseProtocol {
 	public static func parse(_ json: JSON, code: Int) throws -> ErrorResponse {
-		let unknownError = ExampleError(code: code, title: "Error", message: "Error Response can't be mapped.")
+		let unknownError = ExampleError(code: code, domain: "Error", message: "Error Response can't be mapped.")
 		if json[errorKey] != JSON.null {
 			return try ErrorResponse(
 				code: code,
@@ -37,7 +37,7 @@ public struct ErrorResponse: ErrorResponseProtocol {
 	public var code: Int
 	public let messages: [String]
 
-	public var title: String {
+	public var domain: String {
 		return "Error"
 	}
 	
