@@ -68,9 +68,13 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 	fileprivate let sessionManager: SessionManager
 	fileprivate let networkManager: NetworkReachabilityManager?
 	
-	//Override this method in the subclass to set auth headers from the responses.
-	open func parseAuthenticationHeaders (_ response: HTTPURLResponse) {
+	fileprivate func parseAuthenticationHeaders (_ response: HTTPURLResponse) {
+		self.authHeaders = self.authenticationHeaders(response: response)
+	}
 
+	//Override this method in the subclass to set auth headers from the responses.
+	open func authenticationHeaders (response: HTTPURLResponse) -> U? {
+		return nil
 	}
 
 	fileprivate var isNetworkReachable: Bool {
