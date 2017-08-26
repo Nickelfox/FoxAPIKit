@@ -19,8 +19,8 @@ class FoxAPIClient: APIClient<AuthHeaders, ErrorResponse> {
 		self.enableLogs = true
 	}
 	
-	override func parseAuthenticationHeaders(_ response: HTTPURLResponse) {
-		self.authHeaders = try? AuthHeaders.parse(JSON(response.allHeaderFields))
+	override func authenticationHeaders(response: HTTPURLResponse) -> AuthHeaders? {
+		return try? AuthHeaders.parse(JSON(response.allHeaderFields))
 	}
-	
+		
 }
