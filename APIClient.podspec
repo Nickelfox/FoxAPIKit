@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APIClient'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A wrapper over Alamofire for handling APIs for iOS by Fox Labs.'
   s.description      = <<-DESC
 A wrapper over Alamofire for handling APIs for iOS by Fox Labs. It contains utility methods for various classes in iOS.
@@ -21,5 +21,6 @@ A wrapper over Alamofire for handling APIs for iOS by Fox Labs. It contains util
   s.source_files = 'Source/**/*'
   s.dependency 'Alamofire', '~> 4.4'
   s.dependency 'SwiftyJSON', '~> 3.1'
-  s.dependency 'JSONParsing', '~> 0.1'
+  s.dependency 'JSONParsing', '~> 0.1.2'
+  s.dependency 'AnyErrorKit', '~> 0.1'
 end

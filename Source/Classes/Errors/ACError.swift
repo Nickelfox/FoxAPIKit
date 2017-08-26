@@ -9,7 +9,12 @@
 import Foundation
 import SwiftyJSON
 
-public enum APIErrorCode: Int {
+struct ACErrorDefaults {
+	static let domain = "Error"
+	static let message = "An unknown error has occured."
+}
+
+enum ACErrorCode: Int {
 	case noInternet = 5555
 	case mapping = 5556
 	case unknown = 5557
@@ -19,26 +24,26 @@ public enum APIErrorCode: Int {
 	}
 }
 
-public enum APIErrorType: APIError {
+enum ACError: AnyError {
 	
 	case unknown
 	case noInternet
 	case mapping(json: JSON, expectedType: String)
 	
-	public var code: Int {
+	var code: Int {
 		switch self {
-		case .mapping: return APIErrorCode.mapping.code
-		case .noInternet: return APIErrorCode.noInternet.code
-		case .unknown: return APIErrorCode.unknown.code
+		case .mapping: return ACErrorCode.mapping.code
+		case .noInternet: return ACErrorCode.noInternet.code
+		case .unknown: return ACErrorCode.unknown.code
 		}
 	}
 
-	public var title: String {
-		return APIErrorDefaults.title
+	var domain: String {
+		return ACErrorDefaults.domain
 	}
 	
-	public var message: String {
-		var message = APIErrorDefaults.message
+	var message: String {
+		var message = ACErrorDefaults.message
 		switch self {
 		case .mapping (let json, let expectedType):
 			message = "JSON value type mismatch for value \(json), expected type: \(expectedType)"

@@ -7,8 +7,9 @@
 //
 
 import SwiftyJSON
+import AnyErrorKit
 
-public enum JSONError: Error {
+public enum JSONError: AnyError {
 	
 	case typeMismatch(json: JSON, expectedType: String)
 	case invalidTransform(json: JSON, fromType: String, toType: String)
@@ -21,7 +22,7 @@ public enum JSONError: Error {
 		return "JSON Error"
 	}
 
-	public var description: String {
+	public var message: String {
 		switch self {
 		case .typeMismatch(let json, let expectedType):
 			return "json error: value type mismatch for value \(json), expected type: \(expectedType)"

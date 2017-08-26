@@ -10,7 +10,7 @@ import Foundation
 
 public enum APIResult<Value> {
 	case success(Value)
-	case failure(APIError)
+	case failure(AnyError)
 	
 	public var isSuccess: Bool {
 		switch self {
@@ -37,7 +37,7 @@ public enum APIResult<Value> {
 	}
 	
 	/// Returns the associated error value if the result is a failure, `nil` otherwise.
-	public var error: APIError? {
+	public var error: AnyError? {
 		switch self {
 		case .success:
 			return nil
