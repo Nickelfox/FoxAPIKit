@@ -25,6 +25,9 @@
     ],
     "SwiftyJSON": [
       "~> 3.1"
+    ],
+    "JSONParsing": [
+      "~> 0.1"
     ]
   }
 }

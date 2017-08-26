@@ -8,7 +8,7 @@
 
 import Foundation
 import APIClient
-import SwiftyJSON
+import JSONParsing
 
 private let errorKey = "error"
 

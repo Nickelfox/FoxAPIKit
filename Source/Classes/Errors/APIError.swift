@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JSONParsing
 
 struct APIErrorDefaults {
 	static let title = "Error"

@@ -2,6 +2,9 @@ PODS:
   - Alamofire (4.5.0)
   - APIClient (0.1.0):
     - Alamofire (~> 4.4)
+    - JSONParsing (~> 0.1)
+    - SwiftyJSON (~> 3.1)
+  - JSONParsing (0.1.0):
     - SwiftyJSON (~> 3.1)
   - SwiftyJSON (3.1.4)
 
@@ -14,9 +17,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  APIClient: 149613fde4a9ce9a906b08cf56ba9166342130f6
+  APIClient: 1a114dc452aaa5609b9619900e8d8176ab4290ed
+  JSONParsing: 6fc4eb2b606a2133241b953f9de3a153ef6e41fa
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
 PODFILE CHECKSUM: 00b9e48b4e68b265ec95a0ee76602f4880cf8f51
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.3.1
