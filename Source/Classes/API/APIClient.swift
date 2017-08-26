@@ -137,7 +137,7 @@ extension APIClient {
 		
 		//Reachability Check
 		if !self.isNetworkReachable {
-			completionHandler(.failure(ApiClientError.noInternet))
+			completionHandler(.failure(APIClientError.noInternet))
 		}
 
 		if self.enableLogs {
@@ -145,7 +145,7 @@ extension APIClient {
 		}
 		request.response { [weak self] response in
 			guard let this = self else {
-				completionHandler(.failure(ApiClientError.unknown))
+				completionHandler(.failure(APIClientError.unknown))
 				return
 			}
 			if this.enableLogs {
@@ -209,7 +209,7 @@ extension APIClient {
 		self.sessionManager.upload(
 		multipartFormData: multipartFormData, with: router) { [weak self] encodingResult in
 			guard let this = self else {
-				completionHandler(.failure(ApiClientError.unknown))
+				completionHandler(.failure(APIClientError.unknown))
 				return
 			}
 			switch encodingResult {
@@ -242,7 +242,7 @@ extension APIClient {
 		} catch let error as NSError {
 			throw error
 		} catch {
-			throw ApiClientError.unknown
+			throw APIClientError.unknown
 		}
 	}
 	
@@ -251,7 +251,7 @@ extension APIClient {
 		if let errorResponse = try? V.parse(json, code: statusCode) {
 			return errorResponse
 		} else {
-			return ApiClientError.unknown
+			return APIClientError.unknown
 		}
 	}
 	
@@ -259,7 +259,7 @@ extension APIClient {
 		if let error = error {
 			return error
 		} else {
-			return ApiClientError.unknown
+			return APIClientError.unknown
 		}
 	}
 
