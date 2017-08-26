@@ -7,10 +7,7 @@
 //
 
 import Foundation
-//import ReactiveSwift
-//import Result
 import Alamofire
-//import SwiftyJSON
 import JSONParsing
 
 private let AuthHeadersKey = "AuthHeadersKey"

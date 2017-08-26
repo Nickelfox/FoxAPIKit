@@ -6,7 +6,6 @@
 //  Copyright © 2016 Nickelfox. All rights reserved.
 //
 
-import SwiftyJSON
 import JSONParsing
 
 public struct NoResponse: JSONParseable {
