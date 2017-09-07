@@ -90,10 +90,52 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 	
 }
 
+//MARK: Offline Request
+extension APIClient {
+	public func request<T: JSONParseable> (_ fileRouter: FileRouter, completion: @escaping (_ result: APIResult<T>) -> Void) {
+		let completionHandler: (_ result: APIResult<T>) -> Void = { result in
+			DispatchQueue.main.async {
+				completion(result)
+			}
+		}
+		
+		if self.enableLogs {
+			print("Loading data from file at url: \(fileRouter.fileUrl.absoluteString)")
+		}
+		let queue: DispatchQueue = DispatchQueue(label: "file_load", attributes: [])
+		queue.async {
+			do {
+				let data = try Data(contentsOf: fileRouter.fileUrl)
+				if self.enableLogs {
+					print("Response at Url: \(fileRouter.fileUrl.absoluteString)")
+					print("\(String(data: data, encoding: .utf8) ?? ""))")
+				}
+				var error: NSError?
+				let json = JSON.init(data: data, options: .allowFragments, error: &error)
+				if error != nil {
+					completionHandler(.failure(APIClientError.errorReadingFile(fileRouter.fileUrl)))
+					return
+				}
+				var jsonToParse = json
+				//if map keypath is provided then try to map data at that keypath
+				if let keypathToMap = fileRouter.keypathToMap {
+					jsonToParse = json.jsonAtKeyPath(keypath: keypathToMap)
+				}
+				let result = try T.parse(jsonToParse)
+				completionHandler(.success(result))
+			} catch let error as AnyError {
+				completionHandler(.failure(error))
+			} catch {
+				completionHandler(.failure(APIClientError.errorReadingFile(fileRouter.fileUrl)))
+			}
+		}
+	}
+}
+
 //MARK: JSON Request
 extension APIClient {
 
-	public func request<T: JSONParseable> (router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
+	public func request<T: JSONParseable> (_ router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
 		let _ = self.requestInternal(router: router, completion: completion)
 	}
 
@@ -165,7 +207,7 @@ extension APIClient {
 extension APIClient {
 	
 	func multipartRequest<T: JSONParseable> (
-		router: Router,
+		_ router: Router,
 		multipartFormData: @escaping (MultipartFormData) -> Void,
 		completion: @escaping (_ result: APIResult<T>) -> Void) {
 		
