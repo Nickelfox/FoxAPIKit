@@ -16,7 +16,7 @@ fileprivate struct ErrorDefaults {
 
 fileprivate enum ErrorCode: Int {
 	case noInternet = 5555
-	case mapping = 5556
+	case errorReadingFile = 5556
 	case unknown = 5557
 	
 	var code: Int {
@@ -26,14 +26,14 @@ fileprivate enum ErrorCode: Int {
 
 enum APIClientError: AnyError {
 	
-	case unknown
 	case noInternet
-	case mapping(json: JSON, expectedType: String)
+	case errorReadingFile(URL)
+	case unknown
 	
 	var code: Int {
 		switch self {
-		case .mapping: return ErrorCode.mapping.code
 		case .noInternet: return ErrorCode.noInternet.code
+		case .errorReadingFile: return ErrorCode.errorReadingFile.code
 		case .unknown: return ErrorCode.unknown.code
 		}
 	}
@@ -45,10 +45,10 @@ enum APIClientError: AnyError {
 	var message: String {
 		var message = ErrorDefaults.message
 		switch self {
-		case .mapping (let json, let expectedType):
-			message = "JSON value type mismatch for value \(json), expected type: \(expectedType)"
 		case .noInternet:
 			message = "No Internet Connection! Check your internet connection."
+		case .errorReadingFile(let fileUrl):
+			message = "Error reading file: \(fileUrl.absoluteString)"
 		case .unknown: break
 		}
 		return message

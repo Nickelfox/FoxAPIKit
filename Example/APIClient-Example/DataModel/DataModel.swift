@@ -14,14 +14,22 @@ typealias APICompletion<T> = (APIResult<T>) -> Void
 class DataModel {
 
 	static func demo(completion: @escaping APICompletion<DemoObject>) {
-		let params = ["values": ["1", "2"]]
-		let request = APIRequestManager.shared.get(
-			path: "/anything",
-			params: params,
-			timeoutInterval: nil
-		)
-		FoxAPIClient.shared.request(router: request, completion: completion)
+//		let params = ["id": 1]
+//		let request = APIRequestManager.shared.get(
+//			path: "/anything",
+//			params: params,
+//			keypathToMap: "args",
+//			timeoutInterval: nil
+//		)
 		
+//		let offlineJSONRequestManager = OfflineJSONRequestManager()
+//		let request = offlineJSONRequestManager.request(jsonFileName: "Test")
+
+		let url = URL(string: "http://beta.json-generator.com/api/json/get/4kWfQV5KQ")!
+		let fileRequestManager = FileRequestManager()
+		let request = fileRequestManager.request(fileUrl: url)
+		
+		FoxAPIClient.shared.request(request, completion: completion)
 	}
 
 }

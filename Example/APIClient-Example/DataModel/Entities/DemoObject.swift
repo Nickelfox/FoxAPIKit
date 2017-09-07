@@ -16,17 +16,17 @@ enum Test: Int, JSONParseRawRepresentable {
 }
 
 public struct DemoObject: CustomStringConvertible {
-	let values: [Test]
+	let value: Test
 	
 	public var description: String {
-		return "values: \(self.values)"
+		return "value: \(self.value)"
 	}
 }
 
 extension DemoObject: JSONParseable {
 	public static func parse(_ json: JSON) throws -> DemoObject {
 		return try DemoObject(
-			values: json["args"]["values[]"]^^
+			value: json["id"]^
 		)
 	}
 	
