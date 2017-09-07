@@ -90,33 +90,7 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 	
 }
 
-////MARK: Reactive
-//extension APIClient {
-//
-//	public func request<T: JSONParseable> (route: Router) -> SignalProducer<T, APIError> {
-//		
-//		return SignalProducer { sink, disposable in
-//			
-//			let request =
-//			APIClient.sharedInstance.requestInternal(route: route, completion: {
-//				(result: T?, error) -> Void in
-//				guard let result = result else {
-//					sink.send(error: error!)
-//					return
-//				}
-//				sink.send(value: result)
-//				sink.sendCompleted()
-//			})
-//
-//			disposable.add {
-//				request.cancel()
-//			}
-//			}.observe(on: UIScheduler())
-//	}
-//
-//}
-
-//MARK: Non-Reactive JSON Request
+//MARK: JSON Request
 extension APIClient {
 
 	public func request<T: JSONParseable> (router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
@@ -187,7 +161,7 @@ extension APIClient {
 
 }
 
-//MARK: Non-Reactive Multipart Request
+//MARK: Multipart Request
 extension APIClient {
 	
 	func multipartRequest<T: JSONParseable> (
