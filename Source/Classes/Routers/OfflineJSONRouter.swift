@@ -8,12 +8,12 @@
 
 import Foundation
 
-public protocol OfflineJSONRouter: FileRouter {
+public protocol OfflineJSONRouter: URLRouter {
 	var jsonFileName: String { get }
 }
 
 extension OfflineJSONRouter {
-	public var fileUrl: URL {
+	public var url: URL {
 		if let path = Bundle.main.url(forResource: self.jsonFileName, withExtension: "json") {
 			return path
 		}

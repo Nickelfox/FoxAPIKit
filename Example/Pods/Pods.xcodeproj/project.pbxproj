@@ -68,8 +68,8 @@
 		DF2CDB03564F2AC5E59A76FE832162E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F3914F6631B40886D5FF547EE4C4B7 /* Foundation.framework */; };
 		E3D3A64D1F616A9A00E13F1C /* OfflineJSONRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3A64B1F616A9300E13F1C /* OfflineJSONRouter.swift */; };
 		E3D3A64F1F616D2400E13F1C /* OfflineJSONRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3A64E1F616D2400E13F1C /* OfflineJSONRequestManager.swift */; };
-		E3D3A6531F617ECE00E13F1C /* FileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3A6521F617ECE00E13F1C /* FileRouter.swift */; };
-		E3D3A6551F617F0B00E13F1C /* FileRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3A6541F617F0B00E13F1C /* FileRequestManager.swift */; };
+		E3D3A6531F617ECE00E13F1C /* URLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3A6521F617ECE00E13F1C /* URLRouter.swift */; };
+		E3D3A6551F617F0B00E13F1C /* URLRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3A6541F617F0B00E13F1C /* URLRequestManager.swift */; };
 		EAF1BFAFCF45D4FB100C9726D2AFA67D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEB0D5B219F3B06352AE7DA1A1DEEC2 /* Alamofire.framework */; };
 		EF05FBB29263B221FC9BCF94D57A0C38 /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E107C8FF2B5C9AABA5C5CCFBBC363A4 /* JSONError.swift */; };
 		EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED8C40F0D1492352312C1ADB447BB3 /* Notifications.swift */; };
@@ -250,8 +250,8 @@
 		E090BB0A882E0115B25BC92E2F916E4D /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		E3D3A64B1F616A9300E13F1C /* OfflineJSONRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineJSONRouter.swift; sourceTree = "<group>"; };
 		E3D3A64E1F616D2400E13F1C /* OfflineJSONRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineJSONRequestManager.swift; sourceTree = "<group>"; };
-		E3D3A6521F617ECE00E13F1C /* FileRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileRouter.swift; sourceTree = "<group>"; };
-		E3D3A6541F617F0B00E13F1C /* FileRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileRequestManager.swift; sourceTree = "<group>"; };
+		E3D3A6521F617ECE00E13F1C /* URLRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouter.swift; sourceTree = "<group>"; };
+		E3D3A6541F617F0B00E13F1C /* URLRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestManager.swift; sourceTree = "<group>"; };
 		E4369647434E606DE300775E5F9E8B26 /* AnyError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyError.swift; path = Source/Classes/AnyErrorKit/AnyError.swift; sourceTree = "<group>"; };
 		E59134D99A260D99C9A959E0EABF9557 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		E651588E1D32F29C3DE29C012DD3785B /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
@@ -511,8 +511,8 @@
 				1856440D65DB105750F8C53C8C2C254D /* Router.swift */,
 				E3D3A64B1F616A9300E13F1C /* OfflineJSONRouter.swift */,
 				E3D3A64E1F616D2400E13F1C /* OfflineJSONRequestManager.swift */,
-				E3D3A6521F617ECE00E13F1C /* FileRouter.swift */,
-				E3D3A6541F617F0B00E13F1C /* FileRequestManager.swift */,
+				E3D3A6521F617ECE00E13F1C /* URLRouter.swift */,
+				E3D3A6541F617F0B00E13F1C /* URLRequestManager.swift */,
 			);
 			name = Routers;
 			path = Source/Classes/Routers;
@@ -867,10 +867,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D3A6531F617ECE00E13F1C /* FileRouter.swift in Sources */,
+				E3D3A6531F617ECE00E13F1C /* URLRouter.swift in Sources */,
 				9E6362A80012E59C92A6DAF8C793FFFC /* APIClient-dummy.m in Sources */,
 				0558140B422FCDE8F1CCB5C51AC29E73 /* APIClient.swift in Sources */,
-				E3D3A6551F617F0B00E13F1C /* FileRequestManager.swift in Sources */,
+				E3D3A6551F617F0B00E13F1C /* URLRequestManager.swift in Sources */,
 				E3D3A64D1F616A9A00E13F1C /* OfflineJSONRouter.swift in Sources */,
 				115B289A6706B2D0AC0BCF70941D51AE /* APIClientError.swift in Sources */,
 				DE9572136575979988A2BC4504E35186 /* APIRequest.swift in Sources */,

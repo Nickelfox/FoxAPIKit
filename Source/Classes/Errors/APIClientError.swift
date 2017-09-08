@@ -16,7 +16,7 @@ fileprivate struct ErrorDefaults {
 
 fileprivate enum ErrorCode: Int {
 	case noInternet = 5555
-	case errorReadingFile = 5556
+	case errorReadingUrl = 5556
 	case unknown = 5557
 	
 	var code: Int {
@@ -27,13 +27,13 @@ fileprivate enum ErrorCode: Int {
 enum APIClientError: AnyError {
 	
 	case noInternet
-	case errorReadingFile(URL)
+	case errorReadingUrl(URL)
 	case unknown
 	
 	var code: Int {
 		switch self {
 		case .noInternet: return ErrorCode.noInternet.code
-		case .errorReadingFile: return ErrorCode.errorReadingFile.code
+		case .errorReadingUrl: return ErrorCode.errorReadingUrl.code
 		case .unknown: return ErrorCode.unknown.code
 		}
 	}
@@ -47,8 +47,8 @@ enum APIClientError: AnyError {
 		switch self {
 		case .noInternet:
 			message = "No Internet Connection! Check your internet connection."
-		case .errorReadingFile(let fileUrl):
-			message = "Error reading file: \(fileUrl.absoluteString)"
+		case .errorReadingUrl(let url):
+			message = "Error reading data from url: \(url.absoluteString)"
 		case .unknown: break
 		}
 		return message
