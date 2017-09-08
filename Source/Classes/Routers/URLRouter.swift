@@ -1,5 +1,5 @@
 //
-//  FileRouter.swift
+//  URLRouter.swift
 //  APIClient
 //
 //  Created by Ravindra Soni on 16/12/16.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-public protocol FileRouter: Router {
-	var fileUrl: URL { get }
+public protocol URLRouter: Router {
+	var url: URL { get }
 }
 
-extension FileRouter {
+extension URLRouter {
 	public var keypathToMap: String? {
 		return nil
 	}
@@ -38,7 +38,7 @@ extension FileRouter {
 	}
 	
 	public var baseUrl: URL {
-		return self.fileUrl
+		return self.url
 	}
 	
 	public var headers: [String: String] {

@@ -92,7 +92,7 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 
 //MARK: Offline Request
 extension APIClient {
-	public func request<T: JSONParseable> (_ fileRouter: FileRouter, completion: @escaping (_ result: APIResult<T>) -> Void) {
+	public func request<T: JSONParseable> (_ urlRouter: URLRouter, completion: @escaping (_ result: APIResult<T>) -> Void) {
 		let completionHandler: (_ result: APIResult<T>) -> Void = { result in
 			DispatchQueue.main.async {
 				completion(result)
@@ -100,25 +100,25 @@ extension APIClient {
 		}
 		
 		if self.enableLogs {
-			print("Loading data from file at url: \(fileRouter.fileUrl.absoluteString)")
+			print("Loading data from url: \(urlRouter.url.absoluteString)")
 		}
-		let queue: DispatchQueue = DispatchQueue(label: "file_load", attributes: [])
+		let queue: DispatchQueue = DispatchQueue(label: "url_load", attributes: [])
 		queue.async {
 			do {
-				let data = try Data(contentsOf: fileRouter.fileUrl)
+				let data = try Data(contentsOf: urlRouter.url)
 				if self.enableLogs {
-					print("Response at Url: \(fileRouter.fileUrl.absoluteString)")
+					print("Response at Url: \(urlRouter.url.absoluteString)")
 					print("\(String(data: data, encoding: .utf8) ?? ""))")
 				}
 				var error: NSError?
 				let json = JSON.init(data: data, options: .allowFragments, error: &error)
 				if error != nil {
-					completionHandler(.failure(APIClientError.errorReadingFile(fileRouter.fileUrl)))
+					completionHandler(.failure(APIClientError.errorReadingUrl(urlRouter.url)))
 					return
 				}
 				var jsonToParse = json
 				//if map keypath is provided then try to map data at that keypath
-				if let keypathToMap = fileRouter.keypathToMap {
+				if let keypathToMap = urlRouter.keypathToMap {
 					jsonToParse = json.jsonAtKeyPath(keypath: keypathToMap)
 				}
 				let result = try T.parse(jsonToParse)
@@ -126,7 +126,7 @@ extension APIClient {
 			} catch let error as AnyError {
 				completionHandler(.failure(error))
 			} catch {
-				completionHandler(.failure(APIClientError.errorReadingFile(fileRouter.fileUrl)))
+				completionHandler(.failure(APIClientError.errorReadingUrl(urlRouter.url)))
 			}
 		}
 	}

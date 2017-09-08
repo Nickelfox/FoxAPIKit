@@ -26,8 +26,8 @@ class DataModel {
 //		let request = offlineJSONRequestManager.request(jsonFileName: "Test")
 
 		let url = URL(string: "http://beta.json-generator.com/api/json/get/4kWfQV5KQ")!
-		let fileRequestManager = FileRequestManager()
-		let request = fileRequestManager.request(fileUrl: url)
+		let urlRequestManager = URLRequestManager()
+		let request = urlRequestManager.request(url: url)
 		
 		FoxAPIClient.shared.request(request, completion: completion)
 	}
