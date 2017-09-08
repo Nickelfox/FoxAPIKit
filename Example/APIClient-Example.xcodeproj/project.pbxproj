@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8C995DC77F584565964CC82C /* Pods_APIClient_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC453B8CA8AFAE9512341904 /* Pods_APIClient_Example.framework */; };
+		E32389E61F629F800080F37F /* OfflineAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32389E51F629F800080F37F /* OfflineAPIRouter.swift */; };
+		E32389E81F62A0A50080F37F /* TestError.json in Resources */ = {isa = PBXBuildFile; fileRef = E32389E71F62A0A50080F37F /* TestError.json */; };
 		E368CCA21F28671F00420C6D /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC901F28671F00420C6D /* APIRequestManager.swift */; };
 		E368CCA31F28671F00420C6D /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC911F28671F00420C6D /* APIRouter.swift */; };
 		E368CCA41F28671F00420C6D /* AuthHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC921F28671F00420C6D /* AuthHeaders.swift */; };
@@ -31,6 +33,8 @@
 		B1212570D6F4B3C9B7379E29 /* Pods-FLAPIClient-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLAPIClient-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLAPIClient-Example/Pods-FLAPIClient-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BC453B8CA8AFAE9512341904 /* Pods_APIClient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIClient_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04BD1B5D2392CB683F8C7B3 /* Pods-FLAPIClient-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLAPIClient-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FLAPIClient-Example/Pods-FLAPIClient-Example.release.xcconfig"; sourceTree = "<group>"; };
+		E32389E51F629F800080F37F /* OfflineAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineAPIRouter.swift; sourceTree = "<group>"; };
+		E32389E71F62A0A50080F37F /* TestError.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestError.json; sourceTree = "<group>"; };
 		E368CC901F28671F00420C6D /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
 		E368CC911F28671F00420C6D /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		E368CC921F28671F00420C6D /* AuthHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthHeaders.swift; sourceTree = "<group>"; };
@@ -119,9 +123,11 @@
 			children = (
 				E368CC901F28671F00420C6D /* APIRequestManager.swift */,
 				E368CC911F28671F00420C6D /* APIRouter.swift */,
+				E32389E51F629F800080F37F /* OfflineAPIRouter.swift */,
 				E368CC921F28671F00420C6D /* AuthHeaders.swift */,
 				E368CC931F28671F00420C6D /* ErrorResponse.swift */,
 				E3D3A6501F616ECE00E13F1C /* Test.json */,
+				E32389E71F62A0A50080F37F /* TestError.json */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -207,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E32389E81F62A0A50080F37F /* TestError.json in Resources */,
 				E368CCA91F28671F00420C6D /* Main.storyboard in Resources */,
 				E3D3A6511F616ECE00E13F1C /* Test.json in Resources */,
 				E368CCA71F28671F00420C6D /* Assets.xcassets in Resources */,
@@ -284,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E368CCAB1F28671F00420C6D /* DemoObject.swift in Sources */,
+				E32389E61F629F800080F37F /* OfflineAPIRouter.swift in Sources */,
 				E368CCA21F28671F00420C6D /* APIRequestManager.swift in Sources */,
 				E368CCA41F28671F00420C6D /* AuthHeaders.swift in Sources */,
 				E368CCAE1F28671F00420C6D /* ViewController.swift in Sources */,

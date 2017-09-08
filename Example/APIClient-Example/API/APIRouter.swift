@@ -14,7 +14,7 @@ enum APIRouter: Router {
 	case demo
 
 	var keypathToMap: String? {
-		return nil
+		return "args"
 	}
 	
 	var timeoutInterval: TimeInterval? {
@@ -22,9 +22,7 @@ enum APIRouter: Router {
 	}
 	
 	var encoding: URLEncoding? {
-	
 		return nil
-	
 	}
 	
 	public var method: HTTPMethod {
@@ -44,7 +42,7 @@ enum APIRouter: Router {
 	public var params: [String: Any] {
 		switch self {
 		case .demo:
-			return [:]
+			return ["id":"1"]
 		}
 	}
 	
