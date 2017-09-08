@@ -116,12 +116,7 @@ extension APIClient {
 					completionHandler(.failure(APIClientError.errorReadingUrl(urlRouter.url)))
 					return
 				}
-				var jsonToParse = json
-				//if map keypath is provided then try to map data at that keypath
-				if let keypathToMap = urlRouter.keypathToMap {
-					jsonToParse = json.jsonAtKeyPath(keypath: keypathToMap)
-				}
-				let result = try T.parse(jsonToParse)
+				let result: T = try self.parse(json, router: urlRouter, 200)
 				completionHandler(.success(result))
 			} catch let error as AnyError {
 				completionHandler(.failure(error))
