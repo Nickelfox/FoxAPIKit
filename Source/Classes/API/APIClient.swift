@@ -77,6 +77,15 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 		return nil
 	}
 
+	//Override this function to provide custom implementation of error parsing.
+	open func parseError(_ json: JSON, _ statusCode: Int) -> AnyError {
+		if let errorResponse = try? V.parse(json, code: statusCode) {
+			return errorResponse
+		} else {
+			return APIClientError.unknown
+		}
+	}
+
 	fileprivate var isNetworkReachable: Bool {
 		guard let networkManager = self.networkManager  else {
 			return false
@@ -240,6 +249,7 @@ extension APIClient {
 }
 
 extension APIClient {
+	
 	fileprivate func parse<T: JSONParseable> (_ json: JSON, router: Router, _ statusCode: Int) throws -> T {
 		do {
 			//try parsing error response
@@ -258,15 +268,6 @@ extension APIClient {
 			throw error
 		} catch {
 			throw APIClientError.unknown
-		}
-	}
-	
-	//Override this function to provide custom implementation of error parsing.
-	open func parseError(_ json: JSON, _ statusCode: Int) -> AnyError {
-		if let errorResponse = try? V.parse(json, code: statusCode) {
-			return errorResponse
-		} else {
-			return APIClientError.unknown
 		}
 	}
 	
