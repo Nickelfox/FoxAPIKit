@@ -29,14 +29,14 @@ class DataModel {
 		let urlRequestManager = URLRequestManager()
 		let request = urlRequestManager.request(url: url)
 		
-		FoxAPIClient.shared.request(request, completion: completion)
+		NonAuthAPIClient.shared.request(request, completion: completion)
 	}
 
 	static func demoRouter(completion: @escaping APICompletion<DemoObject>) {
 //		let apiRouter = APIRouter.demo
 //		let offlineRouter = OfflineAPIRouter.demo
 		let offlineErrorRouter = OfflineAPIRouter.demoError
-		FoxAPIClient.shared.request(offlineErrorRouter, completion: completion)
+		NonAuthAPIClient.shared.request(offlineErrorRouter, completion: completion)
 	}
 	
 }
