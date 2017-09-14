@@ -15,10 +15,6 @@ public typealias URLEncoding = Alamofire.URLEncoding
 
 public let DefaultTimeoutInterval: TimeInterval = 200
 
-public protocol APIParams {
-	var json: [String: Any] { get }
-}
-
 public protocol Router: URLRequestConvertible {
 	var method: HTTPMethod { get }
 	var path: String { get }
@@ -28,9 +24,18 @@ public protocol Router: URLRequestConvertible {
 	var encoding: URLEncoding? { get }
 	var timeoutInterval: TimeInterval? { get }
 	var keypathToMap: String? { get }
+	func pageParams(index: Int, limit: Int) -> [String: Any]
 }
 
 extension Router {
+	public var encoding: URLEncoding? { return nil }
+	
+	public var timeoutInterval: TimeInterval? { return nil }
+	
+	public var keypathToMap: String? { return nil }
+	
+	public func pageParams(index: Int, limit: Int) -> [String: Any] { return [:] }
+
 	public func asURLRequest() throws -> URLRequest {
 		var request = URLRequest(url: self.baseUrl.appendingPathComponent(self.path))
 		request.httpMethod = self.method.rawValue
@@ -48,10 +53,26 @@ extension Router {
 				throw error
 			}
 		} else {
-			parameters = params
+			parameters = self.params
 		}
 		let encoding: URLEncoding = self.encoding ?? URLEncoding.default
 		return try encoding.encode(request, with: parameters)
 	}
 }
+
+//MARK: Pagination
+private func += <K, V> (left: inout [K:V], right: [K:V]) {
+	for (k, v) in right {
+		left[k] = v
+	}
+}
+
+extension Router {
+	func compiledParams(index: Int, limit: Int) -> [String: Any] {
+		var params = self.params
+		params += self.pageParams(index: index, limit: limit)
+		return params
+	}
+}
+
 

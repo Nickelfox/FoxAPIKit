@@ -66,6 +66,8 @@
 		DE51F46BA536AB1A8D5A3E280A864464 /* AuthHeadersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AD24CE7E4C61E23B064921F1716ABF /* AuthHeadersProtocol.swift */; };
 		DE9572136575979988A2BC4504E35186 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235DC6810C3C67E56E4F4DA3EB4E088C /* APIRequest.swift */; };
 		DF2CDB03564F2AC5E59A76FE832162E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F3914F6631B40886D5FF547EE4C4B7 /* Foundation.framework */; };
+		E3C5E13F1F6A64AB0021AB60 /* PageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C5E13E1F6A64AB0021AB60 /* PageRequest.swift */; };
+		E3C5E1431F6A71250021AB60 /* Paginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C5E1421F6A71250021AB60 /* Paginator.swift */; };
 		E3D3A64D1F616A9A00E13F1C /* OfflineJSONRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3A64B1F616A9300E13F1C /* OfflineJSONRouter.swift */; };
 		E3D3A64F1F616D2400E13F1C /* OfflineJSONRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3A64E1F616D2400E13F1C /* OfflineJSONRequestManager.swift */; };
 		E3D3A6531F617ECE00E13F1C /* URLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3A6521F617ECE00E13F1C /* URLRouter.swift */; };
@@ -248,6 +250,8 @@
 		DEEB0D5B219F3B06352AE7DA1A1DEEC2 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04EC7CFE9846221C38210DF4D1263D3 /* JSONParseRawRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONParseRawRepresentable.swift; path = Source/Classes/JSONParsing/JSONParseRawRepresentable.swift; sourceTree = "<group>"; };
 		E090BB0A882E0115B25BC92E2F916E4D /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		E3C5E13E1F6A64AB0021AB60 /* PageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageRequest.swift; sourceTree = "<group>"; };
+		E3C5E1421F6A71250021AB60 /* Paginator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Paginator.swift; path = Source/Classes/Pagination/Paginator.swift; sourceTree = "<group>"; };
 		E3D3A64B1F616A9300E13F1C /* OfflineJSONRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineJSONRouter.swift; sourceTree = "<group>"; };
 		E3D3A64E1F616D2400E13F1C /* OfflineJSONRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineJSONRequestManager.swift; sourceTree = "<group>"; };
 		E3D3A6521F617ECE00E13F1C /* URLRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRouter.swift; sourceTree = "<group>"; };
@@ -509,6 +513,7 @@
 			children = (
 				46DA412E07208CD629E6834A2F796245 /* RequestManager.swift */,
 				1856440D65DB105750F8C53C8C2C254D /* Router.swift */,
+				E3C5E13E1F6A64AB0021AB60 /* PageRequest.swift */,
 				E3D3A64B1F616A9300E13F1C /* OfflineJSONRouter.swift */,
 				E3D3A64E1F616D2400E13F1C /* OfflineJSONRequestManager.swift */,
 				E3D3A6521F617ECE00E13F1C /* URLRouter.swift */,
@@ -572,6 +577,14 @@
 			path = "../Target Support Files/JSONParsing";
 			sourceTree = "<group>";
 		};
+		E3C5E1411F6A70FE0021AB60 /* Pagination */ = {
+			isa = PBXGroup;
+			children = (
+				E3C5E1421F6A71250021AB60 /* Paginator.swift */,
+			);
+			name = Pagination;
+			sourceTree = "<group>";
+		};
 		EB5D3D5EF530A13A0CC5AE598BDA614A /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -595,6 +608,7 @@
 				8CDFA3AE8F4934C045330380A3E5EC53 /* Errors */,
 				2809445A197C3FD3C1A0342D1EC384C9 /* Response */,
 				A5E164B872330ECFE7CD21E898FAB0B7 /* Routers */,
+				E3C5E1411F6A70FE0021AB60 /* Pagination */,
 				7D8266BCC25E73584D7FD3A99F8C3F1A /* Support Files */,
 			);
 			name = APIClient;
@@ -876,9 +890,11 @@
 				DE9572136575979988A2BC4504E35186 /* APIRequest.swift in Sources */,
 				02F819166ACB0D98D64FCE5A976D7C3A /* APIResult.swift in Sources */,
 				DE51F46BA536AB1A8D5A3E280A864464 /* AuthHeadersProtocol.swift in Sources */,
+				E3C5E13F1F6A64AB0021AB60 /* PageRequest.swift in Sources */,
 				6ED87EADA79354F543F309B51FF87989 /* ErrorResponseProtocol.swift in Sources */,
 				4CC955132B24E77BF1A6D5AA8C1B357E /* ListResponse.swift in Sources */,
 				1D2D3B1F3BBAF7F045A13128339178E0 /* NoResponse.swift in Sources */,
+				E3C5E1431F6A71250021AB60 /* Paginator.swift in Sources */,
 				3339DE4ACB02E2CC49A7F2972E376CA0 /* RequestManager.swift in Sources */,
 				A2FA95A7A91499D7A6499F30EF7D9548 /* Router.swift in Sources */,
 				E3D3A64F1F616D2400E13F1C /* OfflineJSONRequestManager.swift in Sources */,
