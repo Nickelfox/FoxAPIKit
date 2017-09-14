@@ -102,6 +102,14 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 //MARK: Offline Request
 extension APIClient {
 	public func request<T: JSONParseable> (_ urlRouter: URLRouter, completion: @escaping (_ result: APIResult<T>) -> Void) {
+		if urlRouter.url.isFileURL {
+			self.requestWithFileUrl(urlRouter, completion: completion)
+		} else {
+			self.request(urlRouter, completion: completion)
+		}
+	}
+	
+	fileprivate func requestWithFileUrl<T: JSONParseable> (_ urlRouter: URLRouter, completion: @escaping (_ result: APIResult<T>) -> Void) {
 		let completionHandler: (_ result: APIResult<T>) -> Void = { result in
 			DispatchQueue.main.async {
 				completion(result)
@@ -134,6 +142,7 @@ extension APIClient {
 			}
 		}
 	}
+
 }
 
 //MARK: JSON Request

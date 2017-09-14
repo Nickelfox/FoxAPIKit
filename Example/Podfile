@@ -7,4 +7,5 @@ use_frameworks!
 
 target 'APIClient-Example' do
 	pod 'APIClient', :path => '../'
+	pod 'PaginationUIManager', '~> 0.1'
 end

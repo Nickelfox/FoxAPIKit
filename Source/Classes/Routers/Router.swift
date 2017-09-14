@@ -15,10 +15,6 @@ public typealias URLEncoding = Alamofire.URLEncoding
 
 public let DefaultTimeoutInterval: TimeInterval = 200
 
-public protocol APIParams {
-	var json: [String: Any] { get }
-}
-
 public protocol Router: URLRequestConvertible {
 	var method: HTTPMethod { get }
 	var path: String { get }
@@ -31,6 +27,12 @@ public protocol Router: URLRequestConvertible {
 }
 
 extension Router {
+	public var encoding: URLEncoding? { return nil }
+	
+	public var timeoutInterval: TimeInterval? { return nil }
+	
+	public var keypathToMap: String? { return nil }
+	
 	public func asURLRequest() throws -> URLRequest {
 		var request = URLRequest(url: self.baseUrl.appendingPathComponent(self.path))
 		request.httpMethod = self.method.rawValue
@@ -48,10 +50,11 @@ extension Router {
 				throw error
 			}
 		} else {
-			parameters = params
+			parameters = self.params
 		}
 		let encoding: URLEncoding = self.encoding ?? URLEncoding.default
 		return try encoding.encode(request, with: parameters)
 	}
 }
+
 

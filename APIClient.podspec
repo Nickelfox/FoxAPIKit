@@ -17,7 +17,7 @@ A wrapper over Alamofire for handling APIs for iOS by Fox Labs. It contains util
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Ravindra Soni' => 'soni@nickelfox.com' }
   s.source           = { :git => 'https://github.com/Nickelfox/APIClient.git', :tag => s.version.to_s }
- 
+
   s.osx.deployment_target = "10.9"
   s.tvos.deployment_target = "9.0"
   s.watchos.deployment_target = "2.0"
@@ -26,6 +26,6 @@ A wrapper over Alamofire for handling APIs for iOS by Fox Labs. It contains util
   s.source_files = 'Source/**/*'
   s.dependency 'Alamofire', '~> 4.4'
   s.dependency 'SwiftyJSON', '~> 3.1'
-  s.dependency 'JSONParsing', '~> 0.1.2'
-  s.dependency 'AnyErrorKit', '~> 0.1'
+  s.dependency 'JSONParsing', '~> 0.1.3'
+  s.dependency 'AnyErrorKit', '~> 0.1.1'
 end

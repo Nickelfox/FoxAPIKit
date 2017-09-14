@@ -13,18 +13,6 @@ public protocol URLRouter: Router {
 }
 
 extension URLRouter {
-	public var keypathToMap: String? {
-		return nil
-	}
-	
-	public var timeoutInterval: TimeInterval? {
-		return nil
-	}
-	
-	public var encoding: URLEncoding? {
-		return nil
-	}
-	
 	public var method: HTTPMethod {
 		return .get
 	}

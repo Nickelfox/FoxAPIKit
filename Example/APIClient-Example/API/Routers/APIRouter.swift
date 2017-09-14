@@ -11,10 +11,14 @@ import APIClient
 
 enum APIRouter: Router {
 	
-	case demo
+	case user
+	case userError
 
 	var keypathToMap: String? {
-		return "args"
+		switch self {
+		case .user, .userError:
+			return "args"
+		}
 	}
 	
 	var timeoutInterval: TimeInterval? {
@@ -27,25 +31,27 @@ enum APIRouter: Router {
 	
 	public var method: HTTPMethod {
 		switch self {
-		case .demo:
+		case .user, .userError:
 			return .get
 		}
 	}
 	
 	public var path: String {
 		switch self {
-		case .demo:
+		case .user, .userError:
 			return "/get"
 		}
 	}
 	
 	public var params: [String: Any] {
 		switch self {
-		case .demo:
-			return ["id":"1"]
+		case .user:
+			return ["name":"Fox"]
+		case .userError:
+			return ["error":"Example Error"]
 		}
 	}
-	
+		
 	public var baseUrl: URL {
 		let baseURL = URL(string: "https://httpbin.org")!
 		return baseURL
@@ -53,5 +59,7 @@ enum APIRouter: Router {
 	
 	public var headers: [String: String] {
 		return ["Content-Type": "application/json"]
-	}	
+	}
+	
 }
+

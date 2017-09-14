@@ -8,21 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		8C995DC77F584565964CC82C /* Pods_APIClient_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC453B8CA8AFAE9512341904 /* Pods_APIClient_Example.framework */; };
-		E32389E61F629F800080F37F /* OfflineAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32389E51F629F800080F37F /* OfflineAPIRouter.swift */; };
-		E32389E81F62A0A50080F37F /* TestError.json in Resources */ = {isa = PBXBuildFile; fileRef = E32389E71F62A0A50080F37F /* TestError.json */; };
-		E368CCA21F28671F00420C6D /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC901F28671F00420C6D /* APIRequestManager.swift */; };
-		E368CCA31F28671F00420C6D /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC911F28671F00420C6D /* APIRouter.swift */; };
-		E368CCA41F28671F00420C6D /* AuthHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC921F28671F00420C6D /* AuthHeaders.swift */; };
-		E368CCA51F28671F00420C6D /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC931F28671F00420C6D /* ErrorResponse.swift */; };
+		E3533FB71F827B47001BBDE5 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3533FB61F827B47001BBDE5 /* Place.swift */; };
 		E368CCA61F28671F00420C6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC941F28671F00420C6D /* AppDelegate.swift */; };
 		E368CCA71F28671F00420C6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E368CC951F28671F00420C6D /* Assets.xcassets */; };
 		E368CCA81F28671F00420C6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E368CC961F28671F00420C6D /* LaunchScreen.storyboard */; };
 		E368CCA91F28671F00420C6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E368CC981F28671F00420C6D /* Main.storyboard */; };
-		E368CCAA1F28671F00420C6D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC9B1F28671F00420C6D /* DataModel.swift */; };
-		E368CCAB1F28671F00420C6D /* DemoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC9D1F28671F00420C6D /* DemoObject.swift */; };
+		E368CCAB1F28671F00420C6D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC9D1F28671F00420C6D /* User.swift */; };
 		E368CCAC1F28671F00420C6D /* FoxAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC9E1F28671F00420C6D /* FoxAPIClient.swift */; };
-		E368CCAE1F28671F00420C6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CCA11F28671F00420C6D /* ViewController.swift */; };
-		E3D3A6511F616ECE00E13F1C /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = E3D3A6501F616ECE00E13F1C /* Test.json */; };
+		E39E16531F6C0A9900D61973 /* PaginatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39E16521F6C0A9900D61973 /* PaginatorViewController.swift */; };
+		E3A9ABC91F729682001E2825 /* CursorPaginatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9ABC81F729682001E2825 /* CursorPaginatorViewController.swift */; };
+		E3D79BA91F8791F600169897 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79BA81F8791F600169897 /* ViewController.swift */; };
+		E3D79BAB1F87A3CF00169897 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79BAA1F87A3CF00169897 /* Number.swift */; };
+		E3D79BB41F87A4D600169897 /* PaginationAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79BAD1F87A4D600169897 /* PaginationAPIRouter.swift */; };
+		E3D79BB51F87A4D600169897 /* OfflineAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79BAE1F87A4D600169897 /* OfflineAPIRouter.swift */; };
+		E3D79BB61F87A4D600169897 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79BAF1F87A4D600169897 /* APIRouter.swift */; };
+		E3D79BB71F87A4D600169897 /* URLAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79BB01F87A4D600169897 /* URLAPIRouter.swift */; };
+		E3D79BB81F87A4D600169897 /* CursorPaginationAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79BB11F87A4D600169897 /* CursorPaginationAPIRouter.swift */; };
+		E3D79BB91F87A4D600169897 /* AuthHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79BB21F87A4D600169897 /* AuthHeaders.swift */; };
+		E3D79BBA1F87A4D600169897 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79BB31F87A4D600169897 /* ErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,23 +36,26 @@
 		B1212570D6F4B3C9B7379E29 /* Pods-FLAPIClient-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLAPIClient-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLAPIClient-Example/Pods-FLAPIClient-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BC453B8CA8AFAE9512341904 /* Pods_APIClient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIClient_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04BD1B5D2392CB683F8C7B3 /* Pods-FLAPIClient-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLAPIClient-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FLAPIClient-Example/Pods-FLAPIClient-Example.release.xcconfig"; sourceTree = "<group>"; };
-		E32389E51F629F800080F37F /* OfflineAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineAPIRouter.swift; sourceTree = "<group>"; };
-		E32389E71F62A0A50080F37F /* TestError.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestError.json; sourceTree = "<group>"; };
-		E368CC901F28671F00420C6D /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
-		E368CC911F28671F00420C6D /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
-		E368CC921F28671F00420C6D /* AuthHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthHeaders.swift; sourceTree = "<group>"; };
-		E368CC931F28671F00420C6D /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		E3533FB61F827B47001BBDE5 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		E368CC941F28671F00420C6D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E368CC951F28671F00420C6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E368CC971F28671F00420C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E368CC991F28671F00420C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E368CC9B1F28671F00420C6D /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		E368CC9D1F28671F00420C6D /* DemoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoObject.swift; sourceTree = "<group>"; };
+		E368CC9D1F28671F00420C6D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E368CC9E1F28671F00420C6D /* FoxAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoxAPIClient.swift; sourceTree = "<group>"; };
 		E368CC9F1F28671F00420C6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E368CCA01F28671F00420C6D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
-		E368CCA11F28671F00420C6D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E3D3A6501F616ECE00E13F1C /* Test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; };
+		E39E16521F6C0A9900D61973 /* PaginatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaginatorViewController.swift; path = UI/PaginatorExample/PaginatorViewController.swift; sourceTree = "<group>"; };
+		E3A9ABC81F729682001E2825 /* CursorPaginatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CursorPaginatorViewController.swift; path = UI/PaginatorExample/CursorPaginatorViewController.swift; sourceTree = "<group>"; };
+		E3D79BA81F8791F600169897 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../../../../../../../soni/Documents/Clients/Nickelfox/FoxLabs/APIClient/Example/APIClient-Example/UI/Simple API Example/ViewController.swift"; sourceTree = "<group>"; };
+		E3D79BAA1F87A3CF00169897 /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Number.swift; path = "../../../../../../../../../../soni/Documents/Clients/Nickelfox/FoxLabs/APIClient/Example/APIClient-Example/DataModel/Entities/Number.swift"; sourceTree = "<group>"; };
+		E3D79BAD1F87A4D600169897 /* PaginationAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginationAPIRouter.swift; sourceTree = "<group>"; };
+		E3D79BAE1F87A4D600169897 /* OfflineAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineAPIRouter.swift; sourceTree = "<group>"; };
+		E3D79BAF1F87A4D600169897 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		E3D79BB01F87A4D600169897 /* URLAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLAPIRouter.swift; sourceTree = "<group>"; };
+		E3D79BB11F87A4D600169897 /* CursorPaginationAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CursorPaginationAPIRouter.swift; sourceTree = "<group>"; };
+		E3D79BB21F87A4D600169897 /* AuthHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthHeaders.swift; path = "../../../../../../../../../soni/Documents/Clients/Nickelfox/FoxLabs/APIClient/Example/APIClient-Example/API/AuthHeaders.swift"; sourceTree = "<group>"; };
+		E3D79BB31F87A4D600169897 /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorResponse.swift; path = "../../../../../../../../../soni/Documents/Clients/Nickelfox/FoxLabs/APIClient/Example/APIClient-Example/API/ErrorResponse.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 		E368CC8E1F28671F00420C6D /* APIClient-Example */ = {
 			isa = PBXGroup;
 			children = (
+				E39E16501F6C0A6400D61973 /* UI */,
 				E368CC8F1F28671F00420C6D /* API */,
 				E368CC941F28671F00420C6D /* AppDelegate.swift */,
 				E368CC951F28671F00420C6D /* Assets.xcassets */,
@@ -113,7 +120,6 @@
 				E368CC9A1F28671F00420C6D /* DataModel */,
 				E368CC9F1F28671F00420C6D /* Info.plist */,
 				E368CCA01F28671F00420C6D /* MyPlayground.playground */,
-				E368CCA11F28671F00420C6D /* ViewController.swift */,
 			);
 			path = "APIClient-Example";
 			sourceTree = "<group>";
@@ -121,13 +127,9 @@
 		E368CC8F1F28671F00420C6D /* API */ = {
 			isa = PBXGroup;
 			children = (
-				E368CC901F28671F00420C6D /* APIRequestManager.swift */,
-				E368CC911F28671F00420C6D /* APIRouter.swift */,
-				E32389E51F629F800080F37F /* OfflineAPIRouter.swift */,
-				E368CC921F28671F00420C6D /* AuthHeaders.swift */,
-				E368CC931F28671F00420C6D /* ErrorResponse.swift */,
-				E3D3A6501F616ECE00E13F1C /* Test.json */,
-				E32389E71F62A0A50080F37F /* TestError.json */,
+				E3D79BAC1F87A4D600169897 /* Routers */,
+				E3D79BB21F87A4D600169897 /* AuthHeaders.swift */,
+				E3D79BB31F87A4D600169897 /* ErrorResponse.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -135,7 +137,6 @@
 		E368CC9A1F28671F00420C6D /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				E368CC9B1F28671F00420C6D /* DataModel.swift */,
 				E368CC9C1F28671F00420C6D /* Entities */,
 				E368CC9E1F28671F00420C6D /* FoxAPIClient.swift */,
 			);
@@ -145,9 +146,50 @@
 		E368CC9C1F28671F00420C6D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				E368CC9D1F28671F00420C6D /* DemoObject.swift */,
+				E368CC9D1F28671F00420C6D /* User.swift */,
+				E3D79BAA1F87A3CF00169897 /* Number.swift */,
+				E3533FB61F827B47001BBDE5 /* Place.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		E39E16501F6C0A6400D61973 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E3D79BA71F8791BA00169897 /* Simple API Example */,
+				E39E16511F6C0A6F00D61973 /* PaginatorExample */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		E39E16511F6C0A6F00D61973 /* PaginatorExample */ = {
+			isa = PBXGroup;
+			children = (
+				E39E16521F6C0A9900D61973 /* PaginatorViewController.swift */,
+				E3A9ABC81F729682001E2825 /* CursorPaginatorViewController.swift */,
+			);
+			name = PaginatorExample;
+			sourceTree = "<group>";
+		};
+		E3D79BA71F8791BA00169897 /* Simple API Example */ = {
+			isa = PBXGroup;
+			children = (
+				E3D79BA81F8791F600169897 /* ViewController.swift */,
+			);
+			name = "Simple API Example";
+			sourceTree = "<group>";
+		};
+		E3D79BAC1F87A4D600169897 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				E3D79BAD1F87A4D600169897 /* PaginationAPIRouter.swift */,
+				E3D79BAE1F87A4D600169897 /* OfflineAPIRouter.swift */,
+				E3D79BAF1F87A4D600169897 /* APIRouter.swift */,
+				E3D79BB01F87A4D600169897 /* URLAPIRouter.swift */,
+				E3D79BB11F87A4D600169897 /* CursorPaginationAPIRouter.swift */,
+			);
+			name = Routers;
+			path = "../../../../../../../../../soni/Documents/Clients/Nickelfox/FoxLabs/APIClient/Example/APIClient-Example/API/Routers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,9 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E32389E81F62A0A50080F37F /* TestError.json in Resources */,
 				E368CCA91F28671F00420C6D /* Main.storyboard in Resources */,
-				E3D3A6511F616ECE00E13F1C /* Test.json in Resources */,
 				E368CCA71F28671F00420C6D /* Assets.xcassets in Resources */,
 				E368CCA81F28671F00420C6D /* LaunchScreen.storyboard in Resources */,
 			);
@@ -235,6 +275,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AnyErrorKit/AnyErrorKit.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONParsing/JSONParsing.framework",
+				"${BUILT_PRODUCTS_DIR}/PaginationUIManager/PaginationUIManager.framework",
+				"${BUILT_PRODUCTS_DIR}/SSPullToRefresh/SSPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -243,6 +285,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnyErrorKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONParsing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PaginationUIManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,16 +334,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E368CCAB1F28671F00420C6D /* DemoObject.swift in Sources */,
-				E32389E61F629F800080F37F /* OfflineAPIRouter.swift in Sources */,
-				E368CCA21F28671F00420C6D /* APIRequestManager.swift in Sources */,
-				E368CCA41F28671F00420C6D /* AuthHeaders.swift in Sources */,
-				E368CCAE1F28671F00420C6D /* ViewController.swift in Sources */,
+				E3A9ABC91F729682001E2825 /* CursorPaginatorViewController.swift in Sources */,
+				E3D79BB71F87A4D600169897 /* URLAPIRouter.swift in Sources */,
+				E3D79BB61F87A4D600169897 /* APIRouter.swift in Sources */,
+				E3D79BB41F87A4D600169897 /* PaginationAPIRouter.swift in Sources */,
+				E368CCAB1F28671F00420C6D /* User.swift in Sources */,
+				E3533FB71F827B47001BBDE5 /* Place.swift in Sources */,
 				E368CCAC1F28671F00420C6D /* FoxAPIClient.swift in Sources */,
-				E368CCA31F28671F00420C6D /* APIRouter.swift in Sources */,
+				E3D79BBA1F87A4D600169897 /* ErrorResponse.swift in Sources */,
+				E3D79BAB1F87A3CF00169897 /* Number.swift in Sources */,
+				E3D79BB51F87A4D600169897 /* OfflineAPIRouter.swift in Sources */,
+				E3D79BB81F87A4D600169897 /* CursorPaginationAPIRouter.swift in Sources */,
+				E3D79BB91F87A4D600169897 /* AuthHeaders.swift in Sources */,
 				E368CCA61F28671F00420C6D /* AppDelegate.swift in Sources */,
-				E368CCA51F28671F00420C6D /* ErrorResponse.swift in Sources */,
-				E368CCAA1F28671F00420C6D /* DataModel.swift in Sources */,
+				E39E16531F6C0A9900D61973 /* PaginatorViewController.swift in Sources */,
+				E3D79BA91F8791F600169897 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
