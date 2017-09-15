@@ -24,7 +24,7 @@ public protocol Router: URLRequestConvertible {
 	var encoding: URLEncoding? { get }
 	var timeoutInterval: TimeInterval? { get }
 	var keypathToMap: String? { get }
-	func pageParams(index: Int, limit: Int) -> [String: Any]
+	func pageParams(index: Int, limit: Int) -> [String: Any]?
 }
 
 extension Router {
@@ -34,7 +34,7 @@ extension Router {
 	
 	public var keypathToMap: String? { return nil }
 	
-	public func pageParams(index: Int, limit: Int) -> [String: Any] { return [:] }
+	public func pageParams(index: Int, limit: Int) -> [String: Any]? { return nil }
 
 	public func asURLRequest() throws -> URLRequest {
 		var request = URLRequest(url: self.baseUrl.appendingPathComponent(self.path))
@@ -70,7 +70,9 @@ private func += <K, V> (left: inout [K:V], right: [K:V]) {
 extension Router {
 	func compiledParams(index: Int, limit: Int) -> [String: Any] {
 		var params = self.params
-		params += self.pageParams(index: index, limit: limit)
+		if let pageParams = self.pageParams(index: index, limit: limit) {
+			params += pageParams
+		}
 		return params
 	}
 }
