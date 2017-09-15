@@ -1,5 +1,5 @@
 //
-//  Paginator.swift
+//  IndexPaginator.swift
 //  APIClient
 //
 //  Created by Ravindra Soni on 14/09/17.
@@ -9,29 +9,52 @@
 import Foundation
 import JSONParsing
 
-public let defaultPageSize: Int = 20
+private let defaultPageSize: Int = 20
+private let firstIndex: Int = 0
 
 public protocol Pageable: JSONParseable {
 	static func fetch(router: Router, completion: @escaping (_ result: APIResult<[Self]>) -> Void)
 }
 
-public class Paginator<T: Pageable> {
+public enum IndexPaginatorType {
+	case pageBased
+	case offsetBased
+}
+
+public class IndexPaginator<T: Pageable> {
 	public var items: [T] = []
 	public var currentIndex: Int
 	public var canLoadMore = true
 	public let router: Router
 	public let limit: Int
+	public let initialIndex: Int
+	public let paginatorType: IndexPaginatorType
 	
-	public init(router: Router, limit: Int = defaultPageSize) {
-		self.currentIndex = 0
+	private(set) public var loading: Bool = false
+	
+	public init(
+		router: Router,
+		initialIndex: Int = firstIndex,
+		limit: Int = defaultPageSize,
+		paginatorType: IndexPaginatorType = .pageBased) {
+		self.currentIndex = initialIndex
+		self.initialIndex = initialIndex
 		self.limit = limit
 		self.router = router
+		self.paginatorType = paginatorType
 	}
 	
-	public func loadNextPage(completion:  @escaping (_ result: APIResult<[T]>) -> Void) {
+	public func loadNextPage(completion:  @escaping (_ result: APIResult<PageInfo<T>>) -> Void) {
+		if self.loading {
+			completion(.failure(PaginatorError.alreadyLoading))
+			return
+		}
+		
+		self.loading = true
 		let request = PageRequest(router: self.router, index: self.currentIndex, limit: self.limit)
 		T.fetch(router: request) { [weak self] (result: APIResult<[T]>) in
 			guard let this = self else { return }
+			this.loading = false
 			switch result {
 			case .success(let items):
 				for item in items {
@@ -39,14 +62,22 @@ public class Paginator<T: Pageable> {
 				}
 				this.canLoadMore = items.count >= this.limit
 				if this.canLoadMore {
-					this.currentIndex += 1
+					switch this.paginatorType {
+					case .offsetBased: this.currentIndex += items.count
+					case .pageBased: this.currentIndex += 1
+					}
 				}
-			case .failure(let error): completion(.failure(error))
+			case .failure(let error):
+				completion(.failure(error))
 			}
 		}
 	}
 	
-	public func refresh(completion: @escaping (_ result: APIResult<[T]>) -> Void) {
+	public func refresh(completion: @escaping (_ result: APIResult<PageInfo<T>>) -> Void) {
+		if self.loading {
+			completion(.failure(PaginatorError.alreadyLoading))
+			return
+		}
 		self.currentIndex = 0
 		self.items.removeAll()
 		self.loadNextPage(completion: completion)
