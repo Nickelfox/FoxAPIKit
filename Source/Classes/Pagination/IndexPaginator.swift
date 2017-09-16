@@ -37,11 +37,7 @@ public class IndexPaginator<T: Pageable> {
 	public let paginatorType: IndexPaginatorType
 	
 	private(set) public var loading: Bool = false
-	
-	deinit {
-		print("Index Paginator Deinit")
-	}
-	
+		
 	public init(
 		router: Router,
 		initialIndex: Int = firstIndex,
