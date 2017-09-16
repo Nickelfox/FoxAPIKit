@@ -33,10 +33,10 @@ class DataModel {
 	}
 
 	static func demoRouter(completion: @escaping APICompletion<DemoObject>) {
-//		let apiRouter = APIRouter.demo
-//		let offlineRouter = OfflineAPIRouter.demo
-		let offlineErrorRouter = OfflineAPIRouter.demoError
-		NonAuthAPIClient.shared.request(offlineErrorRouter, completion: completion)
+		let router = APIRouter.demo
+//		let router = OfflineAPIRouter.demo
+//		let router = OfflineAPIRouter.demoError
+		NonAuthAPIClient.shared.request(router, completion: completion)
 	}
 	
 }

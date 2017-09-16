@@ -21,6 +21,12 @@ public enum IndexPaginatorType {
 	case offsetBased
 }
 
+public struct IndexPageInfo<T: Pageable> {
+	public var objects: [T]
+	public var hasMoreDataToLoad: Bool
+	public var paginator: IndexPaginator<T>
+}
+
 public class IndexPaginator<T: Pageable> {
 	public var items: [T] = []
 	public var currentIndex: Int
@@ -31,6 +37,10 @@ public class IndexPaginator<T: Pageable> {
 	public let paginatorType: IndexPaginatorType
 	
 	private(set) public var loading: Bool = false
+	
+	deinit {
+		print("Index Paginator Deinit")
+	}
 	
 	public init(
 		router: Router,
@@ -44,7 +54,7 @@ public class IndexPaginator<T: Pageable> {
 		self.paginatorType = paginatorType
 	}
 	
-	public func loadNextPage(completion:  @escaping (_ result: APIResult<PageInfo<T>>) -> Void) {
+	public func loadNextPage(completion:  @escaping (_ result: APIResult<IndexPageInfo<T>>) -> Void) {
 		if self.loading {
 			completion(.failure(PaginatorError.alreadyLoading))
 			return
@@ -57,6 +67,9 @@ public class IndexPaginator<T: Pageable> {
 			this.loading = false
 			switch result {
 			case .success(let items):
+				if this.currentIndex == this.initialIndex {
+					this.items.removeAll()
+				}
 				for item in items {
 					this.items.append(item)
 				}
@@ -67,19 +80,20 @@ public class IndexPaginator<T: Pageable> {
 					case .pageBased: this.currentIndex += 1
 					}
 				}
+				let pageInfo = IndexPageInfo(objects: items, hasMoreDataToLoad: this.canLoadMore, paginator: this)
+				completion(.success(pageInfo))
 			case .failure(let error):
 				completion(.failure(error))
 			}
 		}
 	}
 	
-	public func refresh(completion: @escaping (_ result: APIResult<PageInfo<T>>) -> Void) {
+	public func refresh(completion: @escaping (_ result: APIResult<IndexPageInfo<T>>) -> Void) {
 		if self.loading {
 			completion(.failure(PaginatorError.alreadyLoading))
 			return
 		}
-		self.currentIndex = 0
-		self.items.removeAll()
+		self.currentIndex = self.initialIndex
 		self.loadNextPage(completion: completion)
 	}
 }

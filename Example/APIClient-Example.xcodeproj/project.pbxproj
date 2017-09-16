@@ -19,9 +19,10 @@
 		E368CCA81F28671F00420C6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E368CC961F28671F00420C6D /* LaunchScreen.storyboard */; };
 		E368CCA91F28671F00420C6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E368CC981F28671F00420C6D /* Main.storyboard */; };
 		E368CCAA1F28671F00420C6D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC9B1F28671F00420C6D /* DataModel.swift */; };
-		E368CCAB1F28671F00420C6D /* DemoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC9D1F28671F00420C6D /* DemoObject.swift */; };
+		E368CCAB1F28671F00420C6D /* DemoObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC9D1F28671F00420C6D /* DemoObjects.swift */; };
 		E368CCAC1F28671F00420C6D /* FoxAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC9E1F28671F00420C6D /* FoxAPIClient.swift */; };
 		E368CCAE1F28671F00420C6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CCA11F28671F00420C6D /* ViewController.swift */; };
+		E39E16531F6C0A9900D61973 /* PaginatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39E16521F6C0A9900D61973 /* PaginatorViewController.swift */; };
 		E3D3A6511F616ECE00E13F1C /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = E3D3A6501F616ECE00E13F1C /* Test.json */; };
 /* End PBXBuildFile section */
 
@@ -44,11 +45,12 @@
 		E368CC971F28671F00420C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E368CC991F28671F00420C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E368CC9B1F28671F00420C6D /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		E368CC9D1F28671F00420C6D /* DemoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoObject.swift; sourceTree = "<group>"; };
+		E368CC9D1F28671F00420C6D /* DemoObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoObjects.swift; sourceTree = "<group>"; };
 		E368CC9E1F28671F00420C6D /* FoxAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoxAPIClient.swift; sourceTree = "<group>"; };
 		E368CC9F1F28671F00420C6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E368CCA01F28671F00420C6D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		E368CCA11F28671F00420C6D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E39E16521F6C0A9900D61973 /* PaginatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaginatorViewController.swift; path = UI/PaginatorExample/PaginatorViewController.swift; sourceTree = "<group>"; };
 		E3D3A6501F616ECE00E13F1C /* Test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 		E368CC8E1F28671F00420C6D /* APIClient-Example */ = {
 			isa = PBXGroup;
 			children = (
+				E39E16501F6C0A6400D61973 /* UI */,
 				E368CC8F1F28671F00420C6D /* API */,
 				E368CC941F28671F00420C6D /* AppDelegate.swift */,
 				E368CC951F28671F00420C6D /* Assets.xcassets */,
@@ -145,9 +148,25 @@
 		E368CC9C1F28671F00420C6D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				E368CC9D1F28671F00420C6D /* DemoObject.swift */,
+				E368CC9D1F28671F00420C6D /* DemoObjects.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		E39E16501F6C0A6400D61973 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E39E16511F6C0A6F00D61973 /* PaginatorExample */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		E39E16511F6C0A6F00D61973 /* PaginatorExample */ = {
+			isa = PBXGroup;
+			children = (
+				E39E16521F6C0A9900D61973 /* PaginatorViewController.swift */,
+			);
+			name = PaginatorExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +254,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AnyErrorKit/AnyErrorKit.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONParsing/JSONParsing.framework",
+				"${BUILT_PRODUCTS_DIR}/PaginationUIManager/PaginationUIManager.framework",
+				"${BUILT_PRODUCTS_DIR}/SSPullToRefresh/SSPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -243,6 +264,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnyErrorKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONParsing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PaginationUIManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E368CCAB1F28671F00420C6D /* DemoObject.swift in Sources */,
+				E368CCAB1F28671F00420C6D /* DemoObjects.swift in Sources */,
 				E32389E61F629F800080F37F /* OfflineAPIRouter.swift in Sources */,
 				E368CCA21F28671F00420C6D /* APIRequestManager.swift in Sources */,
 				E368CCA41F28671F00420C6D /* AuthHeaders.swift in Sources */,
@@ -298,6 +321,7 @@
 				E368CCAC1F28671F00420C6D /* FoxAPIClient.swift in Sources */,
 				E368CCA31F28671F00420C6D /* APIRouter.swift in Sources */,
 				E368CCA61F28671F00420C6D /* AppDelegate.swift in Sources */,
+				E39E16531F6C0A9900D61973 /* PaginatorViewController.swift in Sources */,
 				E368CCA51F28671F00420C6D /* ErrorResponse.swift in Sources */,
 				E368CCAA1F28671F00420C6D /* DataModel.swift in Sources */,
 			);

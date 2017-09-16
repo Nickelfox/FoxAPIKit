@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/APIClient" "$PODS_CONFIGURATION_BUILD_DIR/Alamofire" "$PODS_CONFIGURATION_BUILD_DIR/AnyErrorKit" "$PODS_CONFIGURATION_BUILD_DIR/JSONParsing" "$PODS_CONFIGURATION_BUILD_DIR/SwiftyJSON"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/APIClient" "$PODS_CONFIGURATION_BUILD_DIR/Alamofire" "$PODS_CONFIGURATION_BUILD_DIR/AnyErrorKit" "$PODS_CONFIGURATION_BUILD_DIR/JSONParsing" "$PODS_CONFIGURATION_BUILD_DIR/PaginationUIManager" "$PODS_CONFIGURATION_BUILD_DIR/SSPullToRefresh" "$PODS_CONFIGURATION_BUILD_DIR/SwiftyJSON"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/APIClient/APIClient.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/AnyErrorKit/AnyErrorKit.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/JSONParsing/JSONParsing.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftyJSON/SwiftyJSON.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "APIClient" -framework "Alamofire" -framework "AnyErrorKit" -framework "JSONParsing" -framework "SwiftyJSON"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/APIClient/APIClient.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/AnyErrorKit/AnyErrorKit.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/JSONParsing/JSONParsing.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/PaginationUIManager/PaginationUIManager.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SSPullToRefresh/SSPullToRefresh.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftyJSON/SwiftyJSON.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "APIClient" -framework "Alamofire" -framework "AnyErrorKit" -framework "JSONParsing" -framework "PaginationUIManager" -framework "SSPullToRefresh" -framework "SwiftyJSON"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

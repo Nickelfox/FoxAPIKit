@@ -12,9 +12,15 @@ import APIClient
 enum APIRouter: Router {
 	
 	case demo
+	case fetchNumbers
 
 	var keypathToMap: String? {
-		return "args"
+		switch self {
+		case .demo:
+			return "args"
+		case .fetchNumbers:
+			return "args.numbers[][value]"
+		}
 	}
 	
 	var timeoutInterval: TimeInterval? {
@@ -29,12 +35,16 @@ enum APIRouter: Router {
 		switch self {
 		case .demo:
 			return .get
+		case .fetchNumbers:
+			return .get
 		}
 	}
 	
 	public var path: String {
 		switch self {
 		case .demo:
+			return "/get"
+		case .fetchNumbers:
 			return "/get"
 		}
 	}
@@ -43,7 +53,17 @@ enum APIRouter: Router {
 		switch self {
 		case .demo:
 			return ["id":"1"]
+		case .fetchNumbers:
+			var numbers: [[String: Any]] = []
+			for i in 1...20 {
+				numbers.append(["value": i])
+			}
+			return ["numbers": numbers]
 		}
+	}
+	
+	func pageParams(index: Int, limit: Int) -> [String : Any]? {
+		return ["page": index, "limit": limit]
 	}
 	
 	public var baseUrl: URL {

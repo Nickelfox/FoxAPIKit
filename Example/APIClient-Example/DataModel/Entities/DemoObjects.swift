@@ -8,6 +8,7 @@
 
 import Foundation
 import JSONParsing
+import APIClient
 
 enum Test: Int, JSONParseRawRepresentable {
 	typealias RawValue = Int
@@ -35,4 +36,24 @@ extension DemoObject: JSONParseable {
 	}
 }
 
+public struct Number: Pageable {
+	var value: Int
+	
+	public static func parse(_ json: JSON) throws -> Number {
+		return try Number(
+			value: json^
+		)
+	}
 
+	public static func fetch(router: Router, completion: @escaping (APIResult<[Number]>) -> Void) {
+		NonAuthAPIClient.shared.request(router) { (result: APIResult<ListResponse<Number>>) in
+			switch result {
+			case .success(let listResponse):
+				completion(.success(listResponse.list))
+			case .failure(let error):
+				completion(.failure(error))
+			}
+		}
+	}
+	
+}
