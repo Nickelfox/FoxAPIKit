@@ -14,10 +14,11 @@ class PaginatorViewController: UIViewController {
 
 	@IBOutlet var tableView: UITableView!
 	var paginationManager: PaginationUIManager?
-	var paginator: IndexPaginator<Number>?
+//	var paginator: IndexPaginator<Number>?
 	
 	var objects: [Number] {
-		return self.paginator?.items ?? []
+		return []
+//		return self.paginator?.items ?? []
 	}
 	
     override func viewDidLoad() {
@@ -25,7 +26,7 @@ class PaginatorViewController: UIViewController {
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
 		self.setupPaginationManager()
-		self.paginator = IndexPaginator(router: APIRouter.fetchNumbers, initialIndex: 0, limit: 20, paginatorType: .pageBased)
+//		self.paginator = IndexPaginator(router: APIRouter.fetchNumbers, initialIndex: 0, limit: 20, paginatorType: .pageBased)
 		self.paginationManager?.load {
 			
 		}
@@ -53,29 +54,29 @@ extension PaginatorViewController: UITableViewDelegate, UITableViewDataSource {
 extension PaginatorViewController: PaginationUIManagerDelegate {
 
 	func refreshAll(completion: @escaping (Bool) -> Void) {
-		self.paginator?.refresh(completion: { [weak self] result in
-			switch result {
-			case .success(let pageInfo):
-				self?.tableView.reloadData()
-				completion(pageInfo.hasMoreDataToLoad)
-			case .failure(let error):
-				print("refresh Error: \(error.message)")
-				completion(true)
-			}
-		})
+//		self.paginator?.refresh(completion: { [weak self] result in
+//			switch result {
+//			case .success(let pageInfo):
+//				self?.tableView.reloadData()
+//				completion(pageInfo.hasMoreDataToLoad)
+//			case .failure(let error):
+//				print("refresh Error: \(error.message)")
+//				completion(true)
+//			}
+//		})
 	}
 	
 	func loadMore(completion: @escaping (Bool) -> Void) {
-		self.paginator?.loadNextPage(completion: { [weak self] result in
-			switch result {
-			case .success(let pageInfo):
-				self?.tableView.reloadData()
-				completion(pageInfo.hasMoreDataToLoad)
-			case .failure(let error):
-				print("refresh Error: \(error.message)")
-				completion(true)
-			}
-		})
+//		self.paginator?.loadNextPage(completion: { [weak self] result in
+//			switch result {
+//			case .success(let pageInfo):
+//				self?.tableView.reloadData()
+//				completion(pageInfo.hasMoreDataToLoad)
+//			case .failure(let error):
+//				print("refresh Error: \(error.message)")
+//				completion(true)
+//			}
+//		})
 
 	}
 	

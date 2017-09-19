@@ -9,32 +9,35 @@
 import Foundation
 import JSONParsing
 
-public protocol Pageable1: JSONParseable {
-	associatedtype U: JSONParseable
-	associatedtype V: PaginationInfoMapper
-	
-	static func fetch<U: JSONParseable,V: PaginationInfoMapper>(router: Router, completion: @escaping (_ result: APIResult<PaginationResponse<Self, U, V>>) -> Void)
+public protocol Pageable: JSONParseable {
+	static func fetch<U: PaginationResponseProtocol>(router: PageRouter, completion: @escaping (_ result: APIResult<U>) -> Void)
+}
+
+public protocol PageRouter: Router {
+	func router(currentIndex: Int, limit: Int, currentPageMetaData: PageMetaData?) -> PageRouter
 }
 
 private let defaultPageSize: Int = 20
 
-public class Paginator<T: Pageable1, U: JSONParseable, V: PaginationInfoMapper>{
+public class Paginator<T: Pageable, U: PaginationResponseProtocol, V: PageMetaData> where U.Element == T {
 
-	public var items: [T] = []
-	public var currentIndex: Int
-	public var pageInfo: U?
-	public var canLoadMore = true
-	public let router: Router
+	private(set) public var items: [T] = []
+	private(set) public var currentIndex: Int
+	private(set) public var currentPageMetaData: U.MetaData?
+	private(set) public var canLoadMore = true
+	
+	public let router: PageRouter
 	public let limit: Int
 	
-	public init(router: Router, limit: Int = defaultPageSize) {
+	public init(router: PageRouter, limit: Int = defaultPageSize) {
 		self.currentIndex = 0
 		self.limit = limit
 		self.router = router
 	}
 	
 	private func loadNextPage(isFirst: Bool, completion:  @escaping (_ result: APIResult<[T]>) -> Void) {
-		self.fetch(router: self.router) { [weak self] (result) in
+		let router = self.router.router(currentIndex: self.currentIndex, limit: self.limit, currentPageMetaData: self.currentPageMetaData)
+		self.fetch(router: router) { [weak self] (result) in
 			guard let this = self else { return }
 			switch result {
 			case .success(let response):
@@ -45,7 +48,7 @@ public class Paginator<T: Pageable1, U: JSONParseable, V: PaginationInfoMapper>{
 					this.items.append(item)
 				}
 				
-				this.pageInfo = response.pageInfo
+				this.currentPageMetaData = response.pageMetaData
 				this.canLoadMore = response.objects.count >= this.limit
 				if this.canLoadMore {
 					this.currentIndex += 1
@@ -55,7 +58,7 @@ public class Paginator<T: Pageable1, U: JSONParseable, V: PaginationInfoMapper>{
 		}
 	}
 	
-	private func fetch(router: Router, completion: @escaping (_ result: APIResult<PaginationResponse<T, U, V>>) -> Void) {
+	private func fetch(router: PageRouter, completion: @escaping (_ result: APIResult<U>) -> Void) {
 		T.fetch(router: router, completion: completion)
 	}
 

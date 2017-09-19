@@ -9,18 +9,33 @@
 
 import JSONParsing
 
+public protocol PaginationResponseProtocol: JSONParseable {
+	associatedtype Element: Pageable
+	associatedtype MetaData: PageMetaData
+	
+	var objects: [Element] {get}
+	var pageMetaData: MetaData? {get}
+}
+
+public protocol PageMetaData: JSONParseable {}
+
+
 public protocol PaginationInfoMapper {
 	static var pageInfoKeypath: String? { get }
 	static var objectsKeypath: String? { get }
 }
 
-public final class PaginationResponse<T: Pageable1, U: JSONParseable, V: PaginationInfoMapper> {
-	public var objects: [T]
-	public var pageInfo: U?
+public final class PaginationResponse<T: Pageable, U: PageMetaData, V: PaginationInfoMapper>: PaginationResponseProtocol {
 	
-	public init(objects: [T], pageInfo: U?) throws {
+	public typealias Element = T
+	public typealias MetaData = U
+	
+	public var objects: [Element]
+	public var pageMetaData: MetaData?
+	
+	public init(objects: [T], pageMetaData: U?) throws {
 		self.objects = objects
-		self.pageInfo = pageInfo
+		self.pageMetaData = pageMetaData
 	}
 	
 }
@@ -38,7 +53,7 @@ extension PaginationResponse: JSONParseable {
 		}
 		return try PaginationResponse(
 			objects: jsonList.map(^),
-			pageInfo: paginationJSON^?
+			pageMetaData: paginationJSON^?
 		)
 	}
 }

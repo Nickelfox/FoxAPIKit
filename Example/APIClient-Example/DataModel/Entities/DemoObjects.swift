@@ -36,6 +36,22 @@ extension DemoObject: JSONParseable {
 	}
 }
 
+struct PaginationMetaData: PageMetaData {
+	static func parse(_ json: JSON) throws -> PaginationMetaData {
+		return PaginationMetaData()
+	}
+}
+
+struct PageInfoMapper: PaginationInfoMapper {
+	static var objectsKeypath: String? {
+		return "args.numbers[][value]"
+	}
+	
+	static var pageInfoKeypath: String? {
+		return nil
+	}
+}
+
 public struct Number: Pageable {
 	var value: Int
 	
@@ -44,6 +60,14 @@ public struct Number: Pageable {
 			value: json^
 		)
 	}
+
+	public static func fetch<U>(router: PageRouter, completion: @escaping (APIResult<U>) -> Void) where U : PaginationResponseProtocol {
+		NonAuthAPIClient.shared.request(router, completion: completion)
+	}
+	
+//	public static func fetch<U, V>(pageInfo: PageInfo1<V>, completion: @escaping (APIResult<U>) -> Void) where U : PaginationResponseProtocol, V : JSONParseable {
+//		
+//	}
 
 	public static func fetch(router: Router, completion: @escaping (APIResult<[Number]>) -> Void) {
 		NonAuthAPIClient.shared.request(router) { (result: APIResult<ListResponse<Number>>) in

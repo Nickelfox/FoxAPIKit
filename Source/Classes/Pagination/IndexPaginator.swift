@@ -12,7 +12,7 @@ import JSONParsing
 private let defaultPageSize: Int = 20
 private let firstIndex: Int = 0
 
-public protocol Pageable: JSONParseable {
+public protocol Pageable1: JSONParseable {
 	static func fetch(router: Router, completion: @escaping (_ result: APIResult<[Self]>) -> Void)
 }
 
@@ -21,13 +21,13 @@ public enum IndexPaginatorType {
 	case offsetBased
 }
 
-public struct IndexPageInfo<T: Pageable> {
+public struct IndexPageInfo<T: Pageable1> {
 	public var objects: [T]
 	public var hasMoreDataToLoad: Bool
 	public var paginator: IndexPaginator<T>
 }
 
-public class IndexPaginator<T: Pageable> {
+public class IndexPaginator<T: Pageable1> {
 	public var items: [T] = []
 	public var currentIndex: Int
 	public var canLoadMore = true
