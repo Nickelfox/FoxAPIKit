@@ -42,16 +42,6 @@ struct PaginationMetaData: PageMetaData {
 	}
 }
 
-struct PageInfoMapper: PaginationInfoMapper {
-	static var objectsKeypath: String? {
-		return "args.numbers[][value]"
-	}
-	
-	static var pageInfoKeypath: String? {
-		return nil
-	}
-}
-
 public struct Number: Pageable {
 	var value: Int
 	
@@ -60,8 +50,8 @@ public struct Number: Pageable {
 			value: json^
 		)
 	}
-
-	public static func fetch<U>(router: PageRouter, completion: @escaping (APIResult<U>) -> Void) where U : PaginationResponseProtocol {
+	
+	public static func fetch(router: PageRouter, completion: @escaping (APIResult<PageResponse>) -> Void) {
 		NonAuthAPIClient.shared.request(router, completion: completion)
 	}
 	

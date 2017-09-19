@@ -9,7 +9,7 @@
 
 import JSONParsing
 
-public protocol PaginationResponseProtocol: JSONParseable {
+public protocol PaginationResponseProtocol {
 	associatedtype Element: Pageable
 	associatedtype MetaData: PageMetaData
 	
@@ -25,7 +25,17 @@ public protocol PaginationInfoMapper {
 	static var objectsKeypath: String? { get }
 }
 
-public final class PaginationResponse<T: Pageable, U: PageMetaData, V: PaginationInfoMapper>: PaginationResponseProtocol {
+public struct PageResponse: JSONParseable {
+	let json: JSON
+	
+	public static func parse(_ json: JSON) throws -> PageResponse {
+		return PageResponse(json: json)
+	}
+}
+
+
+
+public final class PaginationResponse<T: Pageable, U: PageMetaData>: PaginationResponseProtocol {
 	
 	public typealias Element = T
 	public typealias MetaData = U
@@ -40,19 +50,29 @@ public final class PaginationResponse<T: Pageable, U: PageMetaData, V: Paginatio
 	
 }
 
-extension PaginationResponse: JSONParseable {
+extension PaginationResponse {
 	
-	public static func parse(_ json: JSON) throws -> PaginationResponse {
+	public static func parse(_ json: JSON, pageInfoKeypath: String?, objectsKeypath: String?) throws -> PaginationResponse {
 		var paginationJSON = json
-		if let pageInfoKeypath = V.pageInfoKeypath {
+		if let pageInfoKeypath = pageInfoKeypath {
 			paginationJSON = json.jsonAtKeyPath(keypath: pageInfoKeypath)
 		}
 		var jsonList = json.arrayValue
-		if let objectsKeypath = V.objectsKeypath {
+		if let objectsKeypath = objectsKeypath {
 			jsonList = json.jsonAtKeyPath(keypath: objectsKeypath).arrayValue
 		}
+		var objects: [T] = []
+		for jsonObject in jsonList {
+			do {
+				let object = try T.parse(jsonObject)
+				objects.append(object)
+				
+			} catch {
+				throw error
+			}
+		}
 		return try PaginationResponse(
-			objects: jsonList.map(^),
+			objects: objects,
 			pageMetaData: paginationJSON^?
 		)
 	}
