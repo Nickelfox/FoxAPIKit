@@ -36,10 +36,30 @@ extension DemoObject: JSONParseable {
 	}
 }
 
+protocol X: PageRouter, URLRouter {
+	
+}
+
 struct PaginationMetaData: PageMetaData {
+	
+	var page: Int
+	var limit: Int
+	var next: String
+	
 	static func parse(_ json: JSON) throws -> PaginationMetaData {
-		return PaginationMetaData()
+		return try PaginationMetaData(page: json["page"]^, limit: json["limit"]^, next: json["next"]^)
 	}
+	
+	static func nextPageParams(currentIndex: Int, limit: Int, currentPageMetaData: PaginationMetaData?) -> [String : Any] {
+		var params: [String: Any] = ["page": currentIndex + 1, "limit": limit]
+		if let currentPageMetaData = currentPageMetaData {
+			params["next"] = currentPageMetaData.next + "1"
+		} else {
+			params["next"] = "\(currentIndex + 1)"
+		}
+		return params
+	}
+	
 }
 
 public struct Number: Pageable {
@@ -55,9 +75,6 @@ public struct Number: Pageable {
 		NonAuthAPIClient.shared.request(router, completion: completion)
 	}
 	
-//	public static func fetch<U, V>(pageInfo: PageInfo1<V>, completion: @escaping (APIResult<U>) -> Void) where U : PaginationResponseProtocol, V : JSONParseable {
-//		
-//	}
 
 	public static func fetch(router: Router, completion: @escaping (APIResult<[Number]>) -> Void) {
 		NonAuthAPIClient.shared.request(router) { (result: APIResult<ListResponse<Number>>) in
