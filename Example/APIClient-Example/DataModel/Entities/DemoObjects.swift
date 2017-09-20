@@ -36,10 +36,6 @@ extension DemoObject: JSONParseable {
 	}
 }
 
-protocol X: PageRouter, URLRouter {
-	
-}
-
 struct PaginationMetaData: PageMetaData {
 	
 	var page: Int
@@ -58,6 +54,36 @@ struct PaginationMetaData: PageMetaData {
 			params["next"] = "\(currentIndex + 1)"
 		}
 		return params
+	}
+
+//	static func nextRouter(currentIndex: Int, limit: Int, currentRouter: Router, currentPageMetaData: PaginationMetaData?) -> Router {
+//		var params: [String: Any] = ["page": currentIndex + 1, "limit": limit]
+//		if let currentPageMetaData = currentPageMetaData {
+//			params["next"] = currentPageMetaData.next + "1"
+//		} else {
+//			params["next"] = "\(currentIndex + 1)"
+//		}
+//		return params
+//	}
+
+}
+
+struct CursorPaginationMetaData: CursorPageMetaData {
+	
+	var next: String
+	
+	static func nextPageUrl(currentIndex: Int, limit: Int, currentPageMetaData: CursorPaginationMetaData?) -> URL? {
+		if let currentPageMetaData = currentPageMetaData {
+			return URL(string: "")
+//			params["next"] = currentPageMetaData.next + "1"
+		} else {
+			return URL(string: "")
+//			params["next"] = "\(currentIndex + 1)"
+		}
+	}
+	
+	static func parse(_ json: JSON) throws -> CursorPaginationMetaData {
+		return try CursorPaginationMetaData(next: json["next"]^)
 	}
 	
 }

@@ -138,4 +138,60 @@ enum APIPageRouter: PageRouter {
 	
 }
 
+enum APICursorPageRouter: CursorPageRouter {
+	
+	case fetchNumbers
+	
+	var keypathToMap: String? {
+		return "args"
+	}
+	
+	public var method: HTTPMethod {
+		switch self {
+		case .fetchNumbers:
+			return .get
+		}
+	}
+	
+	var url: URL {
+		return self.baseUrl
+	}
+	
+	public var path: String {
+		switch self {
+		case .fetchNumbers:
+			return "/get"
+		}
+	}
+	
+	public var params: [String: Any] {
+		switch self {
+		case .fetchNumbers:
+			var numbers: [[String: Any]] = []
+			for i in 1...20 {
+				numbers.append(["value": i])
+			}
+			return ["numbers": numbers]
+		}
+	}
+	
+	var objectsKeypath: String? {
+		return "numbers[][value]"
+	}
+	
+	var pageInfoKeypath: String? {
+		return nil
+	}
+	
+	public var baseUrl: URL {
+		let baseURL = URL(string: "https://httpbin.org")!
+		return baseURL
+	}
+	
+	public var headers: [String: String] {
+		return ["Content-Type": "application/json"]
+	}
+	
+}
+
 

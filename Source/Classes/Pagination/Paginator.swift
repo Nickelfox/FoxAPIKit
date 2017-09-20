@@ -14,6 +14,7 @@ public protocol Pageable: JSONParseable {
 }
 
 public protocol PageRouter: Router {
+		
 	var pageInfoKeypath: String? { get }
 	var objectsKeypath: String? { get }
 }

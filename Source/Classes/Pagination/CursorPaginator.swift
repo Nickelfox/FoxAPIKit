@@ -11,7 +11,7 @@ import JSONParsing
 
 private let defaultPageSize: Int = 20
 
-public protocol CursorPageRouter: URLRouter, PageRouter { }
+public protocol CursorPageRouter: URLRouter, PageRouter {}
 
 public protocol CursorPageMetaData: JSONParseable {
 	static func nextPageUrl(currentIndex: Int, limit: Int, currentPageMetaData: Self?) -> URL?
