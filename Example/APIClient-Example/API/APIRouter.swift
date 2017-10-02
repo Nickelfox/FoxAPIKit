@@ -9,6 +9,7 @@
 import Foundation
 import APIClient
 
+//https://graph.facebook.com/v2.10/search?access_token=EAACEdEose0cBAKcmJdaAo0H5vacoanPs7VQ3PBC6Wm8oN5RbWdvBDTbcvjPDqWMUzfP8KcpydkBx2663ZAGBxASv7wwTyxj9zdiHC9Y4O8e3AycyqQFTaZAHuTihsuWvneEwoUbN2KIyeRUjPuXstPj5JAXu3C8AO6dr43o7myKpEoZCVH58Tj7Vr5khTEZD&pretty=0&fields=name%2Ccheckins%2Cpicture&q=cafe&type=place&center=40.7304%2C-73.9921&distance=1000&limit=25&after=MjQZD"
 enum APIRouter: Router {
 	
 	case demo

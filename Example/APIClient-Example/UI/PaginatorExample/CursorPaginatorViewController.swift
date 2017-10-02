@@ -14,9 +14,9 @@ class CursorPaginatorViewController: UIViewController {
 	
 	@IBOutlet var tableView: UITableView!
 	var paginationManager: PaginationUIManager?
-	var paginator: Paginator<Number, PaginationMetaData>?
+	var paginator: Paginator<Place, FBPageMetaData>?
 	
-	var objects: [Number] {
+	var objects: [Place] {
 		return self.paginator?.items ?? []
 	}
 	
@@ -26,7 +26,12 @@ class CursorPaginatorViewController: UIViewController {
 		self.tableView.dataSource = self
 		self.setupPaginationManager()
 		self.paginator = Paginator(paginationRouterBlock: { (router, currentPageMetaData) -> PageRouter in
-			return APICursorPageRouter.fetchNumbers(currentPageMetaData?.next, page: (currentPageMetaData?.page ?? 0) + 1)
+			if let url = currentPageMetaData?.nextUrl {
+				return CursorPageRouter1.fetchNumbersWithUrl(url)
+			} else {
+				return CursorPageRouter1.fetchNumbers
+			}
+//			return APICursorPageRouter.fetchNumbers(currentPageMetaData?.next, page: (currentPageMetaData?.page ?? 0) + 1)
 		})
 //		self.paginator = Paginator(router: APIPageRouter.fetchNumbers, limit: 20)
 		//		self.paginator = IndexPaginator(router: APIRouter.fetchNumbers, initialIndex: 0, limit: 20, paginatorType: .pageBased)
@@ -49,7 +54,7 @@ extension CursorPaginatorViewController: UITableViewDelegate, UITableViewDataSou
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-		cell.textLabel?.text = String(self.objects[indexPath.row].value)
+		cell.textLabel?.text = String(self.objects[indexPath.row].name)
 		return cell
 	}
 }
