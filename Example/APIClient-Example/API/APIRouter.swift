@@ -80,7 +80,7 @@ enum APIRouter: Router {
 
 enum APIPageRouter: PageRouter {
 	
-	case fetchNumbers
+	case fetchNumbers(page: Int, limit: Int)
 	
 	var keypathToMap: String? {
 		return "args"
@@ -110,12 +110,15 @@ enum APIPageRouter: PageRouter {
 	
 	public var params: [String: Any] {
 		switch self {
-		case .fetchNumbers:
+		case .fetchNumbers(let page, let limit):
 			var numbers: [[String: Any]] = []
 			for i in 1...20 {
 				numbers.append(["value": i])
 			}
-			return ["numbers": numbers]
+			var params: [String: Any] = ["numbers": numbers]
+			params["page"] =  page
+			params["limit"] =  limit
+			return params
 		}
 	}
 	
@@ -138,9 +141,9 @@ enum APIPageRouter: PageRouter {
 	
 }
 
-enum APICursorPageRouter: CursorPageRouter {
+enum APICursorPageRouter: PageRouter {
 	
-	case fetchNumbers
+	case fetchNumbers(String?, page: Int)
 	
 	var keypathToMap: String? {
 		return "args"
@@ -153,25 +156,25 @@ enum APICursorPageRouter: CursorPageRouter {
 		}
 	}
 	
-	var url: URL {
-		return self.baseUrl
-	}
-	
 	public var path: String {
 		switch self {
-		case .fetchNumbers:
-			return "/get"
+		case .fetchNumbers(let url, _):
+			return url == nil ? "/anything/1" : ""
 		}
 	}
 	
 	public var params: [String: Any] {
 		switch self {
-		case .fetchNumbers:
+		case .fetchNumbers(_, let page):
 			var numbers: [[String: Any]] = []
 			for i in 1...20 {
 				numbers.append(["value": i])
 			}
-			return ["numbers": numbers]
+			var params: [String: Any] = ["numbers": numbers]
+			params["next"] = "https://httpbin.org/anything/\(page)"
+			params["page"] = page
+			params["limit"] = 20
+			return params
 		}
 	}
 	
@@ -185,7 +188,10 @@ enum APICursorPageRouter: CursorPageRouter {
 	
 	public var baseUrl: URL {
 		let baseURL = URL(string: "https://httpbin.org")!
-		return baseURL
+		switch self {
+		case .fetchNumbers(let url, _):
+			return (url == nil) ? baseURL : URL(string: url!)!
+		}
 	}
 	
 	public var headers: [String: String] {

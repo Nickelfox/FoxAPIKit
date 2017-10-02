@@ -65,31 +65,35 @@ struct PageRequest<T: PageMetaData>: PageRouter {
 	var objectsKeypath: String? { return self.router.objectsKeypath }
 
 }
-
+ 
 public class Paginator<T: Pageable, U: PageMetaData> {
 
+    public typealias PaginationRouterBlock = (PageRouter?, U?) -> PageRouter
+    
 	fileprivate(set) public var items: [T] = []
 	fileprivate(set) public var currentIndex: Int
-	fileprivate(set) public var currentPageMetaData: U? = nil
+	fileprivate(set) public var currentPageMetaData: U?
 	fileprivate(set) public var canLoadMore = true
-	
-	public let router: PageRouter
+    fileprivate var paginationRouterBlock: PaginationRouterBlock
+	fileprivate var currentRouter: PageRouter?
+    
 	public let limit: Int
 	
-	public init(router: PageRouter, limit: Int = defaultPageSize) {
+	public init(limit: Int = defaultPageSize, paginationRouterBlock: @escaping PaginationRouterBlock) {
 		self.currentIndex = 0
 		self.limit = limit
-		self.router = router
+        self.paginationRouterBlock = paginationRouterBlock
 	}
 	
 	fileprivate func loadNextPage(isFirst: Bool, completion:  @escaping (_ result: APIResult<[T]>) -> Void) {
-		let router = PageRequest<U>(
-			currenPageMetaData: self.currentPageMetaData,
-			router: self.router,
-			index: self.currentIndex,
-			limit: self.limit
-		)
-
+//		let router = PageRequest<U>(
+//			currenPageMetaData: self.currentPageMetaData,
+//			router: self.router,
+//			index: self.currentIndex,
+//			limit: self.limit
+//		)
+        self.currentRouter = self.paginationRouterBlock(self.currentRouter, self.currentPageMetaData)
+        let router = self.currentRouter!
 		T.fetch(router: router) { [weak self] (result) in
 			guard let this = self else { return }
 			switch result {
@@ -119,7 +123,7 @@ public class Paginator<T: Pageable, U: PageMetaData> {
 			}
 		}
 	}
-	
+    
 	public func refresh(completion: @escaping (_ result: APIResult<[T]>) -> Void) {
 		self.currentIndex = 0
 		self.loadNextPage(isFirst: true, completion: completion)

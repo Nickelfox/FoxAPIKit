@@ -43,7 +43,7 @@ struct PaginationMetaData: PageMetaData {
 	var next: String
 	
 	static func parse(_ json: JSON) throws -> PaginationMetaData {
-		return try PaginationMetaData(page: json["page"]^, limit: json["limit"]^, next: json["next"]^)
+		return try PaginationMetaData(page: json["page"]^, limit: json["limit"]^, next: json["next"]^!)
 	}
 	
 	static func nextPageParams(currentIndex: Int, limit: Int, currentPageMetaData: PaginationMetaData?) -> [String : Any] {

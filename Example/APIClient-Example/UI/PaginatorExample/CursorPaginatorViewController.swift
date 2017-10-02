@@ -25,7 +25,10 @@ class CursorPaginatorViewController: UIViewController {
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
 		self.setupPaginationManager()
-		self.paginator = Paginator(router: APIPageRouter.fetchNumbers, limit: 20)
+		self.paginator = Paginator(paginationRouterBlock: { (router, currentPageMetaData) -> PageRouter in
+			return APICursorPageRouter.fetchNumbers(currentPageMetaData?.next, page: (currentPageMetaData?.page ?? 0) + 1)
+		})
+//		self.paginator = Paginator(router: APIPageRouter.fetchNumbers, limit: 20)
 		//		self.paginator = IndexPaginator(router: APIRouter.fetchNumbers, initialIndex: 0, limit: 20, paginatorType: .pageBased)
 		self.paginationManager?.load {
 			
