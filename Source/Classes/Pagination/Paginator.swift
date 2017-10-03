@@ -21,52 +21,7 @@ public protocol PageRouter: Router {
 
 private let defaultPageSize: Int = 20
 
-private func += <K, V> (left: inout [K:V], right: [K:V]?) {
-	guard  let right = right else { return }
-	for (k, v) in right {
-		left[k] = v
-	}
-}
-
-struct PageRequest<T: PageMetaData>: PageRouter {
-	
-	let currenPageMetaData: T?
-	let router: PageRouter
-	let index: Int
-	let limit: Int
-	
-	var params: [String: Any] {
-		var params: [String: Any] = self.router.params
-		let pageParams = T.nextPageParams(
-			currentIndex: self.index,
-			limit: self.limit,
-			currentPageMetaData: self.currenPageMetaData
-		)
-		params += pageParams
-		return params
-	}
-	
-	var method: HTTPMethod { return self.router.method }
-	
-	var keypathToMap: String? { return self.router.keypathToMap }
-	
-	var headers: [String : String]  { return self.router.headers }
-	
-	var baseUrl: URL { return self.router.baseUrl }
-	
-	var path: String { return self.router.path }
-	
-	var timeoutInterval: TimeInterval? { return router.timeoutInterval }
-	
-	var encoding: URLEncoding? { return self.router.encoding }
-	
-	var pageInfoKeypath: String? { return self.router.pageInfoKeypath }
-	
-	var objectsKeypath: String? { return self.router.objectsKeypath }
-
-}
- 
-public class Paginator<T: Pageable, U: PageMetaData> {
+public class Paginator<T: Pageable, U: JSONParseable> {
 
     public typealias PaginationRouterBlock = (PageRouter?, U?) -> PageRouter
     
@@ -86,13 +41,8 @@ public class Paginator<T: Pageable, U: PageMetaData> {
 	}
 	
 	fileprivate func loadNextPage(isFirst: Bool, completion:  @escaping (_ result: APIResult<[T]>) -> Void) {
-//		let router = PageRequest<U>(
-//			currenPageMetaData: self.currentPageMetaData,
-//			router: self.router,
-//			index: self.currentIndex,
-//			limit: self.limit
-//		)
-        self.currentRouter = self.paginationRouterBlock(self.currentRouter, self.currentPageMetaData)
+
+		self.currentRouter = self.paginationRouterBlock(self.currentRouter, self.currentPageMetaData)
         let router = self.currentRouter!
 		T.fetch(router: router) { [weak self] (result) in
 			guard let this = self else { return }
@@ -135,10 +85,6 @@ public class Paginator<T: Pageable, U: PageMetaData> {
 
 }
 
-public protocol PageMetaData: JSONParseable {
-	static func nextPageParams(currentIndex: Int, limit: Int, currentPageMetaData: Self?) -> [String: Any]
-}
-
 public struct PageResponse: JSONParseable {
 	let json: JSON
 	
@@ -149,7 +95,7 @@ public struct PageResponse: JSONParseable {
 
 
 
-public final class PaginationResponse<T: Pageable, U: PageMetaData> {
+public final class PaginationResponse<T: Pageable, U: JSONParseable> {
 	
 	public var objects: [T]
 	public var pageMetaData: U?

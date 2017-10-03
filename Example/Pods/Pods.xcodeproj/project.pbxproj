@@ -42,7 +42,6 @@
 		6FA34FC9A231D2D2F62212ED4F52C4DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A257DD489673371614AE317E374BB70C /* Foundation.framework */; };
 		7304B62734268E499484146F32A965BE /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99045B786A47241FC6E4EFB8EBD05316 /* PullToRefresh.swift */; };
 		73B9C996AED49ED7CF8EC2A6F1738059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A257DD489673371614AE317E374BB70C /* Foundation.framework */; };
-		73F44058F51309CDF4BD07D4860805D6 /* IndexPaginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C178D1D86776C90CE3BEE1729CB02A /* IndexPaginator.swift */; };
 		7557EBB4BC6DE62E2CE860B1146D63FA /* APIClient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6056E55EDE48623847DF9C041CB7BA32 /* APIClient-dummy.m */; };
 		7B5FE28C7EA4122B0598738E54DBEBD8 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962C8B1563DA449C6E79A590D5F450C /* SessionDelegate.swift */; };
 		7D8CC01E8C9EFFF9F4D65406CDE0AB66 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D9BB72A42367270BED3D40E195CBD1 /* Result.swift */; };
@@ -83,7 +82,6 @@
 		E0B302E7BFEA609E96D0CC269A7E0113 /* ErrorResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335220BEFBB99DE05F6484CD3DC13D8F /* ErrorResponseProtocol.swift */; };
 		E1A1111346A1416BF22C7B5E0D8F3F27 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E0E1AD8AEB45E46804BABB0135FE56 /* Router.swift */; };
 		E1E60DBF106799CCF67F9D471A94FE26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A257DD489673371614AE317E374BB70C /* Foundation.framework */; };
-		E3A9ABC71F7289AD001E2825 /* CursorPaginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9ABC61F7289AD001E2825 /* CursorPaginator.swift */; };
 		E606572B35001277429FD1096BB5AC7B /* JSONParseTransformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF18459430B4787B9686176EE634C1 /* JSONParseTransformable.swift */; };
 		E9469F182CCABC929248BBB778D3A2A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A257DD489673371614AE317E374BB70C /* Foundation.framework */; };
 		EDD5D4F6B36637A0F7F0EA6879807D27 /* NoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954F1C3B336ECB5AB4CD3DAE95FB884 /* NoResponse.swift */; };
@@ -249,7 +247,6 @@
 		51AE741EFBF59443C93582BBD865F1DA /* PaginationUIManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PaginationUIManager.xcconfig; sourceTree = "<group>"; };
 		521ACBCEEA72008018C42E9D97FB6503 /* CursorBasedResourceFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CursorBasedResourceFetcher.swift; sourceTree = "<group>"; };
 		55107EA4B95E4626E5F4772D50C725A1 /* Pods-APIClient-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-APIClient-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		59C178D1D86776C90CE3BEE1729CB02A /* IndexPaginator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IndexPaginator.swift; sourceTree = "<group>"; };
 		5AA2C0D5FC3E1AF1A7ABF36408211777 /* AnyErrorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnyErrorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1333EE4A021AF74FC0E7278B6BDE59 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E155421CA98A12D3E850E3DFE054897 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
@@ -321,7 +318,6 @@
 		E1A8F11B44F4B5E88573B076010101AF /* PaginationUIManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PaginationUIManager-dummy.m"; sourceTree = "<group>"; };
 		E1FDF3EB3559A7B0C29F3EE24722466B /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		E331C18A2D4F7B139FFD6C56993C92BF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3A9ABC61F7289AD001E2825 /* CursorPaginator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CursorPaginator.swift; sourceTree = "<group>"; };
 		EBEC8667F85C75DFC9DC1CAF68D91DCF /* Float+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Float+JSON.swift"; path = "Source/Classes/JSONParsing/Float+JSON.swift"; sourceTree = "<group>"; };
 		EC7232F426A2C84D69C1FFAEAB837508 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
 		EE0BD4E4F74936A846D8D4EB65A295D7 /* Double+JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Double+JSON.swift"; path = "Source/Classes/JSONParsing/Double+JSON.swift"; sourceTree = "<group>"; };
@@ -569,9 +565,7 @@
 			children = (
 				2093EEB8E35785EA1C976A967CD3952C /* AdvancePaginator.swift */,
 				521ACBCEEA72008018C42E9D97FB6503 /* CursorBasedResourceFetcher.swift */,
-				59C178D1D86776C90CE3BEE1729CB02A /* IndexPaginator.swift */,
 				3A0D85E22453AE62D5F58C6993063D69 /* Paginator.swift */,
-				E3A9ABC61F7289AD001E2825 /* CursorPaginator.swift */,
 				8F707647360156FDA5B82C53971C8145 /* PaginatorError.swift */,
 			);
 			name = Pagination;
@@ -1104,12 +1098,10 @@
 				45AD8C44C6E87CE8D71F2083C3BC81F3 /* APIClient.swift in Sources */,
 				F0CBD1D9F9004DDA35D32CE1C8CB5D28 /* APIClientError.swift in Sources */,
 				25E002247BBF90610D18AE2A91E57859 /* APIRequest.swift in Sources */,
-				E3A9ABC71F7289AD001E2825 /* CursorPaginator.swift in Sources */,
 				1A87B39E616C28EA29044A98BE96F696 /* APIResult.swift in Sources */,
 				D493CCE813AD2E0578B00296C992FC92 /* AuthHeadersProtocol.swift in Sources */,
 				45B60691EB27C0DB119A0A8292102ED5 /* CursorBasedResourceFetcher.swift in Sources */,
 				E0B302E7BFEA609E96D0CC269A7E0113 /* ErrorResponseProtocol.swift in Sources */,
-				73F44058F51309CDF4BD07D4860805D6 /* IndexPaginator.swift in Sources */,
 				B929C9BC32CE8728926A23E7AA714523 /* ListResponse.swift in Sources */,
 				EDD5D4F6B36637A0F7F0EA6879807D27 /* NoResponse.swift in Sources */,
 				FE4DEA1F24C95CBFC06A75CF6B2952D9 /* OfflineJSONRequestManager.swift in Sources */,

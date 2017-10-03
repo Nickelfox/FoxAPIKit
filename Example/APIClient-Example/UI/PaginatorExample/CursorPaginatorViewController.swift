@@ -27,9 +27,9 @@ class CursorPaginatorViewController: UIViewController {
 		self.setupPaginationManager()
 		self.paginator = Paginator(paginationRouterBlock: { (router, currentPageMetaData) -> PageRouter in
 			if let url = currentPageMetaData?.nextUrl {
-				return CursorPageRouter1.fetchNumbersWithUrl(url)
+				return CursorPageRouter.fetchNumbersWithUrl(url)
 			} else {
-				return CursorPageRouter1.fetchNumbers
+				return CursorPageRouter.fetchNumbers
 			}
 //			return APICursorPageRouter.fetchNumbers(currentPageMetaData?.next, page: (currentPageMetaData?.page ?? 0) + 1)
 		})

@@ -12,19 +12,15 @@ import CoreLocation
 
 let token = "Add your FB token here"
 
-public struct FBPageMetaData: PageMetaData {
+public struct FBPageMetaData: JSONParseable {
 	public var nextUrl: String
 	
 	public static func parse(_ json: JSON) throws -> FBPageMetaData {
 		return try FBPageMetaData(nextUrl: json["next"]^)
-	}
-	
-	public static func nextPageParams(currentIndex: Int, limit: Int, currentPageMetaData: FBPageMetaData?) -> [String : Any] {
-		return [:]
-	}
+	}	
 }
 
-enum CursorPageRouter1: PageRouter {
+enum CursorPageRouter: PageRouter {
 
 	case fetchNumbers
 	case fetchNumbersWithUrl(String?)
