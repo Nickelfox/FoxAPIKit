@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct FileAPIRequest: URLRouter {
+public struct URLAPIRequest: URLRouter {
 	
 	public let url: URL
 	
@@ -23,7 +23,7 @@ open class URLRequestManager {
 	public init() {}
 	
 	public func request(url: URL) -> URLRouter {
-		return FileAPIRequest(url: url)
+		return URLAPIRequest(url: url)
 	}
 	
 }
