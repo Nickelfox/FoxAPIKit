@@ -12,6 +12,8 @@ import SwiftyJSON
 
 class FoxAPIClient: APIClient<AuthHeaders, ErrorResponse> {
 	
+	static let shared = FoxAPIClient()
+	
 	override init() {
 		super.init()
 		self.enableLogs = true
@@ -19,30 +21,5 @@ class FoxAPIClient: APIClient<AuthHeaders, ErrorResponse> {
 	
 	override func authenticationHeaders(response: HTTPURLResponse) -> AuthHeaders? {
 		return try? AuthHeaders.parse(JSON(response.allHeaderFields))
-	}
-	
-	override func parseError(_ json: JSON, _ statusCode: Int) -> AnyError {
-		if let errorResponse = try? ErrorResponse.parse(json, code: statusCode) {
-			return errorResponse
-		} else {
-			return ExampleError(code: 0, domain: "Unknown", message: "Unknown Error")
-		}
-	}
-		
-}
-
-class AuthAPIClient: FoxAPIClient {
-	static let shared = AuthAPIClient()
-	
-	override init() {
-		super.init()
-	}
-}
-
-class NonAuthAPIClient: FoxAPIClient {
-	static let shared = NonAuthAPIClient()
-	
-	override init() {
-		super.init()
 	}
 }

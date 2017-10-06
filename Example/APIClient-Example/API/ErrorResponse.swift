@@ -18,20 +18,14 @@ public struct ExampleError: AnyError {
 	public var domain: String
 	public var message: String
 
-	
 }
 
 public struct ErrorResponse: ErrorResponseProtocol {
 	public static func parse(_ json: JSON, code: Int) throws -> ErrorResponse {
-		let unknownError = ExampleError(code: code, domain: "Error", message: "Error Response can't be mapped.")
-		if json[errorKey] != JSON.null {
-			return try ErrorResponse(
-				code: code,
-				messages: json[errorKey].arrayValue.map(^)
-			)
-		} else {
-			throw unknownError
-		}
+		return try ErrorResponse(
+			code: code,
+			messages: [json["args"][errorKey]^]
+		)
 	}
 
 	public var code: Int
