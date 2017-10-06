@@ -16,7 +16,7 @@ public struct Place: Pageable {
 		return try Place(name: json["name"]^)
 	}
 	
-	public static func fetch(router: PageRouter, completion: @escaping (APIResult<PageResponse>) -> Void) {
+	public static func fetch(router: PaginationRouter, completion: @escaping (APIResult<PageResponse>) -> Void) {
 		NonAuthAPIClient.shared.request(router, completion: completion)
 	}
 }

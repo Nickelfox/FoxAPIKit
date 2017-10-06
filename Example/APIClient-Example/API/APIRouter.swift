@@ -79,7 +79,7 @@ enum APIRouter: Router {
 }
 
 
-enum APIPageRouter: PageRouter {
+enum APIPageRouter: PaginationRouter {
 	
 	case fetchNumbers(page: Int, limit: Int)
 	

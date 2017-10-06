@@ -25,7 +25,7 @@ class CursorPaginatorViewController: UIViewController {
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
 		self.setupPaginationManager()
-		self.paginator = Paginator(paginationRouterBlock: { (router, currentPageMetaData) -> PageRouter in
+		self.paginator = Paginator(paginationRouterBlock: { (router, currentPageMetaData) -> PaginationRouter in
 			if let url = currentPageMetaData?.nextUrl {
 				return CursorPageRouter.fetchNumbersWithUrl(url)
 			} else {

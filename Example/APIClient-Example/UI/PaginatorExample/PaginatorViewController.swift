@@ -26,7 +26,7 @@ class PaginatorViewController: UIViewController {
 		self.tableView.dataSource = self
 		self.setupPaginationManager()
 		
-		self.paginator = Paginator(paginationRouterBlock: { (router, currentMetaData) -> PageRouter in
+		self.paginator = Paginator(paginationRouterBlock: { (router, currentMetaData) -> PaginationRouter in
 			return APIPageRouter.fetchNumbers(page: (currentMetaData?.page ?? 0) + 1, limit: currentMetaData?.limit ?? 20)
 		})
 

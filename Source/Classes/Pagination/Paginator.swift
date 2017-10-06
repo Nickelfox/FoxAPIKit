@@ -10,27 +10,28 @@ import Foundation
 import JSONParsing
 
 public protocol Pageable: JSONParseable {
-	static func fetch(router: PageRouter, completion: @escaping (_ result: APIResult<PageResponse>) -> Void)
+	static func fetch(router: PaginationRouter, completion: @escaping (_ result: APIResult<PageResponse>) -> Void)
 }
 
-public protocol PageRouter: Router {
-		
+public protocol PaginationRouter: Router {
 	var pageInfoKeypath: String? { get }
 	var objectsKeypath: String? { get }
 }
 
+public protocol PaginationMetaDataProtocol: JSONParseable {}
+
 private let defaultPageSize: Int = 20
 
-public class Paginator<T: Pageable, U: JSONParseable> {
+public class Paginator<Element: Pageable, MetaData: PaginationMetaDataProtocol> {
 
-    public typealias PaginationRouterBlock = (PageRouter?, U?) -> PageRouter
+    public typealias PaginationRouterBlock = (PaginationRouter?, MetaData?) -> PaginationRouter
     
-	fileprivate(set) public var items: [T] = []
+	fileprivate(set) public var items: [Element] = []
 	fileprivate(set) public var currentIndex: Int
-	fileprivate(set) public var currentPageMetaData: U?
+	fileprivate(set) public var currentPageMetaData: MetaData?
 	fileprivate(set) public var canLoadMore = true
     fileprivate var paginationRouterBlock: PaginationRouterBlock
-	fileprivate var currentRouter: PageRouter?
+	fileprivate var currentRouter: PaginationRouter?
     
 	public let limit: Int
 	
@@ -40,16 +41,16 @@ public class Paginator<T: Pageable, U: JSONParseable> {
         self.paginationRouterBlock = paginationRouterBlock
 	}
 	
-	fileprivate func loadNextPage(isFirst: Bool, completion:  @escaping (_ result: APIResult<[T]>) -> Void) {
+	fileprivate func loadNextPage(isFirst: Bool, completion:  @escaping (_ result: APIResult<[Element]>) -> Void) {
 
 		self.currentRouter = self.paginationRouterBlock(self.currentRouter, self.currentPageMetaData)
         let router = self.currentRouter!
-		T.fetch(router: router) { [weak self] (result) in
+		Element.fetch(router: router) { [weak self] (result) in
 			guard let this = self else { return }
 			switch result {
 			case .success(let pageResponse):
 				do {
-					let paginationResponse = try PaginationResponse<T,U>.parse(pageResponse.json, pageInfoKeypath: router.pageInfoKeypath, objectsKeypath: router.objectsKeypath)
+					let paginationResponse = try PaginationResponse<Element,MetaData>.parse(pageResponse.json, pageInfoKeypath: router.pageInfoKeypath, objectsKeypath: router.objectsKeypath)
 					
 					if isFirst {
 						this.items.removeAll()
@@ -74,12 +75,12 @@ public class Paginator<T: Pageable, U: JSONParseable> {
 		}
 	}
     
-	public func refresh(completion: @escaping (_ result: APIResult<[T]>) -> Void) {
+	public func refresh(completion: @escaping (_ result: APIResult<[Element]>) -> Void) {
 		self.currentIndex = 0
 		self.loadNextPage(isFirst: true, completion: completion)
 	}
 	
-	public func loadNext(completion:  @escaping (_ result: APIResult<[T]>) -> Void) {
+	public func loadNext(completion:  @escaping (_ result: APIResult<[Element]>) -> Void) {
 		self.loadNextPage(isFirst: false, completion: completion)
 	}
 
@@ -95,12 +96,12 @@ public struct PageResponse: JSONParseable {
 
 
 
-public final class PaginationResponse<T: Pageable, U: JSONParseable> {
+public final class PaginationResponse<Element: Pageable, MetaData: JSONParseable> {
 	
-	public var objects: [T]
-	public var pageMetaData: U?
+	public var objects: [Element]
+	public var pageMetaData: MetaData?
 	
-	public init(objects: [T], pageMetaData: U?) throws {
+	public init(objects: [Element], pageMetaData: MetaData?) throws {
 		self.objects = objects
 		self.pageMetaData = pageMetaData
 	}
@@ -118,10 +119,10 @@ extension PaginationResponse {
 		if let objectsKeypath = objectsKeypath {
 			jsonList = json.jsonAtKeyPath(keypath: objectsKeypath).arrayValue
 		}
-		var objects: [T] = []
+		var objects: [Element] = []
 		for jsonObject in jsonList {
 			do {
-				let object = try T.parse(jsonObject)
+				let object = try Element.parse(jsonObject)
 				objects.append(object)
 				
 			} catch {

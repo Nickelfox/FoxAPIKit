@@ -36,7 +36,7 @@ extension DemoObject: JSONParseable {
 	}
 }
 
-struct PaginationMetaData: JSONParseable {
+struct PaginationMetaData: PaginationMetaDataProtocol {
 	
 	var page: Int
 	var limit: Int
@@ -58,7 +58,7 @@ public struct Number: Pageable {
 		)
 	}
 	
-	public static func fetch(router: PageRouter, completion: @escaping (APIResult<PageResponse>) -> Void) {
+	public static func fetch(router: PaginationRouter, completion: @escaping (APIResult<PageResponse>) -> Void) {
 		NonAuthAPIClient.shared.request(router, completion: completion)
 	}
 	

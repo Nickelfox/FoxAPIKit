@@ -10,9 +10,9 @@ import APIClient
 import JSONParsing
 import CoreLocation
 
-let token = "Add your FB token here"
+let token = "EAACEdEose0cBAPqbbTHgQo73z9ZC4JNWTam1qi8VOLebVECZBGmgCJKZCzd5yEHM5erZCvt69GlqhsQ9kWBQP6ikXrOpEZBqAVdOJ7bgNvkAxCwLjo3FJkbmG9e2fyZAhmGGhczHGD6qhAu7FVLzWJdDkT8PwCAUuxy4svMXlKdhPuAolsRxx3JNNXdEUlyPgZD"
 
-public struct FBPageMetaData: JSONParseable {
+public struct FBPageMetaData: PaginationMetaDataProtocol {
 	public var nextUrl: String
 	
 	public static func parse(_ json: JSON) throws -> FBPageMetaData {
@@ -20,7 +20,7 @@ public struct FBPageMetaData: JSONParseable {
 	}	
 }
 
-enum CursorPageRouter: PageRouter {
+enum CursorPageRouter: PaginationRouter {
 
 	case fetchNumbers
 	case fetchNumbersWithUrl(String?)

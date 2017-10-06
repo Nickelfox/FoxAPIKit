@@ -80,10 +80,10 @@
 		E0B302E7BFEA609E96D0CC269A7E0113 /* ErrorResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335220BEFBB99DE05F6484CD3DC13D8F /* ErrorResponseProtocol.swift */; };
 		E1A1111346A1416BF22C7B5E0D8F3F27 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E0E1AD8AEB45E46804BABB0135FE56 /* Router.swift */; };
 		E1E60DBF106799CCF67F9D471A94FE26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A257DD489673371614AE317E374BB70C /* Foundation.framework */; };
-		E3D79B991F87804600169897 /* OfflineJSONRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79B941F87804600169897 /* OfflineJSONRequestManager.swift */; };
-		E3D79B9A1F87804600169897 /* OfflineJSONRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79B951F87804600169897 /* OfflineJSONRouter.swift */; };
-		E3D79B9B1F87804600169897 /* URLRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79B971F87804600169897 /* URLRequestManager.swift */; };
-		E3D79B9C1F87804600169897 /* URLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79B981F87804600169897 /* URLRouter.swift */; };
+		E3D79B9D1F8784C800169897 /* OfflineJSONRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79B941F87804600169897 /* OfflineJSONRequestManager.swift */; };
+		E3D79B9E1F8784CC00169897 /* OfflineJSONRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79B951F87804600169897 /* OfflineJSONRouter.swift */; };
+		E3D79B9F1F8784D100169897 /* URLRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79B971F87804600169897 /* URLRequestManager.swift */; };
+		E3D79BA01F8784D100169897 /* URLRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D79B981F87804600169897 /* URLRouter.swift */; };
 		E606572B35001277429FD1096BB5AC7B /* JSONParseTransformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF18459430B4787B9686176EE634C1 /* JSONParseTransformable.swift */; };
 		E9469F182CCABC929248BBB778D3A2A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A257DD489673371614AE317E374BB70C /* Foundation.framework */; };
 		EDD5D4F6B36637A0F7F0EA6879807D27 /* AnyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954F1C3B336ECB5AB4CD3DAE95FB884 /* AnyResponse.swift */; };
@@ -1057,7 +1057,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D79B9A1F87804600169897 /* OfflineJSONRouter.swift in Sources */,
 				9ED2BB2981896E0A39EFA365503F58CE /* AFError.swift in Sources */,
 				A9EEEA7477981DEEBC72432DE9990A4B /* Alamofire-dummy.m in Sources */,
 				F8B3D3092ED0417E8CDF32033F6122F5 /* Alamofire.swift in Sources */,
@@ -1070,14 +1069,11 @@
 				CB6D60925223897FFA2662667DF83E8A /* Response.swift in Sources */,
 				F6BECD98B97CBFEBE2C96F0E9E72A6C0 /* ResponseSerialization.swift in Sources */,
 				7D8CC01E8C9EFFF9F4D65406CDE0AB66 /* Result.swift in Sources */,
-				E3D79B9B1F87804600169897 /* URLRequestManager.swift in Sources */,
 				62F65AD8DC4F0F9610F4B8B4738EC094 /* ServerTrustPolicy.swift in Sources */,
-				E3D79B991F87804600169897 /* OfflineJSONRequestManager.swift in Sources */,
 				7B5FE28C7EA4122B0598738E54DBEBD8 /* SessionDelegate.swift in Sources */,
 				AE1EF48399533730D0066E04B22CA2D6 /* SessionManager.swift in Sources */,
 				3626B94094672CB1C9DEA32B9F9502E1 /* TaskDelegate.swift in Sources */,
 				10EB23E9ECC4B33E16933BB1EA560B6A /* Timeline.swift in Sources */,
-				E3D79B9C1F87804600169897 /* URLRouter.swift in Sources */,
 				BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1114,6 +1110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				016442E3F2D3C2AF1244C3C78D75109A /* AdvancePaginator.swift in Sources */,
+				E3D79B9F1F8784D100169897 /* URLRequestManager.swift in Sources */,
 				7557EBB4BC6DE62E2CE860B1146D63FA /* APIClient-dummy.m in Sources */,
 				45AD8C44C6E87CE8D71F2083C3BC81F3 /* APIClient.swift in Sources */,
 				F0CBD1D9F9004DDA35D32CE1C8CB5D28 /* APIClientError.swift in Sources */,
@@ -1124,7 +1121,10 @@
 				E0B302E7BFEA609E96D0CC269A7E0113 /* ErrorResponseProtocol.swift in Sources */,
 				B929C9BC32CE8728926A23E7AA714523 /* ListResponse.swift in Sources */,
 				EDD5D4F6B36637A0F7F0EA6879807D27 /* AnyResponse.swift in Sources */,
+				E3D79B9D1F8784C800169897 /* OfflineJSONRequestManager.swift in Sources */,
+				E3D79B9E1F8784CC00169897 /* OfflineJSONRouter.swift in Sources */,
 				1524AD952590A46A942BE1EDB583318D /* Paginator.swift in Sources */,
+				E3D79BA01F8784D100169897 /* URLRouter.swift in Sources */,
 				0CC3234AA8FC3F47662FEBBC24844096 /* PaginatorError.swift in Sources */,
 				510F947B8BEB47741C941E23EC6C3493 /* RequestManager.swift in Sources */,
 				E1A1111346A1416BF22C7B5E0D8F3F27 /* Router.swift in Sources */,
