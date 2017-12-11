@@ -10,9 +10,11 @@ import SwiftyJSON
 
 
 // For Raw Representables like enums
-public protocol JSONParseRawRepresentable: RawRepresentable, JSONParseable {
-	associatedtype RawValue: JSONParseable
+public protocol JSONParseRawRepresentable: RawRepresentable, JSONParseable where RawValue: JSONParseable {
+    
 }
+
+
 
 public extension JSONParseRawRepresentable {
 	
