@@ -10,7 +10,7 @@ import Foundation
 
 open class RequestManager {
 
-	private static let defaultParams: [String: Any] = [:]
+    public static let defaultParams: [String: Any] = [:]
 	private static let defaultHeaders: [String: String] = [:]
 	private static let defaultEncoding: URLEncoding = URLEncoding.default
 	private static let defaultTimeout: TimeInterval = DefaultTimeoutInterval
