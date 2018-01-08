@@ -1,0 +1,2 @@
+github "Nickelfox/AnyErrorKit" "carthage"
+github "SwiftyJSON/SwiftyJSON"

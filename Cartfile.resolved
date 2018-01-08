@@ -1,0 +1,4 @@
+github "Alamofire/Alamofire" "4.6.0"
+github "Nickelfox/AnyErrorKit" "1dcd0af9d579312dd81613cb215aa0a4a140c318"
+github "Nickelfox/JSONParsing" "f7c6774e349f589c834ba42e97f24f2e7e565004"
+github "SwiftyJSON/SwiftyJSON" "3.1.4"
