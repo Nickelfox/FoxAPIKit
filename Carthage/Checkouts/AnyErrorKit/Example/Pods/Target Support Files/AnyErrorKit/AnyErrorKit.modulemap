@@ -1,0 +1,6 @@
+framework module AnyErrorKit {
+  umbrella header "AnyErrorKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

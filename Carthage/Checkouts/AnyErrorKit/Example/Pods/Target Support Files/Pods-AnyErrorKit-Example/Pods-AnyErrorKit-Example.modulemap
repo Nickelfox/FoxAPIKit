@@ -1,0 +1,6 @@
+framework module Pods_AnyErrorKit_Example {
+  umbrella header "Pods-AnyErrorKit-Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
