@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AnyErrorKit'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'A Generic and Basic error handling library for iOS by Fox Labs.'
   s.description      = <<-DESC
 A Generic and Basic error handling library for iOS by Fox Labs. It contains utility methods for various classes in iOS.
@@ -24,5 +24,5 @@ A Generic and Basic error handling library for iOS by Fox Labs. It contains util
   s.watchos.deployment_target = "2.0"
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'Source/**/*'  
+  s.source_files = 'Source/**/*'
 end

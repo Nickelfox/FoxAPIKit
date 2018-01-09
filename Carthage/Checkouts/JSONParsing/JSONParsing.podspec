@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JSONParsing'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'A wrapper over SwiftyJSON for handling parsing json objects for iOS by Fox Labs.'
   s.description      = <<-DESC
 A wrapper over SwiftyJSON for handling parsing json objects for iOS by Fox Labs.. It contains utility methods for various classes in iOS.

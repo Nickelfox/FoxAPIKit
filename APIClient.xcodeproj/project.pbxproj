@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FBADD70A2005239D00985CF1 /* APIClient_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = FBADD7082005239D00985CF1 /* APIClient_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FBADD717200523AF00985CF1 /* APIClient_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = FBADD715200523AF00985CF1 /* APIClient_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FBADD71D200523D400985CF1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADD71B200523D400985CF1 /* Alamofire.framework */; };
+		FBADD71E200523D400985CF1 /* JSONParsing_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADD71C200523D400985CF1 /* JSONParsing_tvOS.framework */; };
+		FBADD7222005249900985CF1 /* JSONParsing_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADD7202005249900985CF1 /* JSONParsing_macOS.framework */; };
+		FBADD7232005249900985CF1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADD7212005249900985CF1 /* Alamofire.framework */; };
 		FBF7BB452004DDCD0055319B /* APIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = FBF7BB432004DDCD0055319B /* APIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FBF7BB6A2004DDFC0055319B /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF7BB4E2004DDFC0055319B /* RequestManager.swift */; };
 		FBF7BB6B2004DDFC0055319B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF7BB4F2004DDFC0055319B /* Router.swift */; };
@@ -37,6 +43,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FBADD7062005239D00985CF1 /* APIClient_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APIClient_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBADD7082005239D00985CF1 /* APIClient_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIClient_tvOS.h; sourceTree = "<group>"; };
+		FBADD7092005239D00985CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBADD713200523AF00985CF1 /* APIClient_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APIClient_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBADD715200523AF00985CF1 /* APIClient_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIClient_macOS.h; sourceTree = "<group>"; };
+		FBADD716200523AF00985CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBADD71B200523D400985CF1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/tvOS/Alamofire.framework; sourceTree = "<group>"; };
+		FBADD71C200523D400985CF1 /* JSONParsing_tvOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSONParsing_tvOS.framework; path = Carthage/Build/tvOS/JSONParsing_tvOS.framework; sourceTree = "<group>"; };
+		FBADD7202005249900985CF1 /* JSONParsing_macOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSONParsing_macOS.framework; path = Carthage/Build/Mac/JSONParsing_macOS.framework; sourceTree = "<group>"; };
+		FBADD7212005249900985CF1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		FBF7BB402004DDCD0055319B /* APIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF7BB432004DDCD0055319B /* APIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
 		FBF7BB442004DDCD0055319B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +85,24 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FBADD7022005239C00985CF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBADD71D200523D400985CF1 /* Alamofire.framework in Frameworks */,
+				FBADD71E200523D400985CF1 /* JSONParsing_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBADD70F200523AF00985CF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBADD7222005249900985CF1 /* JSONParsing_macOS.framework in Frameworks */,
+				FBADD7232005249900985CF1 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBF7BB3C2004DDCD0055319B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,10 +115,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FBADD7072005239D00985CF1 /* APIClient tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				FBADD7082005239D00985CF1 /* APIClient_tvOS.h */,
+				FBADD7092005239D00985CF1 /* Info.plist */,
+			);
+			path = "APIClient tvOS";
+			sourceTree = "<group>";
+		};
+		FBADD714200523AF00985CF1 /* APIClient macOS */ = {
+			isa = PBXGroup;
+			children = (
+				FBADD715200523AF00985CF1 /* APIClient_macOS.h */,
+				FBADD716200523AF00985CF1 /* Info.plist */,
+			);
+			path = "APIClient macOS";
+			sourceTree = "<group>";
+		};
 		FBF7BB362004DDCD0055319B = {
 			isa = PBXGroup;
 			children = (
 				FBF7BB422004DDCD0055319B /* APIClient */,
+				FBADD7072005239D00985CF1 /* APIClient tvOS */,
+				FBADD714200523AF00985CF1 /* APIClient macOS */,
 				FBF7BB412004DDCD0055319B /* Products */,
 				FBF7BB822004DF8C0055319B /* Frameworks */,
 			);
@@ -94,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				FBF7BB402004DDCD0055319B /* APIClient.framework */,
+				FBADD7062005239D00985CF1 /* APIClient_tvOS.framework */,
+				FBADD713200523AF00985CF1 /* APIClient_macOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +247,10 @@
 			isa = PBXGroup;
 			children = (
 				FBF7BB832004DF8C0055319B /* Alamofire.framework */,
+				FBADD71B200523D400985CF1 /* Alamofire.framework */,
+				FBADD7212005249900985CF1 /* Alamofire.framework */,
+				FBADD7202005249900985CF1 /* JSONParsing_macOS.framework */,
+				FBADD71C200523D400985CF1 /* JSONParsing_tvOS.framework */,
 				FBF7BB842004DF8C0055319B /* JSONParsing.framework */,
 			);
 			name = Frameworks;
@@ -199,6 +259,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		FBADD7032005239C00985CF1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBADD70A2005239D00985CF1 /* APIClient_tvOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBADD710200523AF00985CF1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBADD717200523AF00985CF1 /* APIClient_macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBF7BB3D2004DDCD0055319B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,6 +286,44 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		FBADD7052005239C00985CF1 /* APIClient tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBADD70D2005239D00985CF1 /* Build configuration list for PBXNativeTarget "APIClient tvOS" */;
+			buildPhases = (
+				FBADD7012005239C00985CF1 /* Sources */,
+				FBADD7022005239C00985CF1 /* Frameworks */,
+				FBADD7032005239C00985CF1 /* Headers */,
+				FBADD7042005239C00985CF1 /* Resources */,
+				FBADD71F200523D900985CF1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "APIClient tvOS";
+			productName = "APIClient tvOS";
+			productReference = FBADD7062005239D00985CF1 /* APIClient_tvOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FBADD712200523AF00985CF1 /* APIClient macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBADD718200523AF00985CF1 /* Build configuration list for PBXNativeTarget "APIClient macOS" */;
+			buildPhases = (
+				FBADD70E200523AF00985CF1 /* Sources */,
+				FBADD70F200523AF00985CF1 /* Frameworks */,
+				FBADD710200523AF00985CF1 /* Headers */,
+				FBADD711200523AF00985CF1 /* Resources */,
+				FBADD7242005249C00985CF1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "APIClient macOS";
+			productName = "APIClient macOS";
+			productReference = FBADD713200523AF00985CF1 /* APIClient_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		FBF7BB3F2004DDCD0055319B /* APIClient */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBF7BB482004DDCD0055319B /* Build configuration list for PBXNativeTarget "APIClient" */;
@@ -238,6 +352,14 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Nickelfox;
 				TargetAttributes = {
+					FBADD7052005239C00985CF1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					FBADD712200523AF00985CF1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					FBF7BB3F2004DDCD0055319B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -257,11 +379,27 @@
 			projectRoot = "";
 			targets = (
 				FBF7BB3F2004DDCD0055319B /* APIClient */,
+				FBADD7052005239C00985CF1 /* APIClient tvOS */,
+				FBADD712200523AF00985CF1 /* APIClient macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FBADD7042005239C00985CF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBADD711200523AF00985CF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBF7BB3E2004DDCD0055319B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,6 +410,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		FBADD71F200523D900985CF1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/JSONParsing_tvOS.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		FBADD7242005249C00985CF1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/JSONParsing_macOS.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		FBF7BB872004DF910055319B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +458,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FBADD7012005239C00985CF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBADD70E200523AF00985CF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBF7BB3B2004DDCD0055319B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -324,6 +506,116 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		FBADD70B2005239D00985CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "APIClient tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.APIClient-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		FBADD70C2005239D00985CF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "APIClient tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.APIClient-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		FBADD719200523AF00985CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "APIClient macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.APIClient-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		FBADD71A200523AF00985CF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "APIClient macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.APIClient-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		FBF7BB462004DDCD0055319B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -490,6 +782,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FBADD70D2005239D00985CF1 /* Build configuration list for PBXNativeTarget "APIClient tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBADD70B2005239D00985CF1 /* Debug */,
+				FBADD70C2005239D00985CF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBADD718200523AF00985CF1 /* Build configuration list for PBXNativeTarget "APIClient macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBADD719200523AF00985CF1 /* Debug */,
+				FBADD71A200523AF00985CF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FBF7BB3A2004DDCD0055319B /* Build configuration list for PBXProject "APIClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

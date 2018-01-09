@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FBADD6DC20050E8600985CF1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADD6D820050E8500985CF1 /* SwiftyJSON.framework */; };
+		FBADD6E02005129800985CF1 /* AnyErrorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB3F1BD2003BE5000994D2F /* AnyErrorKit.framework */; };
+		FBADD6EA200512CA00985CF1 /* JSONParsing_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = FBADD6E8200512CA00985CF1 /* JSONParsing_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FBADD6F7200512DC00985CF1 /* JSONParsing_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = FBADD6F5200512DC00985CF1 /* JSONParsing_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FBADD6FB200512FD00985CF1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADD6DA20050E8500985CF1 /* SwiftyJSON.framework */; };
+		FBADD6FC200512FD00985CF1 /* AnyErrorKit_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADD6D920050E8500985CF1 /* AnyErrorKit_tvOS.framework */; };
+		FBADD6FE2005142900985CF1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADD6D820050E8500985CF1 /* SwiftyJSON.framework */; };
+		FBADD6FF2005142900985CF1 /* AnyErrorKit_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADD6DB20050E8600985CF1 /* AnyErrorKit_macOS.framework */; };
 		FBB3F1992003BAFD00994D2F /* JSONParsing.h in Headers */ = {isa = PBXBuildFile; fileRef = FBB3F1972003BAFD00994D2F /* JSONParsing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FBB3F1AF2003BB4E00994D2F /* JSONParseTransformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB3F1A22003BB4E00994D2F /* JSONParseTransformable.swift */; };
 		FBB3F1B02003BB4E00994D2F /* JSONParseablePrimitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB3F1A32003BB4E00994D2F /* JSONParseablePrimitive.swift */; };
@@ -21,11 +29,19 @@
 		FBB3F1B92003BB4E00994D2F /* Array+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB3F1AC2003BB4E00994D2F /* Array+JSON.swift */; };
 		FBB3F1BA2003BB4E00994D2F /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB3F1AD2003BB4E00994D2F /* JSONError.swift */; };
 		FBB3F1BB2003BB4E00994D2F /* URL+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB3F1AE2003BB4E00994D2F /* URL+JSON.swift */; };
-		FBB3F1BE2003BE5000994D2F /* AnyErrorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB3F1BD2003BE5000994D2F /* AnyErrorKit.framework */; };
-		FBB3F1C12003BFF200994D2F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB3F1C02003BFF200994D2F /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FBADD6D820050E8500985CF1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
+		FBADD6D920050E8500985CF1 /* AnyErrorKit_tvOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnyErrorKit_tvOS.framework; path = Carthage/Build/tvOS/AnyErrorKit_tvOS.framework; sourceTree = "<group>"; };
+		FBADD6DA20050E8500985CF1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/tvOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		FBADD6DB20050E8600985CF1 /* AnyErrorKit_macOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnyErrorKit_macOS.framework; path = Carthage/Build/Mac/AnyErrorKit_macOS.framework; sourceTree = "<group>"; };
+		FBADD6E6200512CA00985CF1 /* JSONParsing_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONParsing_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBADD6E8200512CA00985CF1 /* JSONParsing_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONParsing_tvOS.h; sourceTree = "<group>"; };
+		FBADD6E9200512CA00985CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBADD6F3200512DC00985CF1 /* JSONParsing_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONParsing_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBADD6F5200512DC00985CF1 /* JSONParsing_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONParsing_macOS.h; sourceTree = "<group>"; };
+		FBADD6F6200512DC00985CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBB3F1942003BAFD00994D2F /* JSONParsing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONParsing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB3F1972003BAFD00994D2F /* JSONParsing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONParsing.h; sourceTree = "<group>"; };
 		FBB3F1982003BAFD00994D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,22 +63,60 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FBADD6E2200512CA00985CF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBADD6FB200512FD00985CF1 /* SwiftyJSON.framework in Frameworks */,
+				FBADD6FC200512FD00985CF1 /* AnyErrorKit_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBADD6EF200512DC00985CF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBADD6FE2005142900985CF1 /* SwiftyJSON.framework in Frameworks */,
+				FBADD6FF2005142900985CF1 /* AnyErrorKit_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBB3F1902003BAFD00994D2F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBB3F1C12003BFF200994D2F /* SwiftyJSON.framework in Frameworks */,
-				FBB3F1BE2003BE5000994D2F /* AnyErrorKit.framework in Frameworks */,
+				FBADD6E02005129800985CF1 /* AnyErrorKit.framework in Frameworks */,
+				FBADD6DC20050E8600985CF1 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FBADD6E7200512CA00985CF1 /* JSONParsing tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				FBADD6E8200512CA00985CF1 /* JSONParsing_tvOS.h */,
+				FBADD6E9200512CA00985CF1 /* Info.plist */,
+			);
+			path = "JSONParsing tvOS";
+			sourceTree = "<group>";
+		};
+		FBADD6F4200512DC00985CF1 /* JSONParsing macOS */ = {
+			isa = PBXGroup;
+			children = (
+				FBADD6F5200512DC00985CF1 /* JSONParsing_macOS.h */,
+				FBADD6F6200512DC00985CF1 /* Info.plist */,
+			);
+			path = "JSONParsing macOS";
+			sourceTree = "<group>";
+		};
 		FBB3F18A2003BAFD00994D2F = {
 			isa = PBXGroup;
 			children = (
 				FBB3F1962003BAFD00994D2F /* JSONParsing */,
+				FBADD6E7200512CA00985CF1 /* JSONParsing tvOS */,
+				FBADD6F4200512DC00985CF1 /* JSONParsing macOS */,
 				FBB3F1952003BAFD00994D2F /* Products */,
 				FBB3F1BC2003BE5000994D2F /* Frameworks */,
 			);
@@ -72,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				FBB3F1942003BAFD00994D2F /* JSONParsing.framework */,
+				FBADD6E6200512CA00985CF1 /* JSONParsing_tvOS.framework */,
+				FBADD6F3200512DC00985CF1 /* JSONParsing_macOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,7 +181,11 @@
 		FBB3F1BC2003BE5000994D2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FBADD6DB20050E8600985CF1 /* AnyErrorKit_macOS.framework */,
+				FBADD6D920050E8500985CF1 /* AnyErrorKit_tvOS.framework */,
+				FBADD6DA20050E8500985CF1 /* SwiftyJSON.framework */,
 				FBB3F1C02003BFF200994D2F /* SwiftyJSON.framework */,
+				FBADD6D820050E8500985CF1 /* SwiftyJSON.framework */,
 				FBB3F1BD2003BE5000994D2F /* AnyErrorKit.framework */,
 			);
 			name = Frameworks;
@@ -134,6 +194,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		FBADD6E3200512CA00985CF1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBADD6EA200512CA00985CF1 /* JSONParsing_tvOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBADD6F0200512DC00985CF1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBADD6F7200512DC00985CF1 /* JSONParsing_macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBB3F1912003BAFD00994D2F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +221,44 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		FBADD6E5200512CA00985CF1 /* JSONParsing tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBADD6EB200512CA00985CF1 /* Build configuration list for PBXNativeTarget "JSONParsing tvOS" */;
+			buildPhases = (
+				FBADD6E1200512CA00985CF1 /* Sources */,
+				FBADD6E2200512CA00985CF1 /* Frameworks */,
+				FBADD6E3200512CA00985CF1 /* Headers */,
+				FBADD6E4200512CA00985CF1 /* Resources */,
+				FBADD6FD2005130000985CF1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JSONParsing tvOS";
+			productName = "JSONParsing tvOS";
+			productReference = FBADD6E6200512CA00985CF1 /* JSONParsing_tvOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FBADD6F2200512DC00985CF1 /* JSONParsing macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBADD6F8200512DC00985CF1 /* Build configuration list for PBXNativeTarget "JSONParsing macOS" */;
+			buildPhases = (
+				FBADD6EE200512DC00985CF1 /* Sources */,
+				FBADD6EF200512DC00985CF1 /* Frameworks */,
+				FBADD6F0200512DC00985CF1 /* Headers */,
+				FBADD6F1200512DC00985CF1 /* Resources */,
+				FBADD7002005142D00985CF1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JSONParsing macOS";
+			productName = "JSONParsing macOS";
+			productReference = FBADD6F3200512DC00985CF1 /* JSONParsing_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		FBB3F1932003BAFD00994D2F /* JSONParsing */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBB3F19C2003BAFD00994D2F /* Build configuration list for PBXNativeTarget "JSONParsing" */;
@@ -173,6 +287,14 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Nickelfox;
 				TargetAttributes = {
+					FBADD6E5200512CA00985CF1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					FBADD6F2200512DC00985CF1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					FBB3F1932003BAFD00994D2F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -192,11 +314,27 @@
 			projectRoot = "";
 			targets = (
 				FBB3F1932003BAFD00994D2F /* JSONParsing */,
+				FBADD6E5200512CA00985CF1 /* JSONParsing tvOS */,
+				FBADD6F2200512DC00985CF1 /* JSONParsing macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FBADD6E4200512CA00985CF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBADD6F1200512DC00985CF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBB3F1922003BAFD00994D2F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -207,6 +345,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		FBADD6FD2005130000985CF1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/AnyErrorKit_tvOS.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		FBADD7002005142D00985CF1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/AnyErrorKit_macOS.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		FBB3F1BF2003BE5600994D2F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,6 +393,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FBADD6E1200512CA00985CF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBADD6EE200512DC00985CF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBB3F18F2003BAFD00994D2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,6 +430,116 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		FBADD6EC200512CA00985CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "JSONParsing tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.JSONParsing-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		FBADD6ED200512CA00985CF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "JSONParsing tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.JSONParsing-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		FBADD6F9200512DC00985CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "JSONParsing macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.JSONParsing-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		FBADD6FA200512DC00985CF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "JSONParsing macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.JSONParsing-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		FBB3F19A2003BAFD00994D2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -374,6 +666,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
 				INFOPLIST_FILE = JSONParsing/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -399,6 +693,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
 				INFOPLIST_FILE = JSONParsing/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -414,6 +710,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FBADD6EB200512CA00985CF1 /* Build configuration list for PBXNativeTarget "JSONParsing tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBADD6EC200512CA00985CF1 /* Debug */,
+				FBADD6ED200512CA00985CF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBADD6F8200512DC00985CF1 /* Build configuration list for PBXNativeTarget "JSONParsing macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBADD6F9200512DC00985CF1 /* Debug */,
+				FBADD6FA200512DC00985CF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FBB3F18E2003BAFD00994D2F /* Build configuration list for PBXProject "JSONParsing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
