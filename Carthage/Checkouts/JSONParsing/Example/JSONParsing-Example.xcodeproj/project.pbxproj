@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6676919A3B9E9CE9067BB20E /* Pods_JSONParsing_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3EC45D85887FFD87005521 /* Pods_JSONParsing_Example.framework */; };
+		E368CC7A1F285E5600420C6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC791F285E5600420C6D /* AppDelegate.swift */; };
+		E368CC7C1F285E5600420C6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E368CC7B1F285E5600420C6D /* ViewController.swift */; };
+		E368CC7F1F285E5600420C6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E368CC7D1F285E5600420C6D /* Main.storyboard */; };
+		E368CC811F285E5600420C6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E368CC801F285E5600420C6D /* Assets.xcassets */; };
+		E368CC841F285E5600420C6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E368CC821F285E5600420C6D /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		729F63D201ED662D915E8E1C /* Pods-JSONParsing-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONParsing-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSONParsing-Example/Pods-JSONParsing-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		7C3EC45D85887FFD87005521 /* Pods_JSONParsing_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONParsing_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FE41E194B01E8A7D8E0007E /* Pods-JSONParsing-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONParsing-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONParsing-Example/Pods-JSONParsing-Example.release.xcconfig"; sourceTree = "<group>"; };
+		E368CC761F285E5600420C6D /* JSONParsing-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JSONParsing-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E368CC791F285E5600420C6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E368CC7B1F285E5600420C6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E368CC7E1F285E5600420C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E368CC801F285E5600420C6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E368CC831F285E5600420C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E368CC851F285E5600420C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E368CC8B1F28611A00420C6D /* Example.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Example.playground; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E368CC731F285E5600420C6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6676919A3B9E9CE9067BB20E /* Pods_JSONParsing_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		68F32F64C3B9449B047D46BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C3EC45D85887FFD87005521 /* Pods_JSONParsing_Example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		914ACC39546488CDCA792F9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				729F63D201ED662D915E8E1C /* Pods-JSONParsing-Example.debug.xcconfig */,
+				7FE41E194B01E8A7D8E0007E /* Pods-JSONParsing-Example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E368CC6D1F285E5600420C6D = {
+			isa = PBXGroup;
+			children = (
+				E368CC781F285E5600420C6D /* JSONParsing-Example */,
+				E368CC771F285E5600420C6D /* Products */,
+				914ACC39546488CDCA792F9B /* Pods */,
+				68F32F64C3B9449B047D46BC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E368CC771F285E5600420C6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E368CC761F285E5600420C6D /* JSONParsing-Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E368CC781F285E5600420C6D /* JSONParsing-Example */ = {
+			isa = PBXGroup;
+			children = (
+				E368CC791F285E5600420C6D /* AppDelegate.swift */,
+				E368CC7B1F285E5600420C6D /* ViewController.swift */,
+				E368CC7D1F285E5600420C6D /* Main.storyboard */,
+				E368CC801F285E5600420C6D /* Assets.xcassets */,
+				E368CC821F285E5600420C6D /* LaunchScreen.storyboard */,
+				E368CC851F285E5600420C6D /* Info.plist */,
+				E368CC8B1F28611A00420C6D /* Example.playground */,
+			);
+			path = "JSONParsing-Example";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E368CC751F285E5600420C6D /* JSONParsing-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E368CC881F285E5600420C6D /* Build configuration list for PBXNativeTarget "JSONParsing-Example" */;
+			buildPhases = (
+				73A020BC255A143A1495725B /* [CP] Check Pods Manifest.lock */,
+				E368CC721F285E5600420C6D /* Sources */,
+				E368CC731F285E5600420C6D /* Frameworks */,
+				E368CC741F285E5600420C6D /* Resources */,
+				2D01C45E3577C7F748D60AFD /* [CP] Embed Pods Frameworks */,
+				B2C236CF3FD6CC86DB4357A7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JSONParsing-Example";
+			productName = "JSONParsing-Example";
+			productReference = E368CC761F285E5600420C6D /* JSONParsing-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E368CC6E1F285E5600420C6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Nickelfox Soni";
+				TargetAttributes = {
+					E368CC751F285E5600420C6D = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = NY45473NT8;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E368CC711F285E5600420C6D /* Build configuration list for PBXProject "JSONParsing-Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E368CC6D1F285E5600420C6D;
+			productRefGroup = E368CC771F285E5600420C6D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E368CC751F285E5600420C6D /* JSONParsing-Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E368CC741F285E5600420C6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E368CC841F285E5600420C6D /* LaunchScreen.storyboard in Resources */,
+				E368CC811F285E5600420C6D /* Assets.xcassets in Resources */,
+				E368CC7F1F285E5600420C6D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D01C45E3577C7F748D60AFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JSONParsing-Example/Pods-JSONParsing-Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AnyErrorKit/AnyErrorKit.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONParsing/JSONParsing.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnyErrorKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONParsing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSONParsing-Example/Pods-JSONParsing-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73A020BC255A143A1495725B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JSONParsing-Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2C236CF3FD6CC86DB4357A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSONParsing-Example/Pods-JSONParsing-Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E368CC721F285E5600420C6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E368CC7C1F285E5600420C6D /* ViewController.swift in Sources */,
+				E368CC7A1F285E5600420C6D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E368CC7D1F285E5600420C6D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E368CC7E1F285E5600420C6D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E368CC821F285E5600420C6D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E368CC831F285E5600420C6D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E368CC861F285E5600420C6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E368CC871F285E5600420C6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E368CC891F285E5600420C6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 729F63D201ED662D915E8E1C /* Pods-JSONParsing-Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				INFOPLIST_FILE = "JSONParsing-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.JSONParsing-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E368CC8A1F285E5600420C6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FE41E194B01E8A7D8E0007E /* Pods-JSONParsing-Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				INFOPLIST_FILE = "JSONParsing-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.JSONParsing-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E368CC711F285E5600420C6D /* Build configuration list for PBXProject "JSONParsing-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E368CC861F285E5600420C6D /* Debug */,
+				E368CC871F285E5600420C6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E368CC881F285E5600420C6D /* Build configuration list for PBXNativeTarget "JSONParsing-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E368CC891F285E5600420C6D /* Debug */,
+				E368CC8A1F285E5600420C6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E368CC6E1F285E5600420C6D /* Project object */;
+}
