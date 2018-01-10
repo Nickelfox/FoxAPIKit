@@ -1,0 +1,2 @@
+github "Nickelfox/AnyErrorKit"
+github "SwiftyJSON/SwiftyJSON" ~> 3.1
