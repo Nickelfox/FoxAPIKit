@@ -6,7 +6,8 @@
 //  Copyright © 2016 Nickelfox. All rights reserved.
 //
 
-import SwiftyJSON
+//import SwiftyJSON
+import JSONParsing
 
 public final class ListResponse<T: JSONParseable> {
     public var list: [T] = []

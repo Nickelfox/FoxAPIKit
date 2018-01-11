@@ -2,7 +2,7 @@
 //  APIClient_tvOS.h
 //  APIClient tvOS
 //
-//  Created by Vaibhav Parmar on 10/01/18.
+//  Created by kartic on 11/01/18.
 //  Copyright © 2018 Nickelfox. All rights reserved.
 //
 

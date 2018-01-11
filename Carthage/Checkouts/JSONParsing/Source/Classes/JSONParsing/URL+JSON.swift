@@ -6,6 +6,8 @@
 //  Copyright © 2016 Nickelfox. All rights reserved.
 //
 
+import Foundation
+
 extension URL: JSONParseTransformable {
 	
 	public typealias RawValue = String

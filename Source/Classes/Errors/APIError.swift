@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JSONParsing
 
 struct APIErrorDefaults {
 	static let title = "Error"
@@ -39,7 +40,7 @@ extension JSONError: APIError {
 	}
 	
 	public var message: String {
-		return self.description
+		return self.message
 	}
 	
 }

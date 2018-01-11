@@ -7,170 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		435D3A4E200756B60088E901 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADDAAD200623C400985CF1 /* Alamofire.framework */; };
+		435D3A4F200756B60088E901 /* JSONParsing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADDAAE200623C400985CF1 /* JSONParsing.framework */; };
+		435D3A592007574B0088E901 /* APIClient_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 435D3A572007574B0088E901 /* APIClient_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		435D3A5D200757750088E901 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADDAB32006242A00985CF1 /* Alamofire.framework */; };
+		435D3A5E200757750088E901 /* JSONParsing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADDAB22006242A00985CF1 /* JSONParsing.framework */; };
+		435D3A72200757DD0088E901 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D3A64200757DD0088E901 /* APIClient.swift */; };
+		435D3A73200757DD0088E901 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D3A65200757DD0088E901 /* APIRequest.swift */; };
+		435D3A74200757DD0088E901 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D3A66200757DD0088E901 /* APIResult.swift */; };
+		435D3A75200757DD0088E901 /* AuthHeadersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D3A67200757DD0088E901 /* AuthHeadersProtocol.swift */; };
+		435D3A76200757DD0088E901 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D3A69200757DD0088E901 /* APIError.swift */; };
+		435D3A77200757DD0088E901 /* APIErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D3A6A200757DD0088E901 /* APIErrorType.swift */; };
+		435D3A78200757DD0088E901 /* ErrorResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D3A6C200757DD0088E901 /* ErrorResponseProtocol.swift */; };
+		435D3A79200757DD0088E901 /* ListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D3A6D200757DD0088E901 /* ListResponse.swift */; };
+		435D3A7A200757DD0088E901 /* NoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D3A6E200757DD0088E901 /* NoResponse.swift */; };
+		435D3A7B200757DD0088E901 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D3A70200757DD0088E901 /* RequestManager.swift */; };
+		435D3A7C200757DD0088E901 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435D3A71200757DD0088E901 /* Router.swift */; };
 		FBADD9EA200621A700985CF1 /* APIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = FBADD9E8200621A700985CF1 /* APIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FBADD9F92006220700985CF1 /* APIClient_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = FBADD9F72006220700985CF1 /* APIClient_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FBADDA062006221600985CF1 /* APIClient_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = FBADDA042006221600985CF1 /* APIClient_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FBADDA282006222C00985CF1 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA0C2006222C00985CF1 /* RequestManager.swift */; };
 		FBADDA292006222C00985CF1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA0D2006222C00985CF1 /* Router.swift */; };
 		FBADDA2A2006222C00985CF1 /* ErrorResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA0F2006222C00985CF1 /* ErrorResponseProtocol.swift */; };
 		FBADDA2B2006222C00985CF1 /* ListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA102006222C00985CF1 /* ListResponse.swift */; };
 		FBADDA2C2006222C00985CF1 /* NoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA112006222C00985CF1 /* NoResponse.swift */; };
-		FBADDA2D2006222C00985CF1 /* JSONParseTransformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA132006222C00985CF1 /* JSONParseTransformable.swift */; };
-		FBADDA2E2006222C00985CF1 /* JSONParseablePrimitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA142006222C00985CF1 /* JSONParseablePrimitive.swift */; };
-		FBADDA2F2006222C00985CF1 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA152006222C00985CF1 /* JSON.swift */; };
-		FBADDA302006222C00985CF1 /* Double+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA162006222C00985CF1 /* Double+JSON.swift */; };
-		FBADDA312006222C00985CF1 /* Bool+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA172006222C00985CF1 /* Bool+JSON.swift */; };
-		FBADDA322006222C00985CF1 /* Int+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA182006222C00985CF1 /* Int+JSON.swift */; };
-		FBADDA332006222C00985CF1 /* JSONParseRawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA192006222C00985CF1 /* JSONParseRawRepresentable.swift */; };
-		FBADDA342006222C00985CF1 /* JSONParseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA1A2006222C00985CF1 /* JSONParseable.swift */; };
-		FBADDA352006222C00985CF1 /* String+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA1B2006222C00985CF1 /* String+JSON.swift */; };
-		FBADDA362006222C00985CF1 /* Float+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA1C2006222C00985CF1 /* Float+JSON.swift */; };
-		FBADDA372006222C00985CF1 /* Array+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA1D2006222C00985CF1 /* Array+JSON.swift */; };
-		FBADDA382006222C00985CF1 /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA1E2006222C00985CF1 /* JSONError.swift */; };
-		FBADDA392006222C00985CF1 /* URL+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA1F2006222C00985CF1 /* URL+JSON.swift */; };
 		FBADDA3A2006222C00985CF1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA212006222C00985CF1 /* APIClient.swift */; };
 		FBADDA3B2006222C00985CF1 /* AuthHeadersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA222006222C00985CF1 /* AuthHeadersProtocol.swift */; };
 		FBADDA3C2006222C00985CF1 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA232006222C00985CF1 /* APIResult.swift */; };
 		FBADDA3D2006222C00985CF1 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA242006222C00985CF1 /* APIRequest.swift */; };
 		FBADDA3E2006222C00985CF1 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA262006222C00985CF1 /* APIError.swift */; };
 		FBADDA3F2006222C00985CF1 /* APIErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA272006222C00985CF1 /* APIErrorType.swift */; };
-		FBADDA5E2006223800985CF1 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA422006223800985CF1 /* RequestManager.swift */; };
-		FBADDA5F2006223800985CF1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA432006223800985CF1 /* Router.swift */; };
-		FBADDA602006223800985CF1 /* ErrorResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA452006223800985CF1 /* ErrorResponseProtocol.swift */; };
-		FBADDA612006223800985CF1 /* ListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA462006223800985CF1 /* ListResponse.swift */; };
-		FBADDA622006223800985CF1 /* NoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA472006223800985CF1 /* NoResponse.swift */; };
-		FBADDA632006223800985CF1 /* JSONParseTransformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA492006223800985CF1 /* JSONParseTransformable.swift */; };
-		FBADDA642006223800985CF1 /* JSONParseablePrimitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA4A2006223800985CF1 /* JSONParseablePrimitive.swift */; };
-		FBADDA652006223800985CF1 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA4B2006223800985CF1 /* JSON.swift */; };
-		FBADDA662006223800985CF1 /* Double+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA4C2006223800985CF1 /* Double+JSON.swift */; };
-		FBADDA672006223800985CF1 /* Bool+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA4D2006223800985CF1 /* Bool+JSON.swift */; };
-		FBADDA682006223800985CF1 /* Int+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA4E2006223800985CF1 /* Int+JSON.swift */; };
-		FBADDA692006223800985CF1 /* JSONParseRawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA4F2006223800985CF1 /* JSONParseRawRepresentable.swift */; };
-		FBADDA6A2006223800985CF1 /* JSONParseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA502006223800985CF1 /* JSONParseable.swift */; };
-		FBADDA6B2006223800985CF1 /* String+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA512006223800985CF1 /* String+JSON.swift */; };
-		FBADDA6C2006223800985CF1 /* Float+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA522006223800985CF1 /* Float+JSON.swift */; };
-		FBADDA6D2006223800985CF1 /* Array+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA532006223800985CF1 /* Array+JSON.swift */; };
-		FBADDA6E2006223800985CF1 /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA542006223800985CF1 /* JSONError.swift */; };
-		FBADDA6F2006223800985CF1 /* URL+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA552006223800985CF1 /* URL+JSON.swift */; };
-		FBADDA702006223800985CF1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA572006223800985CF1 /* APIClient.swift */; };
-		FBADDA712006223800985CF1 /* AuthHeadersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA582006223800985CF1 /* AuthHeadersProtocol.swift */; };
-		FBADDA722006223800985CF1 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA592006223800985CF1 /* APIResult.swift */; };
-		FBADDA732006223800985CF1 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA5A2006223800985CF1 /* APIRequest.swift */; };
-		FBADDA742006223800985CF1 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA5C2006223800985CF1 /* APIError.swift */; };
-		FBADDA752006223800985CF1 /* APIErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA5D2006223800985CF1 /* APIErrorType.swift */; };
-		FBADDA942006224000985CF1 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA782006224000985CF1 /* RequestManager.swift */; };
-		FBADDA952006224000985CF1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA792006224000985CF1 /* Router.swift */; };
-		FBADDA962006224000985CF1 /* ErrorResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA7B2006224000985CF1 /* ErrorResponseProtocol.swift */; };
-		FBADDA972006224000985CF1 /* ListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA7C2006224000985CF1 /* ListResponse.swift */; };
-		FBADDA982006224000985CF1 /* NoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA7D2006224000985CF1 /* NoResponse.swift */; };
-		FBADDA992006224000985CF1 /* JSONParseTransformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA7F2006224000985CF1 /* JSONParseTransformable.swift */; };
-		FBADDA9A2006224000985CF1 /* JSONParseablePrimitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA802006224000985CF1 /* JSONParseablePrimitive.swift */; };
-		FBADDA9B2006224000985CF1 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA812006224000985CF1 /* JSON.swift */; };
-		FBADDA9C2006224000985CF1 /* Double+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA822006224000985CF1 /* Double+JSON.swift */; };
-		FBADDA9D2006224000985CF1 /* Bool+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA832006224000985CF1 /* Bool+JSON.swift */; };
-		FBADDA9E2006224000985CF1 /* Int+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA842006224000985CF1 /* Int+JSON.swift */; };
-		FBADDA9F2006224000985CF1 /* JSONParseRawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA852006224000985CF1 /* JSONParseRawRepresentable.swift */; };
-		FBADDAA02006224000985CF1 /* JSONParseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA862006224000985CF1 /* JSONParseable.swift */; };
-		FBADDAA12006224000985CF1 /* String+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA872006224000985CF1 /* String+JSON.swift */; };
-		FBADDAA22006224000985CF1 /* Float+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA882006224000985CF1 /* Float+JSON.swift */; };
-		FBADDAA32006224000985CF1 /* Array+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA892006224000985CF1 /* Array+JSON.swift */; };
-		FBADDAA42006224000985CF1 /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA8A2006224000985CF1 /* JSONError.swift */; };
-		FBADDAA52006224000985CF1 /* URL+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA8B2006224000985CF1 /* URL+JSON.swift */; };
-		FBADDAA62006224000985CF1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA8D2006224000985CF1 /* APIClient.swift */; };
-		FBADDAA72006224000985CF1 /* AuthHeadersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA8E2006224000985CF1 /* AuthHeadersProtocol.swift */; };
-		FBADDAA82006224000985CF1 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA8F2006224000985CF1 /* APIResult.swift */; };
-		FBADDAA92006224000985CF1 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA902006224000985CF1 /* APIRequest.swift */; };
-		FBADDAAA2006224000985CF1 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA922006224000985CF1 /* APIError.swift */; };
-		FBADDAAB2006224000985CF1 /* APIErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADDA932006224000985CF1 /* APIErrorType.swift */; };
-		FBADDAAF200623C400985CF1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADDAAD200623C400985CF1 /* Alamofire.framework */; };
-		FBADDAB0200623C400985CF1 /* JSONParsing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADDAAE200623C400985CF1 /* JSONParsing.framework */; };
-		FBADDAB42006242A00985CF1 /* JSONParsing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADDAB22006242A00985CF1 /* JSONParsing.framework */; };
-		FBADDAB52006242A00985CF1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADDAB32006242A00985CF1 /* Alamofire.framework */; };
-		FBADDABD200627D800985CF1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADDAB82006246A00985CF1 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		435D3A552007574B0088E901 /* APIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		435D3A572007574B0088E901 /* APIClient_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIClient_tvOS.h; sourceTree = "<group>"; };
+		435D3A582007574B0088E901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		435D3A64200757DD0088E901 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		435D3A65200757DD0088E901 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		435D3A66200757DD0088E901 /* APIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
+		435D3A67200757DD0088E901 /* AuthHeadersProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthHeadersProtocol.swift; sourceTree = "<group>"; };
+		435D3A69200757DD0088E901 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		435D3A6A200757DD0088E901 /* APIErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorType.swift; sourceTree = "<group>"; };
+		435D3A6C200757DD0088E901 /* ErrorResponseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponseProtocol.swift; sourceTree = "<group>"; };
+		435D3A6D200757DD0088E901 /* ListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResponse.swift; sourceTree = "<group>"; };
+		435D3A6E200757DD0088E901 /* NoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResponse.swift; sourceTree = "<group>"; };
+		435D3A70200757DD0088E901 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		435D3A71200757DD0088E901 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		FBADD9E5200621A700985CF1 /* APIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBADD9E8200621A700985CF1 /* APIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
 		FBADD9E9200621A700985CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBADD9F52006220700985CF1 /* APIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBADD9F72006220700985CF1 /* APIClient_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIClient_tvOS.h; sourceTree = "<group>"; };
-		FBADD9F82006220700985CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBADDA022006221500985CF1 /* APIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBADDA042006221600985CF1 /* APIClient_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIClient_macOS.h; sourceTree = "<group>"; };
-		FBADDA052006221600985CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBADDA0C2006222C00985CF1 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		FBADDA0D2006222C00985CF1 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		FBADDA0F2006222C00985CF1 /* ErrorResponseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponseProtocol.swift; sourceTree = "<group>"; };
 		FBADDA102006222C00985CF1 /* ListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResponse.swift; sourceTree = "<group>"; };
 		FBADDA112006222C00985CF1 /* NoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResponse.swift; sourceTree = "<group>"; };
-		FBADDA132006222C00985CF1 /* JSONParseTransformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseTransformable.swift; sourceTree = "<group>"; };
-		FBADDA142006222C00985CF1 /* JSONParseablePrimitive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseablePrimitive.swift; sourceTree = "<group>"; };
-		FBADDA152006222C00985CF1 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
-		FBADDA162006222C00985CF1 /* Double+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA172006222C00985CF1 /* Bool+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA182006222C00985CF1 /* Int+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA192006222C00985CF1 /* JSONParseRawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseRawRepresentable.swift; sourceTree = "<group>"; };
-		FBADDA1A2006222C00985CF1 /* JSONParseable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseable.swift; sourceTree = "<group>"; };
-		FBADDA1B2006222C00985CF1 /* String+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA1C2006222C00985CF1 /* Float+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA1D2006222C00985CF1 /* Array+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA1E2006222C00985CF1 /* JSONError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
-		FBADDA1F2006222C00985CF1 /* URL+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+JSON.swift"; sourceTree = "<group>"; };
 		FBADDA212006222C00985CF1 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		FBADDA222006222C00985CF1 /* AuthHeadersProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthHeadersProtocol.swift; sourceTree = "<group>"; };
 		FBADDA232006222C00985CF1 /* APIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		FBADDA242006222C00985CF1 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		FBADDA262006222C00985CF1 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		FBADDA272006222C00985CF1 /* APIErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorType.swift; sourceTree = "<group>"; };
-		FBADDA422006223800985CF1 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
-		FBADDA432006223800985CF1 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		FBADDA452006223800985CF1 /* ErrorResponseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponseProtocol.swift; sourceTree = "<group>"; };
-		FBADDA462006223800985CF1 /* ListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResponse.swift; sourceTree = "<group>"; };
-		FBADDA472006223800985CF1 /* NoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResponse.swift; sourceTree = "<group>"; };
-		FBADDA492006223800985CF1 /* JSONParseTransformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseTransformable.swift; sourceTree = "<group>"; };
-		FBADDA4A2006223800985CF1 /* JSONParseablePrimitive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseablePrimitive.swift; sourceTree = "<group>"; };
-		FBADDA4B2006223800985CF1 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
-		FBADDA4C2006223800985CF1 /* Double+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA4D2006223800985CF1 /* Bool+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA4E2006223800985CF1 /* Int+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA4F2006223800985CF1 /* JSONParseRawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseRawRepresentable.swift; sourceTree = "<group>"; };
-		FBADDA502006223800985CF1 /* JSONParseable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseable.swift; sourceTree = "<group>"; };
-		FBADDA512006223800985CF1 /* String+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA522006223800985CF1 /* Float+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA532006223800985CF1 /* Array+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA542006223800985CF1 /* JSONError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
-		FBADDA552006223800985CF1 /* URL+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA572006223800985CF1 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		FBADDA582006223800985CF1 /* AuthHeadersProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthHeadersProtocol.swift; sourceTree = "<group>"; };
-		FBADDA592006223800985CF1 /* APIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
-		FBADDA5A2006223800985CF1 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		FBADDA5C2006223800985CF1 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		FBADDA5D2006223800985CF1 /* APIErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorType.swift; sourceTree = "<group>"; };
-		FBADDA782006224000985CF1 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
-		FBADDA792006224000985CF1 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		FBADDA7B2006224000985CF1 /* ErrorResponseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponseProtocol.swift; sourceTree = "<group>"; };
-		FBADDA7C2006224000985CF1 /* ListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResponse.swift; sourceTree = "<group>"; };
-		FBADDA7D2006224000985CF1 /* NoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResponse.swift; sourceTree = "<group>"; };
-		FBADDA7F2006224000985CF1 /* JSONParseTransformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseTransformable.swift; sourceTree = "<group>"; };
-		FBADDA802006224000985CF1 /* JSONParseablePrimitive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseablePrimitive.swift; sourceTree = "<group>"; };
-		FBADDA812006224000985CF1 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
-		FBADDA822006224000985CF1 /* Double+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA832006224000985CF1 /* Bool+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA842006224000985CF1 /* Int+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA852006224000985CF1 /* JSONParseRawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseRawRepresentable.swift; sourceTree = "<group>"; };
-		FBADDA862006224000985CF1 /* JSONParseable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseable.swift; sourceTree = "<group>"; };
-		FBADDA872006224000985CF1 /* String+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA882006224000985CF1 /* Float+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA892006224000985CF1 /* Array+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA8A2006224000985CF1 /* JSONError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
-		FBADDA8B2006224000985CF1 /* URL+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+JSON.swift"; sourceTree = "<group>"; };
-		FBADDA8D2006224000985CF1 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		FBADDA8E2006224000985CF1 /* AuthHeadersProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthHeadersProtocol.swift; sourceTree = "<group>"; };
-		FBADDA8F2006224000985CF1 /* APIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
-		FBADDA902006224000985CF1 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		FBADDA922006224000985CF1 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		FBADDA932006224000985CF1 /* APIErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorType.swift; sourceTree = "<group>"; };
 		FBADDAAD200623C400985CF1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		FBADDAAE200623C400985CF1 /* JSONParsing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSONParsing.framework; path = Carthage/Build/iOS/JSONParsing.framework; sourceTree = "<group>"; };
 		FBADDAB22006242A00985CF1 /* JSONParsing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSONParsing.framework; path = Carthage/Build/tvOS/JSONParsing.framework; sourceTree = "<group>"; };
@@ -180,41 +75,93 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		435D3A512007574B0088E901 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				435D3A5D200757750088E901 /* Alamofire.framework in Frameworks */,
+				435D3A5E200757750088E901 /* JSONParsing.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBADD9E1200621A700985CF1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBADDAAF200623C400985CF1 /* Alamofire.framework in Frameworks */,
-				FBADDAB0200623C400985CF1 /* JSONParsing.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FBADD9F12006220700985CF1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FBADDAB42006242A00985CF1 /* JSONParsing.framework in Frameworks */,
-				FBADDAB52006242A00985CF1 /* Alamofire.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FBADD9FE2006221500985CF1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FBADDABD200627D800985CF1 /* Alamofire.framework in Frameworks */,
+				435D3A4E200756B60088E901 /* Alamofire.framework in Frameworks */,
+				435D3A4F200756B60088E901 /* JSONParsing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		435D3A562007574B0088E901 /* APIClient tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				435D3A62200757DD0088E901 /* Classes */,
+				435D3A572007574B0088E901 /* APIClient_tvOS.h */,
+				435D3A582007574B0088E901 /* Info.plist */,
+			);
+			path = "APIClient tvOS";
+			sourceTree = "<group>";
+		};
+		435D3A62200757DD0088E901 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				435D3A63200757DD0088E901 /* API */,
+				435D3A68200757DD0088E901 /* Errors */,
+				435D3A6B200757DD0088E901 /* Response */,
+				435D3A6F200757DD0088E901 /* Routers */,
+			);
+			name = Classes;
+			path = Source/Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		435D3A63200757DD0088E901 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				435D3A64200757DD0088E901 /* APIClient.swift */,
+				435D3A65200757DD0088E901 /* APIRequest.swift */,
+				435D3A66200757DD0088E901 /* APIResult.swift */,
+				435D3A67200757DD0088E901 /* AuthHeadersProtocol.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		435D3A68200757DD0088E901 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				435D3A69200757DD0088E901 /* APIError.swift */,
+				435D3A6A200757DD0088E901 /* APIErrorType.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		435D3A6B200757DD0088E901 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				435D3A6C200757DD0088E901 /* ErrorResponseProtocol.swift */,
+				435D3A6D200757DD0088E901 /* ListResponse.swift */,
+				435D3A6E200757DD0088E901 /* NoResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		435D3A6F200757DD0088E901 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				435D3A70200757DD0088E901 /* RequestManager.swift */,
+				435D3A71200757DD0088E901 /* Router.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
 		FBADD9DB200621A700985CF1 = {
 			isa = PBXGroup;
 			children = (
 				FBADD9E7200621A700985CF1 /* APIClient */,
-				FBADD9F62006220700985CF1 /* APIClient tvOS */,
-				FBADDA032006221500985CF1 /* APIClient macOS */,
+				435D3A562007574B0088E901 /* APIClient tvOS */,
 				FBADD9E6200621A700985CF1 /* Products */,
 				FBADDAAC200623C300985CF1 /* Frameworks */,
 			);
@@ -224,8 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				FBADD9E5200621A700985CF1 /* APIClient.framework */,
-				FBADD9F52006220700985CF1 /* APIClient.framework */,
-				FBADDA022006221500985CF1 /* APIClient.framework */,
+				435D3A552007574B0088E901 /* APIClient.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,32 +186,11 @@
 			path = APIClient;
 			sourceTree = "<group>";
 		};
-		FBADD9F62006220700985CF1 /* APIClient tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA402006223800985CF1 /* Classes */,
-				FBADD9F72006220700985CF1 /* APIClient_tvOS.h */,
-				FBADD9F82006220700985CF1 /* Info.plist */,
-			);
-			path = "APIClient tvOS";
-			sourceTree = "<group>";
-		};
-		FBADDA032006221500985CF1 /* APIClient macOS */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA762006224000985CF1 /* Classes */,
-				FBADDA042006221600985CF1 /* APIClient_macOS.h */,
-				FBADDA052006221600985CF1 /* Info.plist */,
-			);
-			path = "APIClient macOS";
-			sourceTree = "<group>";
-		};
 		FBADDA0A2006222C00985CF1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				FBADDA0B2006222C00985CF1 /* Routers */,
 				FBADDA0E2006222C00985CF1 /* Response */,
-				FBADDA122006222C00985CF1 /* JSON */,
 				FBADDA202006222C00985CF1 /* API */,
 				FBADDA252006222C00985CF1 /* Errors */,
 			);
@@ -292,26 +217,6 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
-		FBADDA122006222C00985CF1 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA132006222C00985CF1 /* JSONParseTransformable.swift */,
-				FBADDA142006222C00985CF1 /* JSONParseablePrimitive.swift */,
-				FBADDA152006222C00985CF1 /* JSON.swift */,
-				FBADDA162006222C00985CF1 /* Double+JSON.swift */,
-				FBADDA172006222C00985CF1 /* Bool+JSON.swift */,
-				FBADDA182006222C00985CF1 /* Int+JSON.swift */,
-				FBADDA192006222C00985CF1 /* JSONParseRawRepresentable.swift */,
-				FBADDA1A2006222C00985CF1 /* JSONParseable.swift */,
-				FBADDA1B2006222C00985CF1 /* String+JSON.swift */,
-				FBADDA1C2006222C00985CF1 /* Float+JSON.swift */,
-				FBADDA1D2006222C00985CF1 /* Array+JSON.swift */,
-				FBADDA1E2006222C00985CF1 /* JSONError.swift */,
-				FBADDA1F2006222C00985CF1 /* URL+JSON.swift */,
-			);
-			path = JSON;
-			sourceTree = "<group>";
-		};
 		FBADDA202006222C00985CF1 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,150 +237,6 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
-		FBADDA402006223800985CF1 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA412006223800985CF1 /* Routers */,
-				FBADDA442006223800985CF1 /* Response */,
-				FBADDA482006223800985CF1 /* JSON */,
-				FBADDA562006223800985CF1 /* API */,
-				FBADDA5B2006223800985CF1 /* Errors */,
-			);
-			name = Classes;
-			path = Source/Classes;
-			sourceTree = SOURCE_ROOT;
-		};
-		FBADDA412006223800985CF1 /* Routers */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA422006223800985CF1 /* RequestManager.swift */,
-				FBADDA432006223800985CF1 /* Router.swift */,
-			);
-			path = Routers;
-			sourceTree = "<group>";
-		};
-		FBADDA442006223800985CF1 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA452006223800985CF1 /* ErrorResponseProtocol.swift */,
-				FBADDA462006223800985CF1 /* ListResponse.swift */,
-				FBADDA472006223800985CF1 /* NoResponse.swift */,
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		FBADDA482006223800985CF1 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA492006223800985CF1 /* JSONParseTransformable.swift */,
-				FBADDA4A2006223800985CF1 /* JSONParseablePrimitive.swift */,
-				FBADDA4B2006223800985CF1 /* JSON.swift */,
-				FBADDA4C2006223800985CF1 /* Double+JSON.swift */,
-				FBADDA4D2006223800985CF1 /* Bool+JSON.swift */,
-				FBADDA4E2006223800985CF1 /* Int+JSON.swift */,
-				FBADDA4F2006223800985CF1 /* JSONParseRawRepresentable.swift */,
-				FBADDA502006223800985CF1 /* JSONParseable.swift */,
-				FBADDA512006223800985CF1 /* String+JSON.swift */,
-				FBADDA522006223800985CF1 /* Float+JSON.swift */,
-				FBADDA532006223800985CF1 /* Array+JSON.swift */,
-				FBADDA542006223800985CF1 /* JSONError.swift */,
-				FBADDA552006223800985CF1 /* URL+JSON.swift */,
-			);
-			path = JSON;
-			sourceTree = "<group>";
-		};
-		FBADDA562006223800985CF1 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA572006223800985CF1 /* APIClient.swift */,
-				FBADDA582006223800985CF1 /* AuthHeadersProtocol.swift */,
-				FBADDA592006223800985CF1 /* APIResult.swift */,
-				FBADDA5A2006223800985CF1 /* APIRequest.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		FBADDA5B2006223800985CF1 /* Errors */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA5C2006223800985CF1 /* APIError.swift */,
-				FBADDA5D2006223800985CF1 /* APIErrorType.swift */,
-			);
-			path = Errors;
-			sourceTree = "<group>";
-		};
-		FBADDA762006224000985CF1 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA772006224000985CF1 /* Routers */,
-				FBADDA7A2006224000985CF1 /* Response */,
-				FBADDA7E2006224000985CF1 /* JSON */,
-				FBADDA8C2006224000985CF1 /* API */,
-				FBADDA912006224000985CF1 /* Errors */,
-			);
-			name = Classes;
-			path = Source/Classes;
-			sourceTree = SOURCE_ROOT;
-		};
-		FBADDA772006224000985CF1 /* Routers */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA782006224000985CF1 /* RequestManager.swift */,
-				FBADDA792006224000985CF1 /* Router.swift */,
-			);
-			path = Routers;
-			sourceTree = "<group>";
-		};
-		FBADDA7A2006224000985CF1 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA7B2006224000985CF1 /* ErrorResponseProtocol.swift */,
-				FBADDA7C2006224000985CF1 /* ListResponse.swift */,
-				FBADDA7D2006224000985CF1 /* NoResponse.swift */,
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		FBADDA7E2006224000985CF1 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA7F2006224000985CF1 /* JSONParseTransformable.swift */,
-				FBADDA802006224000985CF1 /* JSONParseablePrimitive.swift */,
-				FBADDA812006224000985CF1 /* JSON.swift */,
-				FBADDA822006224000985CF1 /* Double+JSON.swift */,
-				FBADDA832006224000985CF1 /* Bool+JSON.swift */,
-				FBADDA842006224000985CF1 /* Int+JSON.swift */,
-				FBADDA852006224000985CF1 /* JSONParseRawRepresentable.swift */,
-				FBADDA862006224000985CF1 /* JSONParseable.swift */,
-				FBADDA872006224000985CF1 /* String+JSON.swift */,
-				FBADDA882006224000985CF1 /* Float+JSON.swift */,
-				FBADDA892006224000985CF1 /* Array+JSON.swift */,
-				FBADDA8A2006224000985CF1 /* JSONError.swift */,
-				FBADDA8B2006224000985CF1 /* URL+JSON.swift */,
-			);
-			path = JSON;
-			sourceTree = "<group>";
-		};
-		FBADDA8C2006224000985CF1 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA8D2006224000985CF1 /* APIClient.swift */,
-				FBADDA8E2006224000985CF1 /* AuthHeadersProtocol.swift */,
-				FBADDA8F2006224000985CF1 /* APIResult.swift */,
-				FBADDA902006224000985CF1 /* APIRequest.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		FBADDA912006224000985CF1 /* Errors */ = {
-			isa = PBXGroup;
-			children = (
-				FBADDA922006224000985CF1 /* APIError.swift */,
-				FBADDA932006224000985CF1 /* APIErrorType.swift */,
-			);
-			path = Errors;
-			sourceTree = "<group>";
-		};
 		FBADDAAC200623C300985CF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +253,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		435D3A522007574B0088E901 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				435D3A592007574B0088E901 /* APIClient_tvOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBADD9E2200621A700985CF1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,25 +269,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FBADD9F22006220700985CF1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FBADD9F92006220700985CF1 /* APIClient_tvOS.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FBADD9FF2006221500985CF1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FBADDA062006221600985CF1 /* APIClient_macOS.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		435D3A542007574B0088E901 /* APIClient tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 435D3A5A2007574B0088E901 /* Build configuration list for PBXNativeTarget "APIClient tvOS" */;
+			buildPhases = (
+				435D3A502007574B0088E901 /* Sources */,
+				435D3A512007574B0088E901 /* Frameworks */,
+				435D3A522007574B0088E901 /* Headers */,
+				435D3A532007574B0088E901 /* Resources */,
+				435D3A5F200757790088E901 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "APIClient tvOS";
+			productName = "APIClient tvOS";
+			productReference = 435D3A552007574B0088E901 /* APIClient.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		FBADD9E4200621A700985CF1 /* APIClient */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBADD9ED200621A700985CF1 /* Build configuration list for PBXNativeTarget "APIClient" */;
@@ -538,44 +310,6 @@
 			productReference = FBADD9E5200621A700985CF1 /* APIClient.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		FBADD9F42006220700985CF1 /* APIClient tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FBADD9FC2006220700985CF1 /* Build configuration list for PBXNativeTarget "APIClient tvOS" */;
-			buildPhases = (
-				FBADD9F02006220700985CF1 /* Sources */,
-				FBADD9F12006220700985CF1 /* Frameworks */,
-				FBADD9F22006220700985CF1 /* Headers */,
-				FBADD9F32006220700985CF1 /* Resources */,
-				FBADDAB62006242D00985CF1 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "APIClient tvOS";
-			productName = "APIClient tvOS";
-			productReference = FBADD9F52006220700985CF1 /* APIClient.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		FBADDA012006221500985CF1 /* APIClient macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FBADDA072006221600985CF1 /* Build configuration list for PBXNativeTarget "APIClient macOS" */;
-			buildPhases = (
-				FBADD9FD2006221500985CF1 /* Sources */,
-				FBADD9FE2006221500985CF1 /* Frameworks */,
-				FBADD9FF2006221500985CF1 /* Headers */,
-				FBADDA002006221500985CF1 /* Resources */,
-				FBADDABB2006246D00985CF1 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "APIClient macOS";
-			productName = "APIClient macOS";
-			productReference = FBADDA022006221500985CF1 /* APIClient.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -585,15 +319,11 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Nickelfox;
 				TargetAttributes = {
+					435D3A542007574B0088E901 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 					FBADD9E4200621A700985CF1 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-					};
-					FBADD9F42006220700985CF1 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-					};
-					FBADDA012006221500985CF1 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
@@ -612,28 +342,20 @@
 			projectRoot = "";
 			targets = (
 				FBADD9E4200621A700985CF1 /* APIClient */,
-				FBADD9F42006220700985CF1 /* APIClient tvOS */,
-				FBADDA012006221500985CF1 /* APIClient macOS */,
+				435D3A542007574B0088E901 /* APIClient tvOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		435D3A532007574B0088E901 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBADD9E3200621A700985CF1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FBADD9F32006220700985CF1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FBADDA002006221500985CF1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -643,6 +365,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		435D3A5F200757790088E901 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/JSONParsing.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		FBADDAB1200623C700985CF1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -658,38 +395,27 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-		FBADDAB62006242D00985CF1 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/tvOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/tvOS/JSONParsing.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		FBADDABB2006246D00985CF1 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/Alamofire.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		435D3A502007574B0088E901 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				435D3A7C200757DD0088E901 /* Router.swift in Sources */,
+				435D3A7A200757DD0088E901 /* NoResponse.swift in Sources */,
+				435D3A79200757DD0088E901 /* ListResponse.swift in Sources */,
+				435D3A75200757DD0088E901 /* AuthHeadersProtocol.swift in Sources */,
+				435D3A74200757DD0088E901 /* APIResult.swift in Sources */,
+				435D3A73200757DD0088E901 /* APIRequest.swift in Sources */,
+				435D3A7B200757DD0088E901 /* RequestManager.swift in Sources */,
+				435D3A77200757DD0088E901 /* APIErrorType.swift in Sources */,
+				435D3A76200757DD0088E901 /* APIError.swift in Sources */,
+				435D3A78200757DD0088E901 /* ErrorResponseProtocol.swift in Sources */,
+				435D3A72200757DD0088E901 /* APIClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBADD9E0200621A700985CF1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -699,93 +425,72 @@
 				FBADDA2C2006222C00985CF1 /* NoResponse.swift in Sources */,
 				FBADDA3F2006222C00985CF1 /* APIErrorType.swift in Sources */,
 				FBADDA292006222C00985CF1 /* Router.swift in Sources */,
-				FBADDA382006222C00985CF1 /* JSONError.swift in Sources */,
-				FBADDA2D2006222C00985CF1 /* JSONParseTransformable.swift in Sources */,
 				FBADDA3A2006222C00985CF1 /* APIClient.swift in Sources */,
-				FBADDA302006222C00985CF1 /* Double+JSON.swift in Sources */,
 				FBADDA3B2006222C00985CF1 /* AuthHeadersProtocol.swift in Sources */,
-				FBADDA2E2006222C00985CF1 /* JSONParseablePrimitive.swift in Sources */,
-				FBADDA312006222C00985CF1 /* Bool+JSON.swift in Sources */,
 				FBADDA3E2006222C00985CF1 /* APIError.swift in Sources */,
 				FBADDA282006222C00985CF1 /* RequestManager.swift in Sources */,
 				FBADDA3C2006222C00985CF1 /* APIResult.swift in Sources */,
-				FBADDA332006222C00985CF1 /* JSONParseRawRepresentable.swift in Sources */,
-				FBADDA392006222C00985CF1 /* URL+JSON.swift in Sources */,
-				FBADDA362006222C00985CF1 /* Float+JSON.swift in Sources */,
-				FBADDA2F2006222C00985CF1 /* JSON.swift in Sources */,
-				FBADDA322006222C00985CF1 /* Int+JSON.swift in Sources */,
 				FBADDA3D2006222C00985CF1 /* APIRequest.swift in Sources */,
-				FBADDA352006222C00985CF1 /* String+JSON.swift in Sources */,
-				FBADDA342006222C00985CF1 /* JSONParseable.swift in Sources */,
-				FBADDA372006222C00985CF1 /* Array+JSON.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FBADD9F02006220700985CF1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FBADDA612006223800985CF1 /* ListResponse.swift in Sources */,
-				FBADDA602006223800985CF1 /* ErrorResponseProtocol.swift in Sources */,
-				FBADDA622006223800985CF1 /* NoResponse.swift in Sources */,
-				FBADDA752006223800985CF1 /* APIErrorType.swift in Sources */,
-				FBADDA5F2006223800985CF1 /* Router.swift in Sources */,
-				FBADDA6E2006223800985CF1 /* JSONError.swift in Sources */,
-				FBADDA632006223800985CF1 /* JSONParseTransformable.swift in Sources */,
-				FBADDA702006223800985CF1 /* APIClient.swift in Sources */,
-				FBADDA662006223800985CF1 /* Double+JSON.swift in Sources */,
-				FBADDA712006223800985CF1 /* AuthHeadersProtocol.swift in Sources */,
-				FBADDA642006223800985CF1 /* JSONParseablePrimitive.swift in Sources */,
-				FBADDA672006223800985CF1 /* Bool+JSON.swift in Sources */,
-				FBADDA742006223800985CF1 /* APIError.swift in Sources */,
-				FBADDA5E2006223800985CF1 /* RequestManager.swift in Sources */,
-				FBADDA722006223800985CF1 /* APIResult.swift in Sources */,
-				FBADDA692006223800985CF1 /* JSONParseRawRepresentable.swift in Sources */,
-				FBADDA6F2006223800985CF1 /* URL+JSON.swift in Sources */,
-				FBADDA6C2006223800985CF1 /* Float+JSON.swift in Sources */,
-				FBADDA652006223800985CF1 /* JSON.swift in Sources */,
-				FBADDA682006223800985CF1 /* Int+JSON.swift in Sources */,
-				FBADDA732006223800985CF1 /* APIRequest.swift in Sources */,
-				FBADDA6B2006223800985CF1 /* String+JSON.swift in Sources */,
-				FBADDA6A2006223800985CF1 /* JSONParseable.swift in Sources */,
-				FBADDA6D2006223800985CF1 /* Array+JSON.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FBADD9FD2006221500985CF1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FBADDA972006224000985CF1 /* ListResponse.swift in Sources */,
-				FBADDA962006224000985CF1 /* ErrorResponseProtocol.swift in Sources */,
-				FBADDA982006224000985CF1 /* NoResponse.swift in Sources */,
-				FBADDAAB2006224000985CF1 /* APIErrorType.swift in Sources */,
-				FBADDA952006224000985CF1 /* Router.swift in Sources */,
-				FBADDAA42006224000985CF1 /* JSONError.swift in Sources */,
-				FBADDA992006224000985CF1 /* JSONParseTransformable.swift in Sources */,
-				FBADDAA62006224000985CF1 /* APIClient.swift in Sources */,
-				FBADDA9C2006224000985CF1 /* Double+JSON.swift in Sources */,
-				FBADDAA72006224000985CF1 /* AuthHeadersProtocol.swift in Sources */,
-				FBADDA9A2006224000985CF1 /* JSONParseablePrimitive.swift in Sources */,
-				FBADDA9D2006224000985CF1 /* Bool+JSON.swift in Sources */,
-				FBADDAAA2006224000985CF1 /* APIError.swift in Sources */,
-				FBADDA942006224000985CF1 /* RequestManager.swift in Sources */,
-				FBADDAA82006224000985CF1 /* APIResult.swift in Sources */,
-				FBADDA9F2006224000985CF1 /* JSONParseRawRepresentable.swift in Sources */,
-				FBADDAA52006224000985CF1 /* URL+JSON.swift in Sources */,
-				FBADDAA22006224000985CF1 /* Float+JSON.swift in Sources */,
-				FBADDA9B2006224000985CF1 /* JSON.swift in Sources */,
-				FBADDA9E2006224000985CF1 /* Int+JSON.swift in Sources */,
-				FBADDAA92006224000985CF1 /* APIRequest.swift in Sources */,
-				FBADDAA12006224000985CF1 /* String+JSON.swift in Sources */,
-				FBADDAA02006224000985CF1 /* JSONParseable.swift in Sources */,
-				FBADDAA32006224000985CF1 /* Array+JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		435D3A5B2007574B0088E901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "APIClient tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "KarticKhosla.APIClient-tvOS";
+				PRODUCT_NAME = APIClient;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		435D3A5C2007574B0088E901 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "APIClient tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "KarticKhosla.APIClient-tvOS";
+				PRODUCT_NAME = APIClient;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 		FBADD9EB200621A700985CF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -835,7 +540,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -889,7 +594,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -915,6 +620,7 @@
 				);
 				INFOPLIST_FILE = APIClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nickelfox.APIClient;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -940,6 +646,7 @@
 				);
 				INFOPLIST_FILE = APIClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nickelfox.APIClient;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -949,119 +656,18 @@
 			};
 			name = Release;
 		};
-		FBADD9FA2006220700985CF1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = NY45473NT8;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
-				INFOPLIST_FILE = "APIClient tvOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.APIClient-tvOS";
-				PRODUCT_NAME = APIClient;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.2;
-			};
-			name = Debug;
-		};
-		FBADD9FB2006220700985CF1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = NY45473NT8;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
-				INFOPLIST_FILE = "APIClient tvOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.APIClient-tvOS";
-				PRODUCT_NAME = APIClient;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.2;
-			};
-			name = Release;
-		};
-		FBADDA082006221600985CF1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = NY45473NT8;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "APIClient macOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.APIClient-macOS";
-				PRODUCT_NAME = APIClient;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		FBADDA092006221600985CF1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = NY45473NT8;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "APIClient macOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.APIClient-macOS";
-				PRODUCT_NAME = APIClient;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		435D3A5A2007574B0088E901 /* Build configuration list for PBXNativeTarget "APIClient tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				435D3A5B2007574B0088E901 /* Debug */,
+				435D3A5C2007574B0088E901 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FBADD9DF200621A700985CF1 /* Build configuration list for PBXProject "APIClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1076,24 +682,6 @@
 			buildConfigurations = (
 				FBADD9EE200621A700985CF1 /* Debug */,
 				FBADD9EF200621A700985CF1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FBADD9FC2006220700985CF1 /* Build configuration list for PBXNativeTarget "APIClient tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FBADD9FA2006220700985CF1 /* Debug */,
-				FBADD9FB2006220700985CF1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FBADDA072006221600985CF1 /* Build configuration list for PBXNativeTarget "APIClient macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FBADDA082006221600985CF1 /* Debug */,
-				FBADDA092006221600985CF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

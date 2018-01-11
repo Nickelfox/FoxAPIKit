@@ -1,4 +1,4 @@
 github "Alamofire/Alamofire" "4.6.0"
-github "Nickelfox/AnyErrorKit" "0.1.2"
-github "Nickelfox/JSONParsing" "0.1.4"
+github "Nickelfox/AnyErrorKit" "0.1.3"
+github "Nickelfox/JSONParsing" "0.1.6"
 github "SwiftyJSON/SwiftyJSON" "3.1.4"

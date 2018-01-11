@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FBADD9F42006220700985CF1"
+               BlueprintIdentifier = "435D3A542007574B0088E901"
                BuildableName = "APIClient.framework"
                BlueprintName = "APIClient tvOS"
                ReferencedContainer = "container:APIClient.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBADD9F42006220700985CF1"
+            BlueprintIdentifier = "435D3A542007574B0088E901"
             BuildableName = "APIClient.framework"
             BlueprintName = "APIClient tvOS"
             ReferencedContainer = "container:APIClient.xcodeproj">
@@ -65,7 +65,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBADD9F42006220700985CF1"
+            BlueprintIdentifier = "435D3A542007574B0088E901"
             BuildableName = "APIClient.framework"
             BlueprintName = "APIClient tvOS"
             ReferencedContainer = "container:APIClient.xcodeproj">

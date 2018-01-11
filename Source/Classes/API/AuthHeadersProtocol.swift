@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import JSONParsing
 
 public protocol AuthHeadersProtocol: JSONParseable, RequestAdapter {
 	

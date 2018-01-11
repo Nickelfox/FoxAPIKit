@@ -7,14 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB06E9732007469900289218 /* JSONParseTransformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E9662007469800289218 /* JSONParseTransformable.swift */; };
+		FB06E9742007469900289218 /* JSONParseablePrimitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E9672007469800289218 /* JSONParseablePrimitive.swift */; };
+		FB06E9752007469900289218 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E9682007469800289218 /* JSON.swift */; };
+		FB06E9762007469900289218 /* Double+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E9692007469800289218 /* Double+JSON.swift */; };
+		FB06E9772007469900289218 /* Bool+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E96A2007469800289218 /* Bool+JSON.swift */; };
+		FB06E9782007469900289218 /* Int+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E96B2007469800289218 /* Int+JSON.swift */; };
+		FB06E9792007469900289218 /* JSONParseRawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E96C2007469800289218 /* JSONParseRawRepresentable.swift */; };
+		FB06E97A2007469900289218 /* JSONParseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E96D2007469800289218 /* JSONParseable.swift */; };
+		FB06E97B2007469900289218 /* String+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E96E2007469800289218 /* String+JSON.swift */; };
+		FB06E97C2007469900289218 /* Float+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E96F2007469800289218 /* Float+JSON.swift */; };
+		FB06E97D2007469900289218 /* Array+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E9702007469800289218 /* Array+JSON.swift */; };
+		FB06E97E2007469900289218 /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E9712007469800289218 /* JSONError.swift */; };
+		FB06E97F2007469900289218 /* URL+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E9722007469800289218 /* URL+JSON.swift */; };
+		FB06E990200746A200289218 /* JSONParseTransformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E983200746A200289218 /* JSONParseTransformable.swift */; };
+		FB06E991200746A200289218 /* JSONParseablePrimitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E984200746A200289218 /* JSONParseablePrimitive.swift */; };
+		FB06E992200746A200289218 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E985200746A200289218 /* JSON.swift */; };
+		FB06E993200746A200289218 /* Double+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E986200746A200289218 /* Double+JSON.swift */; };
+		FB06E994200746A200289218 /* Bool+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E987200746A200289218 /* Bool+JSON.swift */; };
+		FB06E995200746A200289218 /* Int+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E988200746A200289218 /* Int+JSON.swift */; };
+		FB06E996200746A200289218 /* JSONParseRawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E989200746A200289218 /* JSONParseRawRepresentable.swift */; };
+		FB06E997200746A200289218 /* JSONParseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E98A200746A200289218 /* JSONParseable.swift */; };
+		FB06E998200746A200289218 /* String+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E98B200746A200289218 /* String+JSON.swift */; };
+		FB06E999200746A200289218 /* Float+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E98C200746A200289218 /* Float+JSON.swift */; };
+		FB06E99A200746A200289218 /* Array+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E98D200746A200289218 /* Array+JSON.swift */; };
+		FB06E99B200746A200289218 /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E98E200746A200289218 /* JSONError.swift */; };
+		FB06E99C200746A200289218 /* URL+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06E98F200746A200289218 /* URL+JSON.swift */; };
+		FB06E99F200746EC00289218 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB06E99D200746EC00289218 /* SwiftyJSON.framework */; };
+		FB06E9A0200746EC00289218 /* AnyErrorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB06E99E200746EC00289218 /* AnyErrorKit.framework */; };
+		FB06E9A32007470300289218 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB06E9A12007470300289218 /* SwiftyJSON.framework */; };
+		FB06E9A42007470300289218 /* AnyErrorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB06E9A22007470300289218 /* AnyErrorKit.framework */; };
+		FB06E9A72007471400289218 /* AnyErrorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB06E9A52007471300289218 /* AnyErrorKit.framework */; };
+		FB06E9A82007471400289218 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB06E9A62007471300289218 /* SwiftyJSON.framework */; };
 		FBADD6EA200512CA00985CF1 /* JSONParsing_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = FBADD6E8200512CA00985CF1 /* JSONParsing_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FBADD6F7200512DC00985CF1 /* JSONParsing_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = FBADD6F5200512DC00985CF1 /* JSONParsing_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FBADD9D32006170100985CF1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB3F1C02003BFF200994D2F /* SwiftyJSON.framework */; };
-		FBADD9D42006170100985CF1 /* AnyErrorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB3F1BD2003BE5000994D2F /* AnyErrorKit.framework */; };
-		FBADD9D52006171800985CF1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADD6DA20050E8500985CF1 /* SwiftyJSON.framework */; };
-		FBADD9D72006171900985CF1 /* AnyErrorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADD9D62006171900985CF1 /* AnyErrorKit.framework */; };
-		FBADD9D82006175600985CF1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADD6D820050E8500985CF1 /* SwiftyJSON.framework */; };
-		FBADD9DA2006175700985CF1 /* AnyErrorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADD9D92006175600985CF1 /* AnyErrorKit.framework */; };
 		FBB3F1992003BAFD00994D2F /* JSONParsing.h in Headers */ = {isa = PBXBuildFile; fileRef = FBB3F1972003BAFD00994D2F /* JSONParsing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FBB3F1AF2003BB4E00994D2F /* JSONParseTransformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB3F1A22003BB4E00994D2F /* JSONParseTransformable.swift */; };
 		FBB3F1B02003BB4E00994D2F /* JSONParseablePrimitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB3F1A32003BB4E00994D2F /* JSONParseablePrimitive.swift */; };
@@ -32,18 +58,44 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FBADD6D820050E8500985CF1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
-		FBADD6D920050E8500985CF1 /* AnyErrorKit_tvOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnyErrorKit_tvOS.framework; path = Carthage/Build/tvOS/AnyErrorKit_tvOS.framework; sourceTree = "<group>"; };
-		FBADD6DA20050E8500985CF1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/tvOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		FBADD6DB20050E8600985CF1 /* AnyErrorKit_macOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnyErrorKit_macOS.framework; path = Carthage/Build/Mac/AnyErrorKit_macOS.framework; sourceTree = "<group>"; };
+		FB06E9662007469800289218 /* JSONParseTransformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseTransformable.swift; sourceTree = "<group>"; };
+		FB06E9672007469800289218 /* JSONParseablePrimitive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseablePrimitive.swift; sourceTree = "<group>"; };
+		FB06E9682007469800289218 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		FB06E9692007469800289218 /* Double+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+JSON.swift"; sourceTree = "<group>"; };
+		FB06E96A2007469800289218 /* Bool+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+JSON.swift"; sourceTree = "<group>"; };
+		FB06E96B2007469800289218 /* Int+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+JSON.swift"; sourceTree = "<group>"; };
+		FB06E96C2007469800289218 /* JSONParseRawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseRawRepresentable.swift; sourceTree = "<group>"; };
+		FB06E96D2007469800289218 /* JSONParseable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseable.swift; sourceTree = "<group>"; };
+		FB06E96E2007469800289218 /* String+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+JSON.swift"; sourceTree = "<group>"; };
+		FB06E96F2007469800289218 /* Float+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+JSON.swift"; sourceTree = "<group>"; };
+		FB06E9702007469800289218 /* Array+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+JSON.swift"; sourceTree = "<group>"; };
+		FB06E9712007469800289218 /* JSONError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
+		FB06E9722007469800289218 /* URL+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+JSON.swift"; sourceTree = "<group>"; };
+		FB06E983200746A200289218 /* JSONParseTransformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseTransformable.swift; sourceTree = "<group>"; };
+		FB06E984200746A200289218 /* JSONParseablePrimitive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseablePrimitive.swift; sourceTree = "<group>"; };
+		FB06E985200746A200289218 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		FB06E986200746A200289218 /* Double+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+JSON.swift"; sourceTree = "<group>"; };
+		FB06E987200746A200289218 /* Bool+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+JSON.swift"; sourceTree = "<group>"; };
+		FB06E988200746A200289218 /* Int+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+JSON.swift"; sourceTree = "<group>"; };
+		FB06E989200746A200289218 /* JSONParseRawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseRawRepresentable.swift; sourceTree = "<group>"; };
+		FB06E98A200746A200289218 /* JSONParseable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParseable.swift; sourceTree = "<group>"; };
+		FB06E98B200746A200289218 /* String+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+JSON.swift"; sourceTree = "<group>"; };
+		FB06E98C200746A200289218 /* Float+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+JSON.swift"; sourceTree = "<group>"; };
+		FB06E98D200746A200289218 /* Array+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+JSON.swift"; sourceTree = "<group>"; };
+		FB06E98E200746A200289218 /* JSONError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
+		FB06E98F200746A200289218 /* URL+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+JSON.swift"; sourceTree = "<group>"; };
+		FB06E99D200746EC00289218 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		FB06E99E200746EC00289218 /* AnyErrorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnyErrorKit.framework; path = Carthage/Build/iOS/AnyErrorKit.framework; sourceTree = "<group>"; };
+		FB06E9A12007470300289218 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/tvOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		FB06E9A22007470300289218 /* AnyErrorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnyErrorKit.framework; path = Carthage/Build/tvOS/AnyErrorKit.framework; sourceTree = "<group>"; };
+		FB06E9A52007471300289218 /* AnyErrorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnyErrorKit.framework; path = Carthage/Build/Mac/AnyErrorKit.framework; sourceTree = "<group>"; };
+		FB06E9A62007471300289218 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		FBADD6E6200512CA00985CF1 /* JSONParsing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONParsing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBADD6E8200512CA00985CF1 /* JSONParsing_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONParsing_tvOS.h; sourceTree = "<group>"; };
 		FBADD6E9200512CA00985CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBADD6F3200512DC00985CF1 /* JSONParsing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONParsing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBADD6F5200512DC00985CF1 /* JSONParsing_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONParsing_macOS.h; sourceTree = "<group>"; };
 		FBADD6F6200512DC00985CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBADD9D62006171900985CF1 /* AnyErrorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnyErrorKit.framework; path = Carthage/Build/tvOS/AnyErrorKit.framework; sourceTree = "<group>"; };
-		FBADD9D92006175600985CF1 /* AnyErrorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnyErrorKit.framework; path = Carthage/Build/Mac/AnyErrorKit.framework; sourceTree = "<group>"; };
 		FBB3F1942003BAFD00994D2F /* JSONParsing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONParsing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB3F1972003BAFD00994D2F /* JSONParsing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONParsing.h; sourceTree = "<group>"; };
 		FBB3F1982003BAFD00994D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,8 +112,6 @@
 		FBB3F1AC2003BB4E00994D2F /* Array+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+JSON.swift"; sourceTree = "<group>"; };
 		FBB3F1AD2003BB4E00994D2F /* JSONError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
 		FBB3F1AE2003BB4E00994D2F /* URL+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+JSON.swift"; sourceTree = "<group>"; };
-		FBB3F1BD2003BE5000994D2F /* AnyErrorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnyErrorKit.framework; path = Carthage/Build/iOS/AnyErrorKit.framework; sourceTree = "<group>"; };
-		FBB3F1C02003BFF200994D2F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBADD9D72006171900985CF1 /* AnyErrorKit.framework in Frameworks */,
-				FBADD9D52006171800985CF1 /* SwiftyJSON.framework in Frameworks */,
+				FB06E9A32007470300289218 /* SwiftyJSON.framework in Frameworks */,
+				FB06E9A42007470300289218 /* AnyErrorKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,8 +128,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBADD9DA2006175700985CF1 /* AnyErrorKit.framework in Frameworks */,
-				FBADD9D82006175600985CF1 /* SwiftyJSON.framework in Frameworks */,
+				FB06E9A72007471400289218 /* AnyErrorKit.framework in Frameworks */,
+				FB06E9A82007471400289218 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,17 +137,90 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBADD9D32006170100985CF1 /* SwiftyJSON.framework in Frameworks */,
-				FBADD9D42006170100985CF1 /* AnyErrorKit.framework in Frameworks */,
+				FB06E99F200746EC00289218 /* SwiftyJSON.framework in Frameworks */,
+				FB06E9A0200746EC00289218 /* AnyErrorKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB06E9632007469800289218 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FB06E9642007469800289218 /* Classes */,
+			);
+			path = Source;
+			sourceTree = SOURCE_ROOT;
+		};
+		FB06E9642007469800289218 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FB06E9652007469800289218 /* JSONParsing */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FB06E9652007469800289218 /* JSONParsing */ = {
+			isa = PBXGroup;
+			children = (
+				FB06E9662007469800289218 /* JSONParseTransformable.swift */,
+				FB06E9672007469800289218 /* JSONParseablePrimitive.swift */,
+				FB06E9682007469800289218 /* JSON.swift */,
+				FB06E9692007469800289218 /* Double+JSON.swift */,
+				FB06E96A2007469800289218 /* Bool+JSON.swift */,
+				FB06E96B2007469800289218 /* Int+JSON.swift */,
+				FB06E96C2007469800289218 /* JSONParseRawRepresentable.swift */,
+				FB06E96D2007469800289218 /* JSONParseable.swift */,
+				FB06E96E2007469800289218 /* String+JSON.swift */,
+				FB06E96F2007469800289218 /* Float+JSON.swift */,
+				FB06E9702007469800289218 /* Array+JSON.swift */,
+				FB06E9712007469800289218 /* JSONError.swift */,
+				FB06E9722007469800289218 /* URL+JSON.swift */,
+			);
+			path = JSONParsing;
+			sourceTree = "<group>";
+		};
+		FB06E980200746A200289218 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FB06E981200746A200289218 /* Classes */,
+			);
+			path = Source;
+			sourceTree = SOURCE_ROOT;
+		};
+		FB06E981200746A200289218 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FB06E982200746A200289218 /* JSONParsing */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FB06E982200746A200289218 /* JSONParsing */ = {
+			isa = PBXGroup;
+			children = (
+				FB06E983200746A200289218 /* JSONParseTransformable.swift */,
+				FB06E984200746A200289218 /* JSONParseablePrimitive.swift */,
+				FB06E985200746A200289218 /* JSON.swift */,
+				FB06E986200746A200289218 /* Double+JSON.swift */,
+				FB06E987200746A200289218 /* Bool+JSON.swift */,
+				FB06E988200746A200289218 /* Int+JSON.swift */,
+				FB06E989200746A200289218 /* JSONParseRawRepresentable.swift */,
+				FB06E98A200746A200289218 /* JSONParseable.swift */,
+				FB06E98B200746A200289218 /* String+JSON.swift */,
+				FB06E98C200746A200289218 /* Float+JSON.swift */,
+				FB06E98D200746A200289218 /* Array+JSON.swift */,
+				FB06E98E200746A200289218 /* JSONError.swift */,
+				FB06E98F200746A200289218 /* URL+JSON.swift */,
+			);
+			path = JSONParsing;
+			sourceTree = "<group>";
+		};
 		FBADD6E7200512CA00985CF1 /* JSONParsing tvOS */ = {
 			isa = PBXGroup;
 			children = (
+				FB06E9632007469800289218 /* Source */,
 				FBADD6E8200512CA00985CF1 /* JSONParsing_tvOS.h */,
 				FBADD6E9200512CA00985CF1 /* Info.plist */,
 			);
@@ -107,6 +230,7 @@
 		FBADD6F4200512DC00985CF1 /* JSONParsing macOS */ = {
 			isa = PBXGroup;
 			children = (
+				FB06E980200746A200289218 /* Source */,
 				FBADD6F5200512DC00985CF1 /* JSONParsing_macOS.h */,
 				FBADD6F6200512DC00985CF1 /* Info.plist */,
 			);
@@ -183,14 +307,12 @@
 		FBB3F1BC2003BE5000994D2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FBADD9D62006171900985CF1 /* AnyErrorKit.framework */,
-				FBADD9D92006175600985CF1 /* AnyErrorKit.framework */,
-				FBADD6DB20050E8600985CF1 /* AnyErrorKit_macOS.framework */,
-				FBADD6D920050E8500985CF1 /* AnyErrorKit_tvOS.framework */,
-				FBADD6DA20050E8500985CF1 /* SwiftyJSON.framework */,
-				FBB3F1C02003BFF200994D2F /* SwiftyJSON.framework */,
-				FBADD6D820050E8500985CF1 /* SwiftyJSON.framework */,
-				FBB3F1BD2003BE5000994D2F /* AnyErrorKit.framework */,
+				FB06E9A52007471300289218 /* AnyErrorKit.framework */,
+				FB06E9A62007471300289218 /* SwiftyJSON.framework */,
+				FB06E9A22007470300289218 /* AnyErrorKit.framework */,
+				FB06E9A12007470300289218 /* SwiftyJSON.framework */,
+				FB06E99E200746EC00289218 /* AnyErrorKit.framework */,
+				FB06E99D200746EC00289218 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -401,6 +523,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB06E97F2007469900289218 /* URL+JSON.swift in Sources */,
+				FB06E97D2007469900289218 /* Array+JSON.swift in Sources */,
+				FB06E97C2007469900289218 /* Float+JSON.swift in Sources */,
+				FB06E9762007469900289218 /* Double+JSON.swift in Sources */,
+				FB06E9792007469900289218 /* JSONParseRawRepresentable.swift in Sources */,
+				FB06E9782007469900289218 /* Int+JSON.swift in Sources */,
+				FB06E9752007469900289218 /* JSON.swift in Sources */,
+				FB06E97E2007469900289218 /* JSONError.swift in Sources */,
+				FB06E9772007469900289218 /* Bool+JSON.swift in Sources */,
+				FB06E97B2007469900289218 /* String+JSON.swift in Sources */,
+				FB06E9732007469900289218 /* JSONParseTransformable.swift in Sources */,
+				FB06E9742007469900289218 /* JSONParseablePrimitive.swift in Sources */,
+				FB06E97A2007469900289218 /* JSONParseable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +543,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB06E99C200746A200289218 /* URL+JSON.swift in Sources */,
+				FB06E99A200746A200289218 /* Array+JSON.swift in Sources */,
+				FB06E999200746A200289218 /* Float+JSON.swift in Sources */,
+				FB06E993200746A200289218 /* Double+JSON.swift in Sources */,
+				FB06E996200746A200289218 /* JSONParseRawRepresentable.swift in Sources */,
+				FB06E995200746A200289218 /* Int+JSON.swift in Sources */,
+				FB06E992200746A200289218 /* JSON.swift in Sources */,
+				FB06E99B200746A200289218 /* JSONError.swift in Sources */,
+				FB06E994200746A200289218 /* Bool+JSON.swift in Sources */,
+				FB06E998200746A200289218 /* String+JSON.swift in Sources */,
+				FB06E990200746A200289218 /* JSONParseTransformable.swift in Sources */,
+				FB06E991200746A200289218 /* JSONParseablePrimitive.swift in Sources */,
+				FB06E997200746A200289218 /* JSONParseable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +605,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.2;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -484,7 +632,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.2;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -507,7 +655,7 @@
 				INFOPLIST_FILE = "JSONParsing macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.JSONParsing-macOS";
 				PRODUCT_NAME = JSONParsing;
 				SDKROOT = macosx;
@@ -535,7 +683,7 @@
 				INFOPLIST_FILE = "JSONParsing macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.JSONParsing-macOS";
 				PRODUCT_NAME = JSONParsing;
 				SDKROOT = macosx;
@@ -675,6 +823,7 @@
 				);
 				INFOPLIST_FILE = JSONParsing/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nickelfox.JSONParsing;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -702,6 +851,7 @@
 				);
 				INFOPLIST_FILE = JSONParsing/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nickelfox.JSONParsing;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
