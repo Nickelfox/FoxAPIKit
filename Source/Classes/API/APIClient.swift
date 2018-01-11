@@ -17,6 +17,8 @@ private let AuthHeadersKey = "AuthHeadersKey"
 
 public let DefaultStatusCode = 0
 
+public typealias JSON = JSONParsing.JSON
+
 open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 
 	public var enableLogs = false
