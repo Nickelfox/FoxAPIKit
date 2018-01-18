@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AnyErrorKit'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'A Generic and Basic error handling library for iOS by Fox Labs.'
   s.description      = <<-DESC
 A Generic and Basic error handling library for iOS by Fox Labs. It contains utility methods for various classes in iOS.

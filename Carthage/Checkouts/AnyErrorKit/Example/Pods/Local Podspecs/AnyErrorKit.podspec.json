@@ -1,6 +1,6 @@
 {
   "name": "AnyErrorKit",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "summary": "A Generic and Basic error handling library for iOS by Fox Labs.",
   "description": "A Generic and Basic error handling library for iOS by Fox Labs. It contains utility methods for various classes in iOS.",
   "homepage": "https://github.com/Nickelfox/AnyErrorKit",
@@ -13,9 +13,12 @@
   },
   "source": {
     "git": "https://github.com/Nickelfox/AnyErrorKit.git",
-    "tag": "0.1.0"
+    "tag": "0.1.3"
   },
   "platforms": {
+    "osx": "10.9",
+    "tvos": "9.0",
+    "watchos": "2.0",
     "ios": "9.0"
   },
   "source_files": "Source/**/*"

@@ -1,19 +1,18 @@
 //
 //  AppDelegate.swift
-//  JSONParsing-Example
+//  AnyErrorKit-Example
 //
-//  Created by Ravindra Soni on 26/07/17.
-//  Copyright © 2017 Nickelfox Soni. All rights reserved.
+//  Created by Ravindra Soni on 18/01/18.
+//  Copyright © 2018 Nickelfox Soni. All rights reserved.
 //
 
 import UIKit
 import AnyErrorKit
 
-struct SomeError: AnyError {
-	var code: Int
-	var domain: String
-	var message: String
-	
+class SomeError: AnyError {
+	var code: Int  = 0
+	var domain: String = "Error"
+	var message: String = "Error"
 }
 
 @UIApplicationMain
@@ -24,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
-		
 		return true
 	}
 

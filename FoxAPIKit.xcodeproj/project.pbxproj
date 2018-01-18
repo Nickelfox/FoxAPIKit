@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E3A82FF82010B9A7000216C2 /* FoxAPIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E3A82FF62010B9A7000216C2 /* FoxAPIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3A830072010B9C6000216C2 /* FoxAPIKit_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = E3A830052010B9C6000216C2 /* FoxAPIKit_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3A830182010BDA4000216C2 /* JSONParsing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A830162010BDA4000216C2 /* JSONParsing.framework */; };
+		E3A830192010BDA4000216C2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A830172010BDA4000216C2 /* Alamofire.framework */; };
+		E3A8301C2010BDBB000216C2 /* JSONParsing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A8301A2010BDBB000216C2 /* JSONParsing.framework */; };
+		E3A8301D2010BDBB000216C2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A8301B2010BDBB000216C2 /* Alamofire.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E3A82FF32010B9A7000216C2 /* FoxAPIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FoxAPIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3A82FF62010B9A7000216C2 /* FoxAPIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoxAPIKit.h; sourceTree = "<group>"; };
+		E3A82FF72010B9A7000216C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3A830032010B9C6000216C2 /* FoxAPIKit_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FoxAPIKit_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3A830052010B9C6000216C2 /* FoxAPIKit_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoxAPIKit_tvOS.h; sourceTree = "<group>"; };
+		E3A830062010B9C6000216C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3A8300C2010BA24000216C2 /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Alamofire.framework.dSYM; path = ../Carthage/Build/iOS/Alamofire.framework.dSYM; sourceTree = "<group>"; };
+		E3A8300D2010BA24000216C2 /* JSONParsing.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = JSONParsing.framework.dSYM; path = ../Carthage/Build/iOS/JSONParsing.framework.dSYM; sourceTree = "<group>"; };
+		E3A830112010BA63000216C2 /* JSONParsing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSONParsing.framework; path = ../Carthage/Build/tvOS/JSONParsing.framework; sourceTree = "<group>"; };
+		E3A830122010BA63000216C2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/tvOS/Alamofire.framework; sourceTree = "<group>"; };
+		E3A830162010BDA4000216C2 /* JSONParsing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSONParsing.framework; path = Carthage/Build/iOS/JSONParsing.framework; sourceTree = "<group>"; };
+		E3A830172010BDA4000216C2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		E3A8301A2010BDBB000216C2 /* JSONParsing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSONParsing.framework; path = Carthage/Build/tvOS/JSONParsing.framework; sourceTree = "<group>"; };
+		E3A8301B2010BDBB000216C2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/tvOS/Alamofire.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3A82FEF2010B9A7000216C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3A830182010BDA4000216C2 /* JSONParsing.framework in Frameworks */,
+				E3A830192010BDA4000216C2 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3A82FFF2010B9C6000216C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3A8301C2010BDBB000216C2 /* JSONParsing.framework in Frameworks */,
+				E3A8301D2010BDBB000216C2 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E3A82FE92010B9A6000216C2 = {
+			isa = PBXGroup;
+			children = (
+				E3A82FF52010B9A7000216C2 /* FoxAPIKit */,
+				E3A830042010B9C6000216C2 /* FoxAPIKit tvOS */,
+				E3A82FF42010B9A7000216C2 /* Products */,
+				E3A8300B2010BA23000216C2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E3A82FF42010B9A7000216C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3A82FF32010B9A7000216C2 /* FoxAPIKit.framework */,
+				E3A830032010B9C6000216C2 /* FoxAPIKit_tvOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3A82FF52010B9A7000216C2 /* FoxAPIKit */ = {
+			isa = PBXGroup;
+			children = (
+				E3A82FF62010B9A7000216C2 /* FoxAPIKit.h */,
+				E3A82FF72010B9A7000216C2 /* Info.plist */,
+			);
+			path = FoxAPIKit;
+			sourceTree = "<group>";
+		};
+		E3A830042010B9C6000216C2 /* FoxAPIKit tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				E3A830052010B9C6000216C2 /* FoxAPIKit_tvOS.h */,
+				E3A830062010B9C6000216C2 /* Info.plist */,
+			);
+			path = "FoxAPIKit tvOS";
+			sourceTree = "<group>";
+		};
+		E3A8300B2010BA23000216C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3A830122010BA63000216C2 /* Alamofire.framework */,
+				E3A830172010BDA4000216C2 /* Alamofire.framework */,
+				E3A8301B2010BDBB000216C2 /* Alamofire.framework */,
+				E3A830112010BA63000216C2 /* JSONParsing.framework */,
+				E3A830162010BDA4000216C2 /* JSONParsing.framework */,
+				E3A8301A2010BDBB000216C2 /* JSONParsing.framework */,
+				E3A8300C2010BA24000216C2 /* Alamofire.framework.dSYM */,
+				E3A8300D2010BA24000216C2 /* JSONParsing.framework.dSYM */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E3A82FF02010B9A7000216C2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3A82FF82010B9A7000216C2 /* FoxAPIKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3A830002010B9C6000216C2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3A830072010B9C6000216C2 /* FoxAPIKit_tvOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E3A82FF22010B9A7000216C2 /* FoxAPIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3A82FFB2010B9A7000216C2 /* Build configuration list for PBXNativeTarget "FoxAPIKit" */;
+			buildPhases = (
+				E3A82FEE2010B9A7000216C2 /* Sources */,
+				E3A82FEF2010B9A7000216C2 /* Frameworks */,
+				E3A82FF02010B9A7000216C2 /* Headers */,
+				E3A82FF12010B9A7000216C2 /* Resources */,
+				E3A830102010BA29000216C2 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FoxAPIKit;
+			productName = FoxAPIKit;
+			productReference = E3A82FF32010B9A7000216C2 /* FoxAPIKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E3A830022010B9C6000216C2 /* FoxAPIKit tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3A830082010B9C6000216C2 /* Build configuration list for PBXNativeTarget "FoxAPIKit tvOS" */;
+			buildPhases = (
+				E3A82FFE2010B9C6000216C2 /* Sources */,
+				E3A82FFF2010B9C6000216C2 /* Frameworks */,
+				E3A830002010B9C6000216C2 /* Headers */,
+				E3A830012010B9C6000216C2 /* Resources */,
+				E3A830152010BA68000216C2 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FoxAPIKit tvOS";
+			productName = "FoxAPIKit tvOS";
+			productReference = E3A830032010B9C6000216C2 /* FoxAPIKit_tvOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3A82FEA2010B9A6000216C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Ravindra Soni";
+				TargetAttributes = {
+					E3A82FF22010B9A7000216C2 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					E3A830022010B9C6000216C2 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E3A82FED2010B9A6000216C2 /* Build configuration list for PBXProject "FoxAPIKit" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E3A82FE92010B9A6000216C2;
+			productRefGroup = E3A82FF42010B9A7000216C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3A82FF22010B9A7000216C2 /* FoxAPIKit */,
+				E3A830022010B9C6000216C2 /* FoxAPIKit tvOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3A82FF12010B9A7000216C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3A830012010B9C6000216C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E3A830102010BA29000216C2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/JSONParsing.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		E3A830152010BA68000216C2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/JSONParsing.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3A82FEE2010B9A7000216C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3A82FFE2010B9C6000216C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E3A82FF92010B9A7000216C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E3A82FFA2010B9A7000216C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E3A82FFC2010B9A7000216C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = FoxAPIKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickelfox.FoxAPIKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3A82FFD2010B9A7000216C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = FoxAPIKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickelfox.FoxAPIKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E3A830092010B9C6000216C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "FoxAPIKit tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.FoxAPIKit-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		E3A8300A2010B9C6000216C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NY45473NT8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "FoxAPIKit tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.FoxAPIKit-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3A82FED2010B9A6000216C2 /* Build configuration list for PBXProject "FoxAPIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3A82FF92010B9A7000216C2 /* Debug */,
+				E3A82FFA2010B9A7000216C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3A82FFB2010B9A7000216C2 /* Build configuration list for PBXNativeTarget "FoxAPIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3A82FFC2010B9A7000216C2 /* Debug */,
+				E3A82FFD2010B9A7000216C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3A830082010B9C6000216C2 /* Build configuration list for PBXNativeTarget "FoxAPIKit tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3A830092010B9C6000216C2 /* Debug */,
+				E3A8300A2010B9C6000216C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3A82FEA2010B9A6000216C2 /* Project object */;
+}

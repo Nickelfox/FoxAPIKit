@@ -1,9 +1,9 @@
 PODS:
-  - AnyErrorKit (0.1.0)
-  - JSONParsing (0.1.0):
-    - AnyErrorKit (~> 0.1.0)
-    - SwiftyJSON (~> 3.1)
-  - SwiftyJSON (3.1.4)
+  - AnyErrorKit (0.1.4)
+  - JSONParsing (0.1.8):
+    - AnyErrorKit (~> 0.1.4)
+    - SwiftyJSON (~> 4.0.0)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - JSONParsing (from `../`)
@@ -13,9 +13,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AnyErrorKit: 7ae07b01bbad1333910a2c1dccda8afc8cea6b65
-  JSONParsing: 37779568655a2a56cab73ee0a1d0c324728d8d89
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  AnyErrorKit: 6083091402347e82158c4e6e565680bdd4d1928c
+  JSONParsing: a5534cf36a3c6625beaee1dc08f47819b0c38c97
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
 PODFILE CHECKSUM: bdf66bd1d32fd93dcfd95f4d1fb0c2fedc29cadb
 

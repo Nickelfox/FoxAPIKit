@@ -1,6 +1,6 @@
 {
   "name": "JSONParsing",
-  "version": "0.1.0",
+  "version": "0.1.8",
   "summary": "A wrapper over SwiftyJSON for handling parsing json objects for iOS by Fox Labs.",
   "description": "A wrapper over SwiftyJSON for handling parsing json objects for iOS by Fox Labs.. It contains utility methods for various classes in iOS.",
   "homepage": "https://github.com/Nickelfox/JSONParsing",
@@ -13,18 +13,21 @@
   },
   "source": {
     "git": "https://github.com/Nickelfox/JSONParsing.git",
-    "tag": "0.1.0"
+    "tag": "0.1.8"
   },
   "platforms": {
+    "osx": "10.9",
+    "tvos": "9.0",
+    "watchos": "2.0",
     "ios": "9.0"
   },
   "source_files": "Source/**/*",
   "dependencies": {
     "SwiftyJSON": [
-      "~> 3.1"
+      "~> 4.0.0"
     ],
     "AnyErrorKit": [
-      "~> 0.1.0"
+      "~> 0.1.4"
     ]
   }
 }

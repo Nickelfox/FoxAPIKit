@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  JSONParsing-Example
+//  AnyErrorKit-Example
 //
-//  Created by Ravindra Soni on 26/07/17.
-//  Copyright © 2017 Nickelfox Soni. All rights reserved.
+//  Created by Ravindra Soni on 18/01/18.
+//  Copyright © 2018 Nickelfox Soni. All rights reserved.
 //
 
 import UIKit

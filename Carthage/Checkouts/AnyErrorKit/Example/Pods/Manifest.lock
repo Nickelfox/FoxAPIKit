@@ -1,5 +1,5 @@
 PODS:
-  - AnyErrorKit (0.1.0)
+  - AnyErrorKit (0.1.3)
 
 DEPENDENCIES:
   - AnyErrorKit (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AnyErrorKit: f79699f13f11bd1c45400237ed3f2d828d18b909
+  AnyErrorKit: dc69c7e3e735ee9b68c8c99cb68f07d65d25365c
 
 PODFILE CHECKSUM: 27a7deb2b572b8cad945f7040a4c02a53a2221b3
 
