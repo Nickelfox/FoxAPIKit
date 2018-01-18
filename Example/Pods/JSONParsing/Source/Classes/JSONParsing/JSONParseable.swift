@@ -8,6 +8,12 @@
 
 import SwiftyJSON
 
+extension JSON {
+	public func value<T: JSONParseable>() throws -> T {
+		return try T.parse(self)
+	}
+}
+
 public protocol JSONParseable {
 	static func parse(_ json: JSON) throws -> Self
 }

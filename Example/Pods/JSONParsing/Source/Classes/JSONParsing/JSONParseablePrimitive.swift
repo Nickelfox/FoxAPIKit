@@ -16,18 +16,6 @@ public protocol JSONParseablePrimitive: JSONParseable {
 
 public extension JSONParseablePrimitive {
 	
-	private static func optionalValue(_ json: JSON) -> Self? {
-		if json.type == .number {
-			return Self.transform(json.object as! NSNumber)
-		} else if json.type == .string {
-			return Self.transform(json.object as! String)
-		} else if json.type == .bool {
-			return Self.transform(NSNumber(value: json.object as! Bool))
-		} else {
-			return nil
-		}
-	}
-	
 	public static func parse(_ json: JSON) throws -> Self {
 		if let error = json.error {
 			throw error
@@ -38,8 +26,20 @@ public extension JSONParseablePrimitive {
 		return value
 	}
 	
-	static func forceValue(_ json: JSON) -> Self {
+	fileprivate static func forceValue(_ json: JSON) -> Self {
 		return Self.transform(json)
+	}
+	
+	private static func optionalValue(_ json: JSON) -> Self? {
+		if json.type == .number {
+			return Self.transform(json.object as! NSNumber)
+		} else if json.type == .string {
+			return Self.transform(json.object as! String)
+		} else if json.type == .bool {
+			return Self.transform(NSNumber(value: json.object as! Bool))
+		} else {
+			return nil
+		}
 	}
 	
 }

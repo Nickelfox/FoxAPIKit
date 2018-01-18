@@ -99,11 +99,13 @@ extension PaginationUIManager {
 	fileprivate func removeCustomPullToRefreshView() {
 		self.pullToRefreshView = nil
 	}
-
+	
 	@objc fileprivate func handleRefresh() {
-		self.refresh { }
+		self.refresh {
+			
+		}
 	}
-
+	
 	fileprivate func refresh(completion: @escaping () -> Void) {
 		if self.isLoading {
 			self.endRefreshing()
@@ -147,17 +149,10 @@ extension PaginationUIManager {
 	fileprivate func showBottomLoader() {
 		guard let scrollView = self.scrollView, let loader = self.bottomLoader else { return }
 		scrollView.addSubview(loader)
-		var insets = scrollView.contentInset
-		insets.bottom = loader.frame.height
-		self.pullToRefreshView?.defaultContentInset = insets
 	}
 	
 	fileprivate func hideBottomLoader() {
-		guard let scrollView = self.scrollView else { return }
 		self.bottomLoader?.removeFromSuperview()
-		var insets = scrollView.contentInset
-		insets.bottom = 0
-		self.pullToRefreshView?.defaultContentInset = insets
 	}
 	
 	fileprivate func removeBottomLoader() {
@@ -215,6 +210,7 @@ extension PaginationUIManager {
 extension PaginationUIManager: PullToRefreshViewDelegate {
 	public func pull(toRefreshViewDidStartLoading view: PullToRefreshView!) {
 		self.load { }
+		self.pullToRefreshView?.finishLoading()
 	}
 	
 	public func pull(toRefreshViewDidFinishLoading view: PullToRefreshView!) {
@@ -226,7 +222,11 @@ extension PaginationUIManager: PullToRefreshViewDelegate {
 	}
 	
 	public func pull(_ view: SSPullToRefreshView!, didUpdateContentInset contentInset: UIEdgeInsets) {
-		
+		if self.hasMoreDataToLoad {
+			if let bottomLoader = self.bottomLoader {
+				self.scrollView?.contentInset.bottom = bottomLoader.frame.height
+			}
+		}
 	}
 	
 	public func pull(_ view: SSPullToRefreshView!, didTransitionTo toState: SSPullToRefreshViewState, from fromState: SSPullToRefreshViewState, animated: Bool) {
