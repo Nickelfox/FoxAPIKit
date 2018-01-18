@@ -20,7 +20,9 @@ public protocol PaginationRouter: Router {
 
 public protocol PaginationMetaDataProtocol: JSONParseable {}
 
-private let defaultPageSize: Int = 20
+public struct PaginatorDefaults {
+	public static let pageSize: Int = 20
+}
 
 public class Paginator<Element: Pageable, MetaData: PaginationMetaDataProtocol> {
 
@@ -35,7 +37,7 @@ public class Paginator<Element: Pageable, MetaData: PaginationMetaDataProtocol> 
     
 	public let limit: Int
 	
-	public init(limit: Int = defaultPageSize, paginationRouterBlock: @escaping PaginationRouterBlock) {
+	public init(limit: Int = PaginatorDefaults.pageSize, paginationRouterBlock: @escaping PaginationRouterBlock) {
 		self.currentIndex = 0
 		self.limit = limit
         self.paginationRouterBlock = paginationRouterBlock

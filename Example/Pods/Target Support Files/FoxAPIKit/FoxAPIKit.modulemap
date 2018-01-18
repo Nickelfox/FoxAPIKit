@@ -1,0 +1,6 @@
+framework module FoxAPIKit {
+  umbrella header "FoxAPIKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -14,8 +14,10 @@ public struct PageInfo<T> {
 	public var resourceFetcher: AdvancePaginator<T>
 }
 
-private let defaultPageLimit = 20
-private let firstIndex = 1
+public struct AdvancePaginatorDefaults {
+	public static var limit = 20
+	public static var firstIndex = 1
+}
 
 open class AdvancePaginator<T> {
 
@@ -38,7 +40,8 @@ open class AdvancePaginator<T> {
 
 	// MARK: Initializer
 
-	public init(initialIndex: Int = firstIndex, pageLimit: Int = defaultPageLimit) {
+	public init(initialIndex: Int = AdvancePaginatorDefaults.firstIndex,
+				pageLimit: Int = AdvancePaginatorDefaults.limit) {
 		self.initialIndex = initialIndex
 		self.pageLimit = pageLimit
 		self.currentPage = initialIndex
