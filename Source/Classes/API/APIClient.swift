@@ -219,7 +219,7 @@ extension APIClient {
 //MARK: Multipart Request
 extension APIClient {
 	
-	func multipartRequest<T: JSONParseable> (
+	public func multipartRequest<T: JSONParseable> (
 		_ router: Router,
 		multipartFormData: @escaping (MultipartFormData) -> Void,
 		completion: @escaping (_ result: APIResult<T>) -> Void) {
