@@ -171,6 +171,7 @@ extension APIClient {
 		//Reachability Check
 		if !self.isNetworkReachable {
 			completionHandler(.failure(APIClientError.noInternet))
+            return
 		}
 
 		if self.enableLogs {

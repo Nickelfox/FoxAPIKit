@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FoxAPIKit'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'A wrapper over Alamofire for handling APIs for iOS by Fox Labs.'
   s.description      = <<-DESC
 A wrapper over Alamofire for handling APIs for iOS by Fox Labs. It contains utility methods for various classes in iOS.
@@ -21,6 +21,7 @@ A wrapper over Alamofire for handling APIs for iOS by Fox Labs. It contains util
   s.osx.deployment_target = "10.10"
   s.tvos.deployment_target = "9.0"
   s.ios.deployment_target = '9.0'
+  s.watchos.deployment_target = "2.0"
 
   s.source_files = 'Source/**/*'
   s.dependency 'Alamofire', '~> 4.4'
