@@ -43,7 +43,7 @@ extension Router {
 		}
 		
 		var parameters: [String: Any]?
-		if self.method == .post || self.method == .patch || self.method == .put {
+		if self.method == .post || self.method == .patch || self.method == .put || self.method == .delete {
 			do {
 				request.httpBody = try JSONSerialization.data(withJSONObject: self.params, options: JSONSerialization.WritingOptions())
 			} catch {
