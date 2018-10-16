@@ -46,7 +46,7 @@ public extension JSONParseablePrimitive {
 
 // Keeping this operator explicitely for Primitive Transofrmable types
 postfix operator ^!
-public postfix func ^! <T: JSONParseablePrimitive> (json: JSON) -> T! {
+public postfix func ^! <T: JSONParseablePrimitive> (json: JSON) -> T {
 	return T.forceValue(json)
 }
 

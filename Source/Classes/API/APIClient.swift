@@ -127,12 +127,13 @@ extension APIClient {
 					print("Response at Url: \(urlRouter.url.absoluteString)")
 					print("\(String(data: data, encoding: .utf8) ?? ""))")
 				}
-				var error: NSError?
-				let json = JSON.init(data: data, options: .allowFragments, error: &error)
-				if error != nil {
-					completionHandler(.failure(APIClientError.errorReadingUrl(urlRouter.url)))
-					return
-				}
+//                var error: NSError?
+//                let json = JSON.init(data: data, options: .allowFragments, error: &error)
+                let json = try JSON(data: data, options: JSONSerialization.ReadingOptions.allowFragments)
+//                if error != nil {
+//                    completionHandler(.failure(APIClientError.errorReadingUrl(urlRouter.url)))
+//                    return
+//                }
 				let result: T = try self.parse(json, router: urlRouter, 200)
 				completionHandler(.success(result))
 			} catch let error as AnyError {
@@ -204,7 +205,11 @@ extension APIClient {
 			let code = response.response?.statusCode ?? DefaultStatusCode
 			var json = JSON.null
 			if let data = response.data {
-				json = JSON(data: data)
+                do {
+                    json = try JSON(data: data)
+                } catch {
+                    completionHandler(.failure(error as NSError))
+                }
 			}
 			if 200...299 ~= code {
 				handleJson(json, code: code)

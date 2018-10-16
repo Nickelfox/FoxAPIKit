@@ -1,36 +1,45 @@
 PODS:
-  - Alamofire (4.6.0)
+  - Alamofire (4.7.3)
   - AnyErrorKit (0.1.4)
-  - FoxAPIKit (0.1.4):
-    - Alamofire (~> 4.4)
+  - FoxAPIKit (0.1.5):
+    - Alamofire (~> 4.7)
+    - AnyErrorKit (~> 0.1.4)
+    - JSONParsing (~> 0.2.0)
+    - SwiftyJSON (~> 4.0)
+  - JSONParsing (0.2.0):
     - AnyErrorKit (~> 0.1.1)
-    - JSONParsing (~> 0.1.3)
-    - SwiftyJSON (~> 3.1)
-  - JSONParsing (0.1.3):
-    - AnyErrorKit (~> 0.1.1)
-    - SwiftyJSON (~> 3.1)
+    - SwiftyJSON (~> 4.0)
   - PaginationUIManager (0.2):
     - SSPullToRefresh (~> 1.3)
   - SSPullToRefresh (1.3.0)
-  - SwiftyJSON (3.1.4)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - FoxAPIKit (from `../`)
   - PaginationUIManager (~> 0.1)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AnyErrorKit
+    - JSONParsing
+    - PaginationUIManager
+    - SSPullToRefresh
+    - SwiftyJSON
+
 EXTERNAL SOURCES:
   FoxAPIKit:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AnyErrorKit: 6083091402347e82158c4e6e565680bdd4d1928c
-  FoxAPIKit: aceb298749a5573313fa4f6ca45f8fb242782bbc
-  JSONParsing: 499e8b6454d4c59efa6f10c98523fefcf72e119c
+  FoxAPIKit: f3c313b7eb9127b150d9d3bd45c1302733aebd96
+  JSONParsing: bd99070967867c9b234e8cea7c1a4b3e5ba77b5b
   PaginationUIManager: ef5af488fe863d046940056cb39f97c6dc157cd0
   SSPullToRefresh: 3a47e116692b60e7da5a8c60418488133bcc9550
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
 PODFILE CHECKSUM: dc4f74cfe65d4094c16708605e26ca3de31da5ef
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0
