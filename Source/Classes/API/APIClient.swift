@@ -206,7 +206,7 @@ extension APIClient {
 			var json = JSON.null
 			if let data = response.data {
                 do {
-                    json = try JSON(data: data)
+                    json = try JSON(data: data, options: .allowFragments)
                 } catch {
                     completionHandler(.failure(error as NSError))
                 }
