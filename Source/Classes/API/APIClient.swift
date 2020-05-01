@@ -96,18 +96,23 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 	open func clearAuthHeaders() {
 		self.authHeaders = nil
 	}
+    
+    open func request<T: JSONParseable> (_ router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        let _ = self.requestInternal(router: router, completion: completion)
+    }
+
+    open func request<T: JSONParseable> (_ urlRouter: URLRouter, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        if urlRouter.url.isFileURL {
+            self.requestWithFileUrl(urlRouter, completion: completion)
+        } else {
+            self.request(urlRouter, completion: completion)
+        }
+    }
 	
 }
 
 //MARK: Offline Request
 extension APIClient {
-	public func request<T: JSONParseable> (_ urlRouter: URLRouter, completion: @escaping (_ result: APIResult<T>) -> Void) {
-		if urlRouter.url.isFileURL {
-			self.requestWithFileUrl(urlRouter, completion: completion)
-		} else {
-			self.request(urlRouter, completion: completion)
-		}
-	}
 	
 	fileprivate func requestWithFileUrl<T: JSONParseable> (_ urlRouter: URLRouter, completion: @escaping (_ result: APIResult<T>) -> Void) {
 		let completionHandler: (_ result: APIResult<T>) -> Void = { result in
@@ -148,10 +153,6 @@ extension APIClient {
 
 //MARK: JSON Request
 extension APIClient {
-
-	public func request<T: JSONParseable> (_ router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
-		let _ = self.requestInternal(router: router, completion: completion)
-	}
 
 	fileprivate func requestInternal<T: JSONParseable> (router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) -> Request {
 		
