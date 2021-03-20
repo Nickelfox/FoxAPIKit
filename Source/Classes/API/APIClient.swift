@@ -268,10 +268,6 @@ extension APIClient {
 	
 	fileprivate func parse<T: JSONParseable> (_ json: JSON, router: Router, _ statusCode: Int) throws -> T {
 		do {
-			//try parsing error response
-			if let errorResponse = try? V.parse(json, code: statusCode) {
-				throw errorResponse
-			}
 			var jsonToParse = json
 			//if map keypath is provided then try to map data at that keypath
 			if let keypathToMap = router.keypathToMap {
