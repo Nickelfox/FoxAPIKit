@@ -101,6 +101,10 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
         let _ = self.requestInternal(router: router, completion: completion)
     }
 
+    open func request<T: Codable> (_ router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        let _ = self.requestInternal(router: router, completion: completion)
+    }
+
     open func request<T: JSONParseable> (_ urlRouter: URLRouter, completion: @escaping (_ result: APIResult<T>) -> Void) {
         if urlRouter.url.isFileURL {
             self.requestWithFileUrl(urlRouter, completion: completion)
@@ -154,6 +158,14 @@ extension APIClient {
 //MARK: JSON Request
 extension APIClient {
 
+    fileprivate func requestInternal<T: Codable> (router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) -> Request {
+        
+        //Make request
+        let request = self.sessionManager.request(router)
+        self.makeRequest(request: request, router: router, completion: completion)
+        return request
+    }
+
 	fileprivate func requestInternal<T: JSONParseable> (router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) -> Request {
 		
 		//Make request
@@ -162,6 +174,64 @@ extension APIClient {
 		return request
 	}
 	
+    fileprivate func makeRequest<T: Codable> (request: DataRequest, router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        
+        let completionHandler: (_ result: APIResult<T>) -> Void = { result in
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        }
+        
+        //Reachability Check
+        if !self.isNetworkReachable {
+            completionHandler(.failure(APIClientError.noInternet))
+            return
+        }
+
+        if self.enableLogs {
+            request.log()
+        }
+        request.response { [weak self] response in
+            guard let this = self else {
+                completionHandler(.failure(APIClientError.unknown))
+                return
+            }
+            if this.enableLogs {
+                response.log()
+            }
+            
+            func handleJson(_ json: JSON, code: Int) {
+                if let httpResponse = response.response {
+                    //Parse Auth Headers
+                    this.parseAuthenticationHeaders(httpResponse)
+                }
+                do {
+                    let result: T = try this.parse(json, router: router, code)
+                    completionHandler(.success(result))
+                } catch let apiError as AnyError {
+                    completionHandler(.failure(apiError))
+                } catch {
+                    completionHandler(.failure(error as NSError))
+                }
+            }
+            
+            let code = response.response?.statusCode ?? DefaultStatusCode
+            var json = JSON.null
+            if let data = response.data {
+                do {
+                    json = try JSON(data: data, options: .allowFragments)
+                } catch {
+                    completionHandler(.failure(error as NSError))
+                }
+            }
+            if 200...299 ~= code {
+                handleJson(json, code: code)
+            } else {
+                completionHandler(.failure(this.parseError(json, code)))
+            }
+        }
+    }
+    
 	fileprivate func makeRequest<T: JSONParseable> (request: DataRequest, router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
 		
 		let completionHandler: (_ result: APIResult<T>) -> Void = { result in
@@ -266,6 +336,24 @@ extension APIClient {
 
 extension APIClient {
 	
+    fileprivate func parse<T: Codable> (_ json: JSON, router: Router, _ statusCode: Int) throws -> T {
+        do {
+            var jsonToParse = json
+            //if map keypath is provided then try to map data at that keypath
+            if let keypathToMap = router.keypathToMap {
+                jsonToParse = json.jsonAtKeyPath(keypath: keypathToMap)
+            }
+            let jsonData = try JSONSerialization.data(withJSONObject: jsonToParse.rawValue, options: .prettyPrinted)
+            return try JSONDecoder().decode(T.self, from: jsonData)
+        } catch let apiError as AnyError {
+            throw apiError
+        } catch let error as NSError {
+            throw error
+        } catch {
+            throw APIClientError.unknown
+        }
+    }
+    
 	fileprivate func parse<T: JSONParseable> (_ json: JSON, router: Router, _ statusCode: Int) throws -> T {
 		do {
 			var jsonToParse = json
