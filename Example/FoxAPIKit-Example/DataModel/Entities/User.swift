@@ -12,7 +12,8 @@ import FoxAPIKit
 
 public struct User {
 	let name: String
-	
+    let address: String
+    
 	static func fetchUser(completion: @escaping (APIResult<User>) -> Void) {
 		let router = APIRouter.user
 		FoxAPIClient.shared.request(router, completion: completion)
@@ -22,16 +23,26 @@ public struct User {
 		let router = APIRouter.userError
 		FoxAPIClient.shared.request(router, completion: completion)
 	}
+    
+    static func fetchCodableUser(completion: @escaping (APIResult<User>) -> Void) {
+        let router = APIRouter.user
+        FoxAPIClient.shared.request(router, completion: completion)
+    }
 	
 }
 
-extension User: JSONParseable {
-	public static func parse(_ json: JSON) throws -> User {
-		return try User(
-			name: json["name"]^
-		)
-	}
+//extension User: JSONParseable {
+//	public static func parse(_ json: JSON) throws -> User {
+//		return try User(
+//			name: json["name"]^
+//		)
+//	}
+//}
+
+extension User: Codable {
+    
+    public enum CodingKeys: String, CodingKey {
+        case name
+        case address = "user_address"
+    }
 }
-
-
-
