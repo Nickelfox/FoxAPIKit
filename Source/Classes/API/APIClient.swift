@@ -109,14 +109,13 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
         let _ = self.requestInternal(router: router, completion: completion)
     }
 
-    open func request<T: JSONParseable> (_ urlRouter: URLRouter, completion: @escaping (_ result: APIResult<T>) -> Void) {
+  open func request<T: JSONParseable> (_ urlRouter: URLRouter, completion: @escaping (_ result: APIResult<T>) -> Void) {
         if urlRouter.url.isFileURL {
             self.requestWithFileUrl(urlRouter, completion: completion)
         } else {
             self.request(urlRouter, completion: completion)
         }
     }
-	
 }
 
 //MARK: Offline Request
@@ -139,14 +138,7 @@ extension APIClient {
 				if self.enableLogs {
 					print("Response at Url: \(urlRouter.url.absoluteString)")
 					print("\(String(data: data, encoding: .utf8) ?? ""))")
-				}
-//                var error: NSError?
-//                let json = JSON.init(data: data, options: .allowFragments, error: &error)
                 let json = try JSON(data: data, options: JSONSerialization.ReadingOptions.allowFragments)
-//                if error != nil {
-//                    completionHandler(.failure(APIClientError.errorReadingUrl(urlRouter.url)))
-//                    return
-//                }
 				let result: T = try self.parse(json, router: urlRouter, 200)
 				completionHandler(.success(result))
 			} catch let error as AnyError {
@@ -170,7 +162,7 @@ extension APIClient {
         return request
     }
 
-	fileprivate func requestInternal<T: JSONParseable> (router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) -> Request {
+  fileprivate func requestInternal<T: JSONParseable> (router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) -> Request {
 		
 		//Make request
 		let request = self.sessionManager.request(router)
@@ -253,6 +245,7 @@ extension APIClient {
 		if self.enableLogs {
 			request.log()
 		}
+    
 		request.response { [weak self] response in
 			guard let this = self else {
 				completionHandler(.failure(APIClientError.unknown))
@@ -293,8 +286,6 @@ extension APIClient {
 			}
 		}
 	}
-
-
 }
 
 //MARK: Multipart Request
@@ -334,8 +325,6 @@ extension APIClient {
 			}
 		}
 	}
-
-
 }
 
 extension APIClient {
@@ -382,7 +371,6 @@ extension APIClient {
 			return APIClientError.unknown
 		}
 	}
-
 }
 
 extension Request {
@@ -398,10 +386,8 @@ extension Request {
 				print("Params: \(params)")
 			}
 		}
-	}
-	
+	}	
 }
-
 
 extension DefaultDataResponse {
 
@@ -416,6 +402,4 @@ extension DefaultDataResponse {
 			print("Data: \(utf8)")
 		}
 	}
-
-	
 }
