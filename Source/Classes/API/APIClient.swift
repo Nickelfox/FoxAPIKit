@@ -100,6 +100,10 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
     open func request<T: JSONParseable> (_ router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
         let _ = self.requestInternal(router: router, completion: completion)
     }
+    
+    open func requestForceJSONParseable<T: JSONParseable> (_ router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        let _ = self.requestInternal(router: router, completion: completion)
+    }
 
     open func request<T: Codable> (_ router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
         let _ = self.requestInternal(router: router, completion: completion)

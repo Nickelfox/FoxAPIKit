@@ -12,7 +12,8 @@ import FoxAPIKit
 
 public struct User {
 	let name: String
-	
+    let address: String
+    
 	static func fetchUser(completion: @escaping (APIResult<User>) -> Void) {
 		let router = APIRouter.user
 		FoxAPIClient.shared.request(router, completion: completion)
@@ -42,5 +43,6 @@ extension User: Codable {
     
     public enum CodingKeys: String, CodingKey {
         case name
+        case address = "user_address"
     }
 }
