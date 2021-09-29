@@ -138,6 +138,7 @@ extension APIClient {
 				if self.enableLogs {
 					print("Response at Url: \(urlRouter.url.absoluteString)")
 					print("\(String(data: data, encoding: .utf8) ?? ""))")
+                }
                 let json = try JSON(data: data, options: JSONSerialization.ReadingOptions.allowFragments)
 				let result: T = try self.parse(json, router: urlRouter, 200)
 				completionHandler(.success(result))
