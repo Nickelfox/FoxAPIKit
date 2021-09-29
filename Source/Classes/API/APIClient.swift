@@ -292,7 +292,8 @@ extension APIClient {
 //MARK: Multipart Request
 extension APIClient {
 	
-	public func multipartRequest<T: JSONParseable> (
+    
+    public func multipartRequest<T: JSONParseable> (
 		_ router: Router,
 		multipartFormData: @escaping (MultipartFormData) -> Void,
 		completion: @escaping (_ result: APIResult<T>) -> Void) {
@@ -304,6 +305,30 @@ extension APIClient {
 		)
 	}
 	
+    public func multipartRequestForceJSONParseable<T: JSONParseable> (
+        _ router: Router,
+        multipartFormData: @escaping (MultipartFormData) -> Void,
+        completion: @escaping (_ result: APIResult<T>) -> Void) {
+        
+        self.multipartRequestInternal(
+            router: router,
+            multipartFormData: multipartFormData,
+            completion: completion
+        )
+    }
+
+    public func multipartRequest<T: Codable> (
+        _ router: Router,
+        multipartFormData: @escaping (MultipartFormData) -> Void,
+        completion: @escaping (_ result: APIResult<T>) -> Void) {
+        
+        self.multipartRequestInternal(
+            router: router,
+            multipartFormData: multipartFormData,
+            completion: completion
+        )
+    }
+
 	fileprivate func multipartRequestInternal<T: JSONParseable> (router: Router, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (_ result: APIResult<T>) -> Void) {
 		let completionHandler: (_ result: APIResult<T>) -> Void = { result in
 			DispatchQueue.main.async {
@@ -326,6 +351,29 @@ extension APIClient {
 			}
 		}
 	}
+    
+    fileprivate func multipartRequestInternal<T: Codable> (router: Router, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        let completionHandler: (_ result: APIResult<T>) -> Void = { result in
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        }
+        
+        //Make request
+        self.sessionManager.upload(
+        multipartFormData: multipartFormData, with: router) { [weak self] encodingResult in
+            guard let this = self else {
+                completionHandler(.failure(APIClientError.unknown))
+                return
+            }
+            switch encodingResult {
+            case .success(let upload, _, _):
+                this.makeRequest(request: upload, router: router, completion: completion)
+            case .failure(let encodingError):
+                completionHandler(.failure(this.parseError(encodingError as NSError?)))
+            }
+        }
+    }
 }
 
 extension APIClient {
