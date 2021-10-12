@@ -7,6 +7,7 @@
 //
 
 import JSONParsing
+import Foundation
 
 public struct PageInfo<T> {
 	public var objects: [T]
