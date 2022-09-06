@@ -209,6 +209,7 @@ extension APIClient {
                     json = try JSON(data: data, options: .allowFragments)
                 } catch {
                     completionHandler(.failure(error as NSError))
+                    return
                 }
 			}
 			if 200...299 ~= code {
