@@ -22,7 +22,7 @@ A wrapper over Alamofire for handling APIs for iOS by Fox Labs. It contains util
   s.tvos.deployment_target = "9.0"
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'Source/**/*'
+  s.source_files = 'Sources/**/*'
   s.dependency 'Alamofire', '~> 4.7'
   s.dependency 'SwiftyJSON', '~> 4.0'
   s.dependency 'JSONParsing', '~> 0.2.0'

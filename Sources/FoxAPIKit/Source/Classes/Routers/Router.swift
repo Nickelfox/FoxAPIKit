@@ -8,6 +8,7 @@
 
 
 import Alamofire
+import Foundation
 
 public typealias HTTPMethod = Alamofire.HTTPMethod
 public typealias URLRequestConvertible = Alamofire.URLRequestConvertible
