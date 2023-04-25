@@ -156,3 +156,76 @@ enum MyAPIError: Error {
     case customError(message: String)
 }
 ```
+#### <i class="icon-file"></i>**API Client**
+The APIClient is a powerful and customizable HTTP client provided by FoxAPIKit that handles making API requests and handling responses in your Swift-based iOS applications. It provides a simple and convenient way to communicate with APIs and retrieve data from remote servers.
+
+```swift
+class MyAPIClient: APIClient<AuthHeaders, ErrorResponse> {
+    
+    static let shared = SSAPIClient()
+    
+    override init() {
+        super.init()
+        #if DEBUG
+        enableLogs = true
+        #else
+        enableLogs = false
+        #endif
+    }
+    
+    override func authenticationHeaders(response: HTTPURLResponse) -> AuthHeaders? {
+        return self.authHeaders
+    }
+}
+```
+#### <i class="icon-file"></i>**Authentication**
+If your API requires authentication, you can customize the headers of the API request by setting the headers property of the `APIClient` instance. For example:
+
+```swift
+// Set custom headers for authentication
+SSAPIClient.shared.authHeaders = AuthHeaders(token: <your_auth_token>)
+```
+You can update the headers at any time before making an API request to include any required authentication information.
+
+#### <i class="icon-file"></i>**APIRequest**
+Using APIClient we can finally request an API where router contain all the URL request and by requesting an API using `MyAPIClient` we get a result in as `APIResult` that return parseable `Value` and `error` as a response.
+
+```swift
+let router = MyAPIRouter.getUser(id: 0)
+MyAPIClient.shared.request(router) { (result: APIResult<User>) in
+    switch result {
+    case .success(let value):
+        // handle success response
+    case .failure(let anyError):
+        // handle failure response
+    }
+}
+```
+#### <i class="icon-file"></i>**Making Multipart Requests with APIClient**
+Here's an example of how you can use the APIClient class to make a multipart request to upload an image to a remote server:
+```swift
+let router = MyAPIRouter.uploadPhoto
+MyAPIClient.shared.multipartRequest(router) { formData in
+    if let image = UIImage(named: "example_image"),
+       let imageData = image.jpegData(compressionQuality: 0.5) {
+       let fileName = "profile_photo\(arc4random()).png"
+           formData.append(
+                    imageData,
+                    withName: "profile_photo",
+                    fileName: "user_photo.png",
+                    mimeType: "image/png"
+           )
+    }
+} completion: { (result: APIResult<AnyResponse>) in
+    switch result {
+    case .success(let value):
+         // handle success response
+    case .failure(let anyError):
+         // handle failure response
+    }        
+}
+```
+
+## Conclusion
+
+FoxAPIKit provide handful exprience to call APIs and reduce the development efforts while creating Network layer in your project.
