@@ -13,7 +13,7 @@ If you wish to integrate `JSONParsing` in your project, then make following chan
 platform :ios, '9.0'
 use_frameworks!
 target 'YourAppName' do
-pod 'FoxAPIKit', :git => 'https://github.com/Nickelfox/FoxAPIKit.git', :branch => 'develop'
+pod 'FoxAPIKit'
 end
 ```
 
@@ -29,7 +29,7 @@ Once you have your Swift package set up, adding ForAPIKit as a dependency is as 
 
 ```
 dependencies: [
-    .package(url: "https://github.com/Nickelfox/FoxAPIKit", .branch("develop"))
+    .package(url: "https://github.com/Nickelfox/FoxAPIKit", .branch("master"))
 ]
 ```
 
