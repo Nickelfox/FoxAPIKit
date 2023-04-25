@@ -29,3 +29,21 @@ extension ListResponse: JSONParseable {
         return listResponse
     }	
 }
+
+extension Array: JSONParseable where Element: JSONParseable {
+        
+    public static func parse(_ json: JSON) throws -> [Element] {
+        let jsonList = json.arrayValue
+
+        var array = Array()
+        for json in jsonList {
+            do {
+                let object = try Element.parse(json)
+                array.append(object)
+            } catch {
+                throw error
+            }
+        }
+        return array
+    }
+}

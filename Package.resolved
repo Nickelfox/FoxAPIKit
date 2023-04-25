@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "8dd85aee02e39dd280c75eef88ffdb86eed4b07b",
+          "version": "5.6.2"
+        }
+      },
+      {
+        "package": "AnyErrorKit",
+        "repositoryURL": "https://github.com/Nickelfox/AnyErrorKit",
+        "state": {
+          "branch": "develop",
+          "revision": "862b6ce06a4027a181d483bf43e7172d64851031",
+          "version": null
+        }
+      },
+      {
+        "package": "JSONParsing",
+        "repositoryURL": "https://github.com/Nickelfox/JSONParsing",
+        "state": {
+          "branch": "develop",
+          "revision": "a26873b4d023456b5cdfe19fb7da7759ccc004a8",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftyJSON",
+        "repositoryURL": "https://github.com/SwiftyJSON/SwiftyJSON.git",
+        "state": {
+          "branch": null,
+          "revision": "2b6054efa051565954e1d2b9da831680026cd768",
+          "version": "4.3.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

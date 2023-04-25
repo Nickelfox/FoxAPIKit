@@ -25,16 +25,24 @@ class ViewController: UIViewController {
 //			}
 //		}
 		
-		User.testUserError {  [weak self] result in
-			switch result {
-			case .success(let user):
-				self?.nameLabel.text = user.name
-			case .failure(let error):
-				self?.nameLabel.text = error.message
-			}
-			
-		}
+//		User.testUserError {  [weak self] result in
+//			switch result {
+//			case .success(let user):
+//				self?.nameLabel.text = user.name
+//			case .failure(let error):
+//				self?.nameLabel.text = error.message
+//			}
+//
+//		}
 	
+//        User.fetchCodableUser { result in
+//            switch result {
+//            case .success(let user):
+//                self.nameLabel.text = user.name
+//            case .failure(let error):
+//                print(error.message)
+//            }
+//        }
 	}
 	
 }
