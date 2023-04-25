@@ -228,4 +228,4 @@ MyAPIClient.shared.multipartRequest(router) { formData in
 
 ## Conclusion
 
-FoxAPIKit provide handful exprience to call APIs and reduce the development efforts while creating Network layer in your project.
+FoxAPIKit provide handful experience to call APIs and reduce the development efforts while creating Network layer in your project.
