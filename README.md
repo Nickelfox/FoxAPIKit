@@ -36,3 +36,12 @@ dependencies: [
 #### <i class="icon-pencil"></I>**Manually**
 If you don't want to use any dependency manager in your project, you can install this library manually too.
 Just download and add the `Sources` folder to your project.
+
+## Features
+
+- Router: A flexible and extensible router that allows you to define your API endpoints as Swift enums, making it easy to manage your API routes in a type-safe way.
+- APIClient: A powerful and customizable HTTP client that handles making API requests and handling responses, including handling authentication, headers, and query parameters.
+- Error Handling: FoxAPIKit provides a set of error handling utilities called [AnyErrorKit](https://github.com/Nickelfox/AnyErrorKit) that allow you to define and handle custom API errors, making it easy to manage errors returned from API responses.
+- APIRequest: A protocol that defines the structure of an API request, including the URL, HTTP method, headers, query parameters, and request body.
+- APIResponse: A protocol that defines the structure of an API response, including the HTTP status code, headers, and response body.
+- Parsing: [JSONParsing](https://github.com/Nickelfox/JSONParsing) is used to parse raw JSON and convert into `JSONParseable` or `Codable` type object.
