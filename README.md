@@ -104,3 +104,40 @@ enum MyAPIRouter: Router {
 }
 ```
 
+#### <i class="icon-file"></i>**JSONParsing**
+The `JSONParseable` or `Codable` protocol provided by FoxAPIKit allows you to easily create custom model objects in Swift from `JSON` data received from an API response. It simplifies the process of parsing and mapping JSON data to your model objects, making it efficient and convenient.
+```ruby
+// Confirm `JSONParseable` protocol
+struct User: JSONParseable {
+    
+    var id: Int
+    var name: String
+    var weight: Double?
+    var accounts: [String]
+    
+    static func parse(_ json: JSON) throws -> User {
+        return try User(
+            id: json["id"]^,
+            name: json["name"]^!,
+            weight: json["weight"]^?,
+            accounts: json["accounts"]^^
+        )
+    }
+}
+
+// Confirm `Codable` protocol
+struct User: Codable {
+    
+    var id: Int
+    var name: String
+    var weight: Double?
+    var accounts: [String]
+    
+    enum CodingKeys: CodingKey {
+        case id
+        case name
+        case weight
+        case accounts
+    }
+}
+```
