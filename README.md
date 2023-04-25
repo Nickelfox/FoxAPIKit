@@ -183,7 +183,7 @@ If your API requires authentication, you can customize the headers of the API re
 
 ```swift
 // Set custom headers for authentication
-SSAPIClient.shared.authHeaders = AuthHeaders(token: <your_auth_token>)
+MyAPIClient.shared.authHeaders = AuthHeaders(token: <your_auth_token>)
 ```
 You can update the headers at any time before making an API request to include any required authentication information.
 
