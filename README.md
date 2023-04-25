@@ -1,5 +1,5 @@
-# FLAPIClient
-API Client
+# FoxAPIKit
+FoxAPIKit is wrapper around [Alamofire](https://github.com/Alamofire/Alamofire) networking library written in swift that provides a set of tools for working with APIs, including a router, APIClient, error handling, and API request and response handling. It is designed to simplify the process of making API requests and handling responses in Swift-based iOS applications.
 
 ## Installation
 #### <i class="icon-file"></i>**CocoaPods**
