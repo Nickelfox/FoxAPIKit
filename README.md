@@ -45,3 +45,62 @@ Just download and add the `Sources` folder to your project.
 - APIRequest: A protocol that defines the structure of an API request, including the URL, HTTP method, headers, query parameters, and request body.
 - APIResponse: A protocol that defines the structure of an API response, including the HTTP status code, headers, and response body.
 - Parsing: [JSONParsing](https://github.com/Nickelfox/JSONParsing) is used to parse raw JSON and convert into `JSONParseable` or `Codable` type object.
+
+## Usage
+
+#### <i class="icon-file"></i>**Router**
+
+`Router` is the core component of FoxAPIKit and allows you to define your API endpoints as Swift enums. `Router` protocol confirms `URLRequestConvertible` that contain all the elements require to create a URLRequest. Here's an example of how you can define a router:
+```ruby
+import FoxAPIKit
+
+enum MyAPIRouter: Router {
+    case getUsers
+    case getUser(id: Int)
+    case createUser(name: String, email: String)
+    case updateUser(id: Int, name: String, email: String)
+    case deleteUser(id: Int)
+    
+    var path: String {
+        switch self {
+        case .getUsers:
+            return "/users"
+        case .getUser(let id):
+            return "/users/\(id)"
+        case .createUser, .updateUser:
+            return "/users"
+        case .deleteUser(let id):
+            return "/users/\(id)"
+        }
+    }
+    
+    var method: HTTPMethod {
+        switch self {
+        case .getUsers, .getUser:
+            return .get
+        case .createUser:
+            return .post
+        case .updateUser:
+            return .put
+        case .deleteUser:
+            return .delete
+        }
+    }
+    
+    var headers: [String: String]? {
+        // Define custom headers for each API endpoint if needed
+        return nil
+    }
+    
+    var queryParameters: [String: Any]? {
+        // Define query parameters for each API endpoint if needed
+        return nil
+    }
+    
+    var keypathToMap: String? { 
+        // Define query keypathToMap for each API endpoint if needed
+        return nil 
+    }
+}
+```
+
