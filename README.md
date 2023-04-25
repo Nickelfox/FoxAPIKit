@@ -51,7 +51,7 @@ Just download and add the `Sources` folder to your project.
 #### <i class="icon-file"></i>**Router**
 
 `Router` is the core component of FoxAPIKit and allows you to define your API endpoints as Swift enums. `Router` protocol confirms `URLRequestConvertible` that contain all the elements require to create a URLRequest. Here's an example of how you can define a router:
-```ruby
+```swift
 import FoxAPIKit
 
 enum MyAPIRouter: Router {
@@ -106,7 +106,9 @@ enum MyAPIRouter: Router {
 
 #### <i class="icon-file"></i>**JSONParsing**
 The `JSONParseable` or `Codable` protocol provided by FoxAPIKit allows you to easily create custom model objects in Swift from `JSON` data received from an API response. It simplifies the process of parsing and mapping JSON data to your model objects, making it efficient and convenient.
-```ruby
+```swift
+import JSONParsing
+
 // Confirm `JSONParseable` protocol
 struct User: JSONParseable {
     
@@ -139,5 +141,18 @@ struct User: Codable {
         case weight
         case accounts
     }
+}
+```
+#### <i class="icon-file"></i>**Error Handling**
+Error Handling
+The APIClient provides built-in error handling for common HTTP errors, such as invalid URLs, network errors, and server errors. Additionally, you can define and handle custom API errors using the APIError enum provided by FoxAPIKit. Here's an example:
+
+```swift
+import FoxAPIKit
+
+enum MyAPIError: Error {
+    case invalidResponse
+    case unauthorized
+    case customError(message: String)
 }
 ```
