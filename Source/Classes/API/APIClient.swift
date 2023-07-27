@@ -72,6 +72,8 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 		self.authHeaders = self.authenticationHeaders(response: response)
 	}
 
+	open func trackApiFailed(url: String, timeDiff: Int, size: Int) {}
+
 	//Override this method in the subclass to set auth headers from the responses.
 	open func authenticationHeaders (response: HTTPURLResponse) -> U? {
 		return nil
