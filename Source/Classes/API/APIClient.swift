@@ -230,6 +230,14 @@ extension APIClient {
             }
         }
     }
+
+	private func printRequest(router: Router) {
+        	print("\n⎾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾⏋\n\n🛜🛜---HTTP REQUEST---🛜🛜\n\n\(router.method) ::: \(router.baseUrl)\(router.path)\n\nHEADERS ::: \(router.headers.json) \n\nPARAMS ::: \(router.params.json)\n⎿______________________________________________________________________________________________________________________⏌\n\n")
+    	}
+
+    	private func printResponse(router: Router, response: DefaultDataResponse) {
+        	print("\n⎾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾⏋\n🛜🛜---HTTP RESPONSE---🛜🛜\n[\(router.method) ::: \(router.baseUrl)\(router.path)]\n\nRESPONSE :::\nn\(response.data?.prettyPrintedJsonString ?? NSString())\n⎿____________________________________________________________________________________________________________________⏌\n\n")
+    	}
     
 	fileprivate func makeRequest<T: JSONParseable> (request: DataRequest, router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
 		
@@ -246,7 +254,7 @@ extension APIClient {
 		}
 
 		if self.enableLogs {
-			request.log()
+			printRequest(router: router)
 		}
     
 		request.response { [weak self] response in
@@ -255,7 +263,7 @@ extension APIClient {
 				return
 			}
 			if this.enableLogs {
-				response.log()
+				self?.printResponse(router: router, response: response)
 			}
 			
 			func handleJson(_ json: JSON, code: Int) {
@@ -453,4 +461,24 @@ extension DefaultDataResponse {
 			print("Data: \(utf8)")
 		}
 	}
+}
+
+public extension Collection {
+    var json: String {
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: self, options: [.prettyPrinted])
+            return String(data: jsonData, encoding: .utf8) ?? ""
+        } catch {
+            return "json serialization error: \(error)"
+        }
+    }
+}
+
+public extension Data {
+    var prettyPrintedJsonString: NSString {
+        guard let object = try? JSONSerialization.jsonObject(with: self, options: []),
+              let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),
+              let prettyPrintedString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else { return NSString() }
+        return prettyPrintedString
+    }
 }
