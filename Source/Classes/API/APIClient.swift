@@ -100,16 +100,36 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
         self.authHeaders = nil
     }
     
+    open func request<T: JSONParseable> (_ router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        let _ = self.requestInternal(router: router, completion: completion)
+    }
+    
     open func request<T: JSONParseable> (_ router: Router) async throws -> T {
         try await self.requestInternal(router: router)
+    }
+    
+    open func requestForceJSONParseable<T: JSONParseable> (_ router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        let _ = self.requestInternal(router: router, completion: completion)
     }
     
     open func requestForceJSONParseable<T: JSONParseable> (_ router: Router) async throws -> T {
         try await self.requestInternal(router: router)
     }
     
+    open func request<T: Codable> (_ router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        let _ = self.requestInternal(router: router, completion: completion)
+    }
+    
     open func request<T: Codable> (_ router: Router) async throws -> T {
         try await self.requestInternal(router: router)
+    }
+    
+    open func request<T: JSONParseable> (_ urlRouter: URLRouter, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        if urlRouter.url.isFileURL {
+            self.requestWithFileUrl(urlRouter, completion: completion)
+        } else {
+            self.request(urlRouter, completion: completion)
+        }
     }
     
     open func request<T: JSONParseable> (_ urlRouter: URLRouter) async throws -> T {
@@ -120,6 +140,35 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 //MARK: Offline Request
 @available(iOS 13.0, *)
 extension APIClient {
+    fileprivate func requestWithFileUrl<T: JSONParseable> (_ urlRouter: URLRouter, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        let completionHandler: (_ result: APIResult<T>) -> Void = { result in
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        }
+        
+        if self.enableLogs {
+            print("Loading data from url: \(urlRouter.url.absoluteString)")
+        }
+        let queue: DispatchQueue = DispatchQueue(label: "url_load", attributes: [])
+        queue.async {
+            do {
+                let data = try Data(contentsOf: urlRouter.url)
+                if self.enableLogs {
+                    print("Response at Url: \(urlRouter.url.absoluteString)")
+                    print("\(String(data: data, encoding: .utf8) ?? ""))")
+                }
+                let json = try JSON(data: data, options: JSONSerialization.ReadingOptions.allowFragments)
+                let result: T = try self.parse(json, router: urlRouter, 200)
+                completionHandler(.success(result))
+            } catch let error as AnyError {
+                completionHandler(.failure(error))
+            } catch {
+                completionHandler(.failure(APIClientError.errorReadingUrl(urlRouter.url)))
+            }
+        }
+    }
+    
     fileprivate func requestWithFileUrl<T: JSONParseable> (_ urlRouter: URLRouter) async throws -> T {
         return try await withCheckedThrowingContinuation { continuation in
             if self.enableLogs {
@@ -147,16 +196,89 @@ extension APIClient {
 //MARK: JSON Request
 @available(iOS 13.0, *)
 extension APIClient {
+    
+    fileprivate func requestInternal<T: Codable> (router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) -> Request {
+        //Make request
+        let request = self.sessionManager.request(router)
+        self.makeRequest(request: request, router: router, completion: completion)
+        return request
+    }
+    
     fileprivate func requestInternal<T: Codable> (router: Router) async throws -> T {
         //Make request
         let request = self.sessionManager.request(router)
         return try await self.makeRequest(request: request, router: router)
     }
     
+    fileprivate func requestInternal<T: JSONParseable> (router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) -> Request {
+        //Make request
+        let request = self.sessionManager.request(router)
+        self.makeRequest(request: request, router: router, completion: completion)
+        return request
+    }
+    
     fileprivate func requestInternal<T: JSONParseable> (router: Router) async throws -> T {
         //Make request
         let request = self.sessionManager.request(router)
         return try await self.makeRequest(request: request, router: router)
+    }
+    
+    fileprivate func makeRequest<T: Codable> (request: DataRequest, router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        
+        let completionHandler: (_ result: APIResult<T>) -> Void = { result in
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        }
+        
+        //Reachability Check
+        if !self.isNetworkReachable {
+            completionHandler(.failure(APIClientError.noInternet))
+            return
+        }
+        
+        if self.enableLogs {
+            request.log()
+        }
+        request.response { [weak self] response in
+            guard let this = self else {
+                completionHandler(.failure(APIClientError.unknown))
+                return
+            }
+            if this.enableLogs {
+                response.log()
+            }
+            
+            func handleJson(_ json: JSON, code: Int) {
+                if let httpResponse = response.response {
+                    //Parse Auth Headers
+                    this.parseAuthenticationHeaders(httpResponse)
+                }
+                do {
+                    let result: T = try this.parse(json, router: router, code)
+                    completionHandler(.success(result))
+                } catch let apiError as AnyError {
+                    completionHandler(.failure(apiError))
+                } catch {
+                    completionHandler(.failure(error as NSError))
+                }
+            }
+            
+            let code = response.response?.statusCode ?? DefaultStatusCode
+            var json = JSON.null
+            if let data = response.data {
+                do {
+                    json = try JSON(data: data, options: .allowFragments)
+                } catch {
+                    completionHandler(.failure(error as NSError))
+                }
+            }
+            if 200...299 ~= code {
+                handleJson(json, code: code)
+            } else {
+                completionHandler(.failure(this.parseError(json, code)))
+            }
+        }
     }
     
     fileprivate func makeRequest<T: Codable> (request: DataRequest, router: Router) async throws -> T {
@@ -218,6 +340,65 @@ extension APIClient {
         print("\n⎾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾⏋\n🛜🛜---HTTP RESPONSE---🛜🛜\n[\(router.method) ::: \(router.baseUrl)\(router.path)]\n\nRESPONSE :::\nn\(response.data?.prettyPrintedJsonString ?? NSString())\n⎿____________________________________________________________________________________________________________________⏌\n\n")
     }
     
+    fileprivate func makeRequest<T: JSONParseable> (request: DataRequest, router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        
+        let completionHandler: (_ result: APIResult<T>) -> Void = { result in
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        }
+        
+        //Reachability Check
+        if !self.isNetworkReachable {
+            completionHandler(.failure(APIClientError.noInternet))
+            return
+        }
+        
+        if self.enableLogs {
+            printRequest(router: router)
+        }
+        
+        request.response { [weak self] response in
+            guard let this = self else {
+                completionHandler(.failure(APIClientError.unknown))
+                return
+            }
+            if this.enableLogs {
+                self?.printResponse(router: router, response: response)
+            }
+            
+            func handleJson(_ json: JSON, code: Int) {
+                if let httpResponse = response.response {
+                    //Parse Auth Headers
+                    this.parseAuthenticationHeaders(httpResponse)
+                }
+                do {
+                    let result: T = try this.parse(json, router: router, code)
+                    completionHandler(.success(result))
+                } catch let apiError as AnyError {
+                    completionHandler(.failure(apiError))
+                } catch {
+                    completionHandler(.failure(error as NSError))
+                }
+            }
+            
+            let code = response.response?.statusCode ?? DefaultStatusCode
+            var json = JSON.null
+            if let data = response.data {
+                do {
+                    json = try JSON(data: data, options: .allowFragments)
+                } catch {
+                    completionHandler(.failure(error as NSError))
+                }
+            }
+            if 200...299 ~= code {
+                handleJson(json, code: code)
+            } else {
+                completionHandler(.failure(this.parseError(json, code)))
+            }
+        }
+    }
+    
     fileprivate func makeRequest<T: JSONParseable> (request: DataRequest, router: Router) async throws -> T {
         
         return try await withCheckedThrowingContinuation { continuation in
@@ -271,16 +452,76 @@ extension APIClient {
 //MARK: Multipart Request
 @available(iOS 13.0, *)
 extension APIClient {
+    
+    public func multipartRequest<T: JSONParseable> (
+        _ router: Router,
+        multipartFormData: @escaping (MultipartFormData) -> Void,
+        completion: @escaping (_ result: APIResult<T>) -> Void) {
+        
+        self.multipartRequestInternal(
+            router: router,
+            multipartFormData: multipartFormData,
+            completion: completion
+        )
+    }
+    
     public func multipartRequest<T: JSONParseable> (_ router: Router, multipartFormData: @escaping (MultipartFormData) -> Void) async throws -> T {
         try await self.multipartRequestInternal(router: router, multipartFormData: multipartFormData)
+    }
+    
+    public func multipartRequestForceJSONParseable<T: JSONParseable> (
+        _ router: Router,
+        multipartFormData: @escaping (MultipartFormData) -> Void,
+        completion: @escaping (_ result: APIResult<T>) -> Void) {
+        
+        self.multipartRequestInternal(
+            router: router,
+            multipartFormData: multipartFormData,
+            completion: completion
+        )
     }
     
     public func multipartRequestForceJSONParseable<T: JSONParseable> (_ router: Router, multipartFormData: @escaping (MultipartFormData) -> Void) async throws -> T {
         try await self.multipartRequestInternal(router: router, multipartFormData: multipartFormData)
     }
     
+    public func multipartRequest<T: Codable> (
+        _ router: Router,
+        multipartFormData: @escaping (MultipartFormData) -> Void,
+        completion: @escaping (_ result: APIResult<T>) -> Void) {
+        
+        self.multipartRequestInternal(
+            router: router,
+            multipartFormData: multipartFormData,
+            completion: completion
+        )
+    }
+    
     public func multipartRequest<T: Codable> (_ router: Router, multipartFormData: @escaping (MultipartFormData) -> Void) async throws -> T {
         try await self.multipartRequestInternal(router: router, multipartFormData: multipartFormData)
+    }
+    
+    fileprivate func multipartRequestInternal<T: JSONParseable> (router: Router, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        let completionHandler: (_ result: APIResult<T>) -> Void = { result in
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        }
+        
+        //Make request
+        self.sessionManager.upload(
+        multipartFormData: multipartFormData, with: router) { [weak self] encodingResult in
+            guard let this = self else {
+                completionHandler(.failure(APIClientError.unknown))
+                return
+            }
+            switch encodingResult {
+            case .success(let upload, _, _):
+                this.makeRequest(request: upload, router: router, completion: completion)
+            case .failure(let encodingError):
+                completionHandler(.failure(this.parseError(encodingError as NSError?)))
+            }
+        }
     }
     
     fileprivate func multipartRequestInternal<T: JSONParseable> (router: Router, multipartFormData: @escaping (MultipartFormData) -> Void) async throws -> T {
@@ -302,6 +543,29 @@ extension APIClient {
                 }
             }
             self.sessionManager.upload(multipartFormData: multipartFormData, with: router, encodingCompletion: completion)
+        }
+    }
+    
+    fileprivate func multipartRequestInternal<T: Codable> (router: Router, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (_ result: APIResult<T>) -> Void) {
+        let completionHandler: (_ result: APIResult<T>) -> Void = { result in
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        }
+        
+        //Make request
+        self.sessionManager.upload(
+        multipartFormData: multipartFormData, with: router) { [weak self] encodingResult in
+            guard let this = self else {
+                completionHandler(.failure(APIClientError.unknown))
+                return
+            }
+            switch encodingResult {
+            case .success(let upload, _, _):
+                this.makeRequest(request: upload, router: router, completion: completion)
+            case .failure(let encodingError):
+                completionHandler(.failure(this.parseError(encodingError as NSError?)))
+            }
         }
     }
     
