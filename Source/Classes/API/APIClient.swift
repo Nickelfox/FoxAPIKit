@@ -436,7 +436,7 @@ extension APIClient {
                     do {
                         json = try JSON(data: data, options: .allowFragments)
                     } catch {
-                        continuation.resume(throwing: error)
+                        //continuation.resume(throwing: error)
                     }
                 }
                 if 200...299 ~= code {
