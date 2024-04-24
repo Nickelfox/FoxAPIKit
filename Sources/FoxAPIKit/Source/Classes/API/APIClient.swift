@@ -24,7 +24,7 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 	
 	public init() {
 		self.networkManager = NetworkReachabilityManager()
-		self.sessionManager = SessionManager(configuration: URLSessionConfiguration.default)
+		self.sessionManager = Session(configuration: URLSessionConfiguration.default)
 		if let profileJSON = self.currentProfile {
 			do {
 				self.setAuthHeaders(try JSON(profileJSON)^)
@@ -57,6 +57,8 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 			self.currentProfile = authHeaders.toJSON()
 		}
 	}
+    
+    
 
 	public var isAuthenticated: Bool {
 		if let headers = self.authHeaders {
@@ -65,7 +67,7 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 		return false
 	}
 	
-	fileprivate let sessionManager: SessionManager
+	fileprivate let sessionManager: Session
 	fileprivate let networkManager: NetworkReachabilityManager?
 	
 	fileprivate func parseAuthenticationHeaders (_ response: HTTPURLResponse) {
@@ -459,4 +461,26 @@ extension DefaultDataResponse {
 			print("Data: \(utf8)")
 		}
 	}
+}
+
+// MARK: - AuthInterceptor
+
+class AuthInterceptor<U: AuthHeadersProtocol>: RequestInterceptor {
+    
+    private let authHeaders: U?
+    
+    init(authHeaders: U?) {
+        self.authHeaders = authHeaders
+    }
+    
+    func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
+        var modifiedRequest = urlRequest
+        
+        if let authHeaders = self.authHeaders {
+            // Modify the URLRequest to add authentication headers
+            // Example: modifiedRequest.headers.add(...)
+        }
+        
+        completion(.success(modifiedRequest))
+    }
 }
