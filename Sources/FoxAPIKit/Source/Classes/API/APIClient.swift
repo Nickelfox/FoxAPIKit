@@ -57,8 +57,6 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 			self.currentProfile = authHeaders.toJSON()
 		}
 	}
-    
-    
 
 	public var isAuthenticated: Bool {
 		if let headers = self.authHeaders {
@@ -67,7 +65,7 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 		return false
 	}
 	
-	fileprivate let sessionManager: Session
+	fileprivate let sessionManager: SessionManager
 	fileprivate let networkManager: NetworkReachabilityManager?
 	
 	fileprivate func parseAuthenticationHeaders (_ response: HTTPURLResponse) {
