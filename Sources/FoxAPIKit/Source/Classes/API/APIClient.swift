@@ -24,7 +24,7 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 	
 	public init() {
 		self.networkManager = NetworkReachabilityManager()
-		self.sessionManager = Session(configuration: URLSessionConfiguration.default)
+		self.sessionManager = SessionManager(configuration: URLSessionConfiguration.default)
 		if let profileJSON = self.currentProfile {
 			do {
 				self.setAuthHeaders(try JSON(profileJSON)^)
@@ -459,26 +459,4 @@ extension DefaultDataResponse {
 			print("Data: \(utf8)")
 		}
 	}
-}
-
-// MARK: - AuthInterceptor
-
-class AuthInterceptor<U: AuthHeadersProtocol>: RequestInterceptor {
-    
-    private let authHeaders: U?
-    
-    init(authHeaders: U?) {
-        self.authHeaders = authHeaders
-    }
-    
-    func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
-        var modifiedRequest = urlRequest
-        
-        if let authHeaders = self.authHeaders {
-            // Modify the URLRequest to add authentication headers
-            // Example: modifiedRequest.headers.add(...)
-        }
-        
-        completion(.success(modifiedRequest))
-    }
 }
