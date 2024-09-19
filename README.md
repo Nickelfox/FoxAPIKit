@@ -1,5 +1,5 @@
 # FoxAPIKit
-FoxAPIKit is wrapper around [Alamofire](https://github.com/Alamofire/Alamofire) networking library written in swift that provides a set of tools for working with APIs, including a router, APIClient, error handling, and API request and response handling. It is designed to simplify the process of making API requests and handling responses in Swift-based iOS applications.
+FoxAPIKit is a wrapper around [Alamofire](https://github.com/Alamofire/Alamofire) networking library written in swift that provides a set of tools for working with APIs, including a router, APIClient, error handling, and API request and response handling. It is designed to simplify the process of making API requests and handling responses in Swift-based iOS applications.
 
 ## Installation
 #### <i class="icon-file"></i>**CocoaPods**
@@ -7,7 +7,7 @@ FoxAPIKit is wrapper around [Alamofire](https://github.com/Alamofire/Alamofire) 
 
 > `$ sudo gem install cocoapods`
 
-If you wish to integrate `JSONParsing` in your project, then make following changes in your `Podfile`:
+If you wish to integrate `JSONParsing` in your project, you need make the following changes in your `Podfile`:
 
 ```  
 platform :ios, '9.0'
@@ -25,7 +25,7 @@ pod install
 
 The [Swift Package Manager](https://swift.org/package-manager) is a tool for automating the distribution of Swift code and is integrated into the swift compiler.
 
-Once you have your Swift package set up, adding ForAPIKit as a dependency is as easy as adding it to the ```dependencies``` value of your ```Package.swift```.
+Once you have the Swift package set up, adding ForAPIKit as a dependency is as easy as adding it to the ```dependencies``` value of your ```Package.swift```.
 
 ```
 dependencies: [
@@ -34,7 +34,7 @@ dependencies: [
 ```
 
 #### <i class="icon-pencil"></I>**Manually**
-If you don't want to use any dependency manager in your project, you can install this library manually too.
+If you don't want to use any dependency manager in your project, you can also install this library manually.
 Just download and add the `Sources` folder to your project.
 
 ## Features
@@ -188,7 +188,7 @@ MyAPIClient.shared.authHeaders = AuthHeaders(token: <your_auth_token>)
 You can update the headers at any time before making an API request to include any required authentication information.
 
 #### <i class="icon-file"></i>**APIRequest**
-Using APIClient we can finally request an API where router contain all the URL request and by requesting an API using `MyAPIClient` we get a result in as `APIResult` that return parseable `Value` and `error` as a response.
+Using APIClient we can finally request an API where router contains all the URL requests and by requesting an API using `MyAPIClient` we get a result in as `APIResult` that return parseable `Value` and `error` as a response.
 
 ```swift
 let router = MyAPIRouter.getUser(id: 0)
@@ -228,4 +228,4 @@ MyAPIClient.shared.multipartRequest(router) { formData in
 
 ## Conclusion
 
-FoxAPIKit provide handful exprience to call APIs and reduce the development efforts while creating Network layer in your project.
+FoxAPIKit provides a handful exprience to call APIs and reduce the development efforts while creating Network layer in your project.
