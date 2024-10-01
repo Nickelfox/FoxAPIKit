@@ -10,21 +10,29 @@ import Foundation
 import Alamofire
 import JSONParsing
 import AnyErrorKit
+import Combine
 
 private let AuthHeadersKey = "AuthHeadersKey"
 
 public let DefaultStatusCode = 0
 
 public typealias JSON = JSONParsing.JSON
-public typealias AnyError = AnyErrorKit.AnyError
+public typealias AnyError = Error //AnyErrorKit.AnyError
 
 open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 
 	public var enableLogs = false
-	
+
+    fileprivate let interceptor: APIRequestInterceptor<U>
+    fileprivate let session: Session
+    fileprivate let networkManager: NetworkReachabilityManager?
+
 	public init() {
 		self.networkManager = NetworkReachabilityManager()
-		self.sessionManager = SessionManager(configuration: URLSessionConfiguration.default)
+        self.interceptor = APIRequestInterceptor<U>()
+        let configuration = URLSessionConfiguration.default
+
+		self.session = Session(configuration: configuration, interceptor: interceptor)
 		if let profileJSON = self.currentProfile {
 			do {
 				self.setAuthHeaders(try JSON(profileJSON)^)
@@ -50,10 +58,11 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 	public var authHeaders: U? = nil {
 		didSet {
 			guard let authHeaders = self.authHeaders else {
-				self.sessionManager.adapter = nil
+                self.interceptor.authHeaders = nil
+                self.currentProfile = nil
 				return
 			}
-			self.sessionManager.adapter = authHeaders
+            self.interceptor.authHeaders = authHeaders
 			self.currentProfile = authHeaders.toJSON()
 		}
 	}
@@ -64,9 +73,6 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 		}
 		return false
 	}
-	
-	fileprivate let sessionManager: SessionManager
-	fileprivate let networkManager: NetworkReachabilityManager?
 	
 	fileprivate func parseAuthenticationHeaders (_ response: HTTPURLResponse) {
 		self.authHeaders = self.authenticationHeaders(response: response)
@@ -117,6 +123,67 @@ open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
         }
     }
 
+    // MARK: - Combine Publishers
+
+    // Combine-based request for Codable types
+    open func requestPublisher<T: Codable>(_ router: Router) -> AnyPublisher<T, Error> {
+        Future { [weak self] promise in
+            self?.request(router) { (result: APIResult<T>) in
+                switch result {
+                case .success(let value):
+                    promise(.success(value))
+                case .failure(let error):
+                    promise(.failure(error))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+
+    // Combine-based request for JSONParseable types
+    open func requestPublisher<T: JSONParseable>(_ router: Router) -> AnyPublisher<T, Error> {
+        Future { [weak self] promise in
+            self?.request(router) { (result: APIResult<T>) in
+                switch result {
+                case .success(let value):
+                    promise(.success(value))
+                case .failure(let error):
+                    promise(.failure(error))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+
+    // MARK: - Async/Await Methods
+
+    // Async/Await request for Codable types
+    open func requestAsync<T: Codable>(_ router: Router) async throws -> T {
+        try await withCheckedThrowingContinuation { continuation in
+            self.request(router) { (result: APIResult<T>) in
+                switch result {
+                case .success(let value):
+                    continuation.resume(returning: value)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+
+    // Async/Await request for JSONParseable types
+    open func requestAsync<T: JSONParseable>(_ router: Router) async throws -> T {
+        try await withCheckedThrowingContinuation { continuation in
+            self.request(router) { (result: APIResult<T>) in
+                switch result {
+                case .success(let value):
+                    continuation.resume(returning: value)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
 }
 
 //MARK: Offline Request
@@ -159,7 +226,7 @@ extension APIClient {
     fileprivate func requestInternal<T: Codable> (router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) -> Request {
         
         //Make request
-        let request = self.sessionManager.request(router)
+        let request = self.session.request(router)
         self.makeRequest(request: request, router: router, completion: completion)
         return request
     }
@@ -167,7 +234,7 @@ extension APIClient {
 	fileprivate func requestInternal<T: JSONParseable> (router: Router, completion: @escaping (_ result: APIResult<T>) -> Void) -> Request {
 		
 		//Make request
-		let request = self.sessionManager.request(router)
+		let request = self.session.request(router)
 		self.makeRequest(request: request, router: router, completion: completion)
 		return request
 	}
@@ -330,50 +397,23 @@ extension APIClient {
         )
     }
 
-	fileprivate func multipartRequestInternal<T: JSONParseable> (router: Router, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (_ result: APIResult<T>) -> Void) {
-		let completionHandler: (_ result: APIResult<T>) -> Void = { result in
-			DispatchQueue.main.async {
-				completion(result)
-			}
-		}
-		
-		//Make request
-		self.sessionManager.upload(
-		multipartFormData: multipartFormData, with: router) { [weak self] encodingResult in
-			guard let this = self else {
-				completionHandler(.failure(APIClientError.unknown))
-				return
-			}
-			switch encodingResult {
-			case .success(let upload, _, _):
-				this.makeRequest(request: upload, router: router, completion: completion)
-			case .failure(let encodingError):
-				completionHandler(.failure(this.parseError(encodingError as NSError?)))
-			}
-		}
-	}
+    fileprivate func multipartRequestInternal<T: JSONParseable> (
+        router: Router,
+        multipartFormData: @escaping (MultipartFormData) -> Void,
+        completion: @escaping (_ result: APIResult<T>) -> Void
+    ) {
+        let request = self.session.upload(multipartFormData: multipartFormData, with: router)
+        self.makeRequest(request: request, router: router, completion: completion)
+    }
+
     
-    fileprivate func multipartRequestInternal<T: Codable> (router: Router, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (_ result: APIResult<T>) -> Void) {
-        let completionHandler: (_ result: APIResult<T>) -> Void = { result in
-            DispatchQueue.main.async {
-                completion(result)
-            }
-        }
-        
-        //Make request
-        self.sessionManager.upload(
-        multipartFormData: multipartFormData, with: router) { [weak self] encodingResult in
-            guard let this = self else {
-                completionHandler(.failure(APIClientError.unknown))
-                return
-            }
-            switch encodingResult {
-            case .success(let upload, _, _):
-                this.makeRequest(request: upload, router: router, completion: completion)
-            case .failure(let encodingError):
-                completionHandler(.failure(this.parseError(encodingError as NSError?)))
-            }
-        }
+    fileprivate func multipartRequestInternal<T: Codable> (
+        router: Router,
+        multipartFormData: @escaping (MultipartFormData) -> Void,
+        completion: @escaping (_ result: APIResult<T>) -> Void
+    ) {
+        let request = self.session.upload(multipartFormData: multipartFormData, with: router)
+        self.makeRequest(request: request, router: router, completion: completion)
     }
 }
 
@@ -446,7 +486,7 @@ extension Request {
 }
 
 
-extension DefaultDataResponse {
+extension AFDataResponse {
 
 	func log() {
 		if let response = self.response,
@@ -459,4 +499,36 @@ extension DefaultDataResponse {
 			print("Data: \(utf8)")
 		}
 	}
+}
+
+private class APIRequestInterceptor<U: AuthHeadersProtocol>: RequestInterceptor {
+    private let lock = NSLock()
+    private var _authHeaders: U?
+
+    var authHeaders: U? {
+        get {
+            lock.lock()
+            defer { lock.unlock() }
+            return _authHeaders
+        }
+        set {
+            lock.lock()
+            _authHeaders = newValue
+            lock.unlock()
+        }
+    }
+
+    func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
+        var urlRequest = urlRequest
+        if let headers = authHeaders {
+            // Assuming AuthHeadersProtocol provides a method to convert headers to a dictionary
+            for (key, value) in headers.toJSON() {
+                urlRequest.setValue(value, forHTTPHeaderField: key)
+            }
+        }
+        completion(.success(urlRequest))
+    }
+
+    // Implement retry logic if needed, otherwise omit this method
+    // func retry(...) { ... }
 }
